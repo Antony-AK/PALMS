@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Coyoto';
+  src: url('./assets/fonts/Coyoto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --palms-blue: #13294B;   /* Dark Blue - Primary */
+  --palms-blue-dark: #173E6B;
+  --palms-grey: #888B8D;  /* Neutral Grey */
+  --palms-grey-light: #F3F4F6;
+  --palms-black: #0A0A0A;
+  --palms-white: #FFFFFF;
+}
+
+body {
+  /* font-family: 'Agenda', system-ui, -apple-system, BlinkMacSystemFont, sans-serif; */
+  color: var(--palms-black);
+  background-color: var(--palms-white);
+}
+
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--palms-blue);
+  color: var(--palms-white);
+  padding: 0.65rem 1.25rem;
+  font-size: 0.875rem;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--palms-blue-dark);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--palms-black);
+  border: 1px solid #D1D5DB;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.875rem;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--palms-grey-light);
+}
+
+/* Entry animation */
+.fade-down {
+  animation: fadeDown 0.6s ease forwards;
+}
+
+/* NAV LINK UNDERLINE ANIMATION */
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.25s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--palms-blue);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
