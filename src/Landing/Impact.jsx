@@ -58,7 +58,7 @@ const ImpactSection = () => {
 
         {/* LEFT – AUTHORITY STATEMENT */}
         <div className="impact-reveal">
-          <span className="text-xs text-gray-500 block mb-6">
+          <span className="text-xs  text-gray-500 block mb-6">
             Our impact
           </span>
 
@@ -91,7 +91,7 @@ const ImpactSection = () => {
             {/* METRIC */}
             <div className="impact-reveal">
               <h3
-                className="text-7xl font-semibold text-[var(--palms-blue)] impact-number"
+                className="text-7xl font-semibold text-[var(--palms-green)] impact-number"
                 data-value="25"
               >
                 0
@@ -108,7 +108,7 @@ const ImpactSection = () => {
             {/* METRIC */}
             <div className="impact-reveal">
               <h3
-                className="text-7xl font-semibold text-[var(--palms-blue)] impact-number"
+                className="text-7xl font-semibold text-[var(--palms-green)] impact-number"
                 data-value="12"
               >
                 0
@@ -125,7 +125,7 @@ const ImpactSection = () => {
             {/* METRIC */}
             <div className="impact-reveal">
               <h3
-                className="text-7xl font-semibold text-[var(--palms-blue)] impact-number"
+                className="text-7xl font-semibold text-[var(--palms-green)] impact-number"
                 data-value="1000"
               >
                 0+

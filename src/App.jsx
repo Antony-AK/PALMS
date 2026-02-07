@@ -8,20 +8,27 @@ import './App.css'
 import Contact from './pages/Contact';
 import Footer from './Landing/Footer';
 
+import { useEffect } from "react";
+import { initSmoothScroll } from "./utils/smoothScroll";
+
+
+
 function App() {
+
+
+
+
+
   return (
-    <div className="">
-      <Navbar />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-
-      </Routes>
-
-         <Footer />
-
-
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </div>
     </div>
   )
 }

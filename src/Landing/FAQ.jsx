@@ -72,7 +72,7 @@ const FAQItem = ({ item, isOpen, onClick }) => {
              inline-flex items-center justify-center
              origin-center"
                 >
-                    <span className="text-xl leading-none select-none">
+                    <span className="text-xl leading-none text-[var(--palms-green)] select-none">
                         {isOpen ? "−" : "+"}
                     </span>
                 </span>

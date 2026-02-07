@@ -1,28 +1,36 @@
 import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
+import t1 from "../assets/t11.jpg";
+import t2 from "../assets/t12.jpg";
+import t3 from "../assets/t3.png";
+import t4 from "../assets/t13.jpg";
 
 const testimonials = [
   {
-    name: "Senior Manager",
-    role: "Manufacturing Industry",
+    name: "Sharone",
+    role: "Senior Manager",
+    image: t1,
     quote:
       "PALMS helped me slow down my thinking and approach leadership with greater clarity. The learning stayed with me well beyond the sessions.",
   },
   {
-    name: "HR Professional",
-    role: "IT Services",
+    name: "Anna",
+    role: "HR Professional",
+    image: t2,
     quote:
       "The programmes at PALMS are thoughtful and structured. They focus not just on skills, but on how we think and relate at work.",
   },
   {
-    name: "Mid-level Executive",
-    role: "Financial Services",
+    name: "Antony",
+    role: "Mid-level Executive",
+    image: t3,
     quote:
       "What sets PALMS apart is the consistency. The regular learning sessions created space for reflection and meaningful growth.",
   },
   {
-    name: "Team Lead",
-    role: "Engineering Services",
+    name: "Clara",
+    role: "Team Lead",
+    image: t4,
     quote:
       "The experiential programmes challenged our assumptions and strengthened trust within our team. It was learning done right.",
   },
@@ -52,15 +60,23 @@ const TestimonialsSection = () => {
 
         {/* LEFT — ACTIVE QUOTE */}
         <div>
-          <span className="text-xs text-gray-500 block mb-6">
+          <span className="text-xs mb-5 text-gray-500 block">
             Voices from our community
           </span>
 
           <div ref={quoteRef}>
             {/* Decorative quote mark */}
-            <p className="text-[6rem] leading-none text-[var(--palms-blue)]/10 mb-4">
+            <p className="absolute text-[6rem] leading-none text-[var(--palms-blue)]/10 ">
               “
             </p>
+
+            <div className="w-44 h-44 ms-5 rounded-full overflow-hidden bg-gray-200">
+              <img
+                src={testimonials[activeIndex].image}
+                alt={testimonials[activeIndex].name}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             {/* Quote */}
             <p className="text-2xl md:text-[1.75rem] leading-[1.6] tracking-tight text-black max-w-[560px]">
@@ -68,11 +84,11 @@ const TestimonialsSection = () => {
             </p>
 
             {/* Divider */}
-            <div className="mt-10 pt-6 border-t border-gray-200 max-w-[120px]" />
+            <div className="mt-5 pt-3 border-t border-[var(--palms-green)] max-w-[120px]" />
 
             {/* Author */}
-            <div className="mt-6">
-              <p className="text-base font-medium text-black">
+            <div className="">
+              <p className="text-base font-medium text-[var(--palms-blue)]">
                 {testimonials[activeIndex].name}
               </p>
               <p className="text-sm text-[var(--palms-grey)]">
@@ -93,20 +109,18 @@ const TestimonialsSection = () => {
               }}
               tabIndex={0}
               className={`group text-left pb-6 border-b transition-all duration-300
-                ${
-                  activeIndex === index
-                    ? "border-[var(--palms-blue)] text-[var(--palms-blue)] bg-gray-100 outline-none pt-5 ps-5"
-                    : "border-gray-200 text-black  hover:text-[var(--palms-blue)]"
+                ${activeIndex === index
+                  ? "border-[var(--palms-green)] border-b-2 text-[var(--palms-blue)] bg-gray-50 outline-none pt-5 ps-5"
+                  : "border-gray-200 text-black  hover:text-[var(--palms-blue)]"
                 }`}
             >
-              <p className="text-base font-medium flex items-center gap-2">
+              <p className="text-base text-[var(--palms-blue)] font-medium flex items-center gap-2">
                 {/* Active dot */}
                 <span
                   className={`w-2 h-2 rounded-full transition-all duration-300
-                    ${
-                      activeIndex === index
-                        ? "bg-[var(--palms-blue)]"
-                        : "bg-transparent"
+                    ${activeIndex === index
+                      ? "bg-[var(--palms-green)]"
+                      : "bg-transparent"
                     }`}
                 />
                 {item.name}

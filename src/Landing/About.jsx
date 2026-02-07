@@ -35,7 +35,7 @@ const AboutSection = () => {
 
                 {/* LEFT COLUMN */}
                 <div className="w-full flex flex-col  mx-auto ">
-                    <span className="about-reveal text-xs text-gray-500 block mb-4 ">
+                    <span className="about-reveal text-xs  text-gray-500 block mb-4 ">
                         About PALMS
                     </span>
 
@@ -84,7 +84,7 @@ const AboutSection = () => {
                                 Learn more about PALMS
                             </button>
 
-                            <button className="text-sm text-black flex items-center gap-1 hover:underline underline-offset-4">
+                            <button className="text-sm text-[var(--palms-green)] flex items-center gap-1 hover:underline underline-offset-4">
                                 Our approach →
                             </button>
                         </div>

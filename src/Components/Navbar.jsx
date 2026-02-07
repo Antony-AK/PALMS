@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "../assets/logo.jpeg"
+import logo from "../assets/logo1.png"
 import { NavLink } from "react-router-dom";
 
 
@@ -17,8 +17,8 @@ const Navbar = () => {
 
     const linkClass = ({ isActive }) =>
         `nav-link transition-colors ${isActive
-            ? "text-[var(--palms-blue)] "
-            : "text-[var(--palms-grey)] hover:text-[var(--palms-blue)]"
+            ? "text-[var(--palms-green)] "
+            : "text-[var(--palms-grey)] hover:text-[var(--palms-green)]"
         }`;
 
 
@@ -35,7 +35,7 @@ const Navbar = () => {
 
                 {/* Navigation */}
                 <nav className=" flex items-center gap-18 font-medium">
-                    <NavLink to="/" ><div className="w-36 h-8 mt-1 text-lg font-semibold tracking-tight text-[var(--palms-blue)]">
+                    <NavLink to="/" ><div className="w-44 h-10 -mt-5 text-lg font-semibold tracking-tight text-[var(--palms-blue)]">
                         <img src={logo} className="object-cover" alt="" />
                     </div>
                     </NavLink>
@@ -45,12 +45,24 @@ const Navbar = () => {
                             Who Are We
                         </NavLink>
 
-                        <NavLink to="/blogs" className={linkClass}>
-                            Blogs
+                        <NavLink to="/services" className={linkClass}>
+                            Services
+                        </NavLink>
+
+                        <NavLink to="/ourteam" className={linkClass}>
+                            Our Team
                         </NavLink>
 
                         <NavLink to="/gallery" className={linkClass}>
                             Gallery
+                        </NavLink>
+
+                        <NavLink to="/blogs" className={linkClass}>
+                            Mindspace
+                        </NavLink>
+
+                        <NavLink to="/memberships" className={linkClass}>
+                            Memberships
                         </NavLink>
 
                         <NavLink to="/contact" className={linkClass}>

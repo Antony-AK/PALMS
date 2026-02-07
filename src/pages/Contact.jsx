@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import HologramGlobe from "../Components/HologramGlobe";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,21 +32,24 @@ const Contact = () => {
     }, []);
 
     return (
-        <section
-            ref={sectionRef}
-            className="w-full bg-white px-6 pt-36 pb-16"
-        >
-            <div className="max-w-[1260px] mx-auto">
+     <section
+  ref={sectionRef}
+  className="relative w-full min-h-screen bg-white px-6 pt-36 pb-16 overflow-hidden"
+>
+
+            <HologramGlobe />
+
+            <div className="relative z-10 max-w-[1260px] mx-auto">
 
                 {/* HERO STATEMENT */}
-                <div className="contact-reveal mb-32">
+                <div className="contact-reveal mb-32 w-full">
                     <span className="text-xs text-gray-500 block mb-8">
                         Contact PALMS
                     </span>
 
-                    <h1 className="text-4xl md:text-6xl font-semibold leading-tight text-[var(--palms-blue)]">
+                    <h1 className="text-4xl md:text-6xl w-full font-semibold leading-tight text-[var(--palms-blue)]">
                         Conversations
-                        <br />
+                       
                         that begin
                         <br />
                         with intent

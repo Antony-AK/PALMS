@@ -62,7 +62,7 @@ const MembershipCTASection = () => {
               Become a member
             </button>
 
-            <button className="text-sm text-black flex items-center gap-1 hover:underline underline-offset-4 transition">
+            <button className="text-sm text-[var(--palms-green)] flex items-center gap-1 hover:underline underline-offset-4 transition">
               Explore membership structure →
             </button>
           </div>

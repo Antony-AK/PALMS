@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import logo from "../assets/logo.jpeg"
+import logo from "../assets/logo-white.jpg"
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -42,11 +42,9 @@ const Footer = () => {
 
           {/* LEFT — BRAND ANCHOR */}
           <div className="max-w-[520px]">
-            <div className="w-56 h-16 mt-1 text-lg font-semibold tracking-tight text-[var(--palms-blue)]">
+            <div className="w-72 h-24  text-lg bg-transparent font-semibold tracking-tight text-[var(--palms-blue)]">
               <img src={logo} className="object-cover" alt="" />
             </div>
-
-         
 
             <p className="text-md text-white/70 leading-relaxed">
               Creating positive social change by empowering individuals

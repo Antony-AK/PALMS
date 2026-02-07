@@ -8,18 +8,30 @@
 }
 
 :root {
-  --palms-blue: #13294B;   /* Dark Blue - Primary */
+  --palms-blue: #13294B;
+  /* Dark Blue - Primary */
   --palms-blue-dark: #173E6B;
-  --palms-grey: #888B8D;  /* Neutral Grey */
+  --palms-grey: #888B8D;
   --palms-grey-light: #F3F4F6;
   --palms-black: #0A0A0A;
   --palms-white: #FFFFFF;
+  --palms-green: #6cc24a;
+
+}
+
+html {
+  scroll-behavior: auto; /* we control scroll manually */
+}
+
+body {
+  overscroll-behavior: none;
 }
 
 body {
   /* font-family: 'Agenda', system-ui, -apple-system, BlinkMacSystemFont, sans-serif; */
   color: var(--palms-black);
   background-color: var(--palms-white);
+  overflow-x: hidden;
 }
 
 
@@ -71,7 +83,7 @@ body {
   bottom: 0;
   width: 0%;
   height: 2px;
-  background-color: var(--palms-blue);
+  background-color: var(--palms-green);
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
@@ -80,14 +92,50 @@ body {
   width: 100%;
 }
 
+.hero-title,
+.hero-sub,
+.hero-actions > *,
+.hero-image {
+  will-change: transform, opacity, clip-path;
+}
+
+
 
 @keyframes fadeDown {
   from {
     opacity: 0;
     transform: translateY(-12px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.4; }
+}
+
+
+.hero-noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/noise.png");
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.2s ease-out forwards;
 }

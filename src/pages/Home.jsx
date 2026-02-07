@@ -10,18 +10,22 @@ import TestimonialsSection from '../Landing/Testimonials';
 import MembershipCTASection from '../Landing/MembershipCTA';
 import Footer from '../Landing/Footer';
 import FAQSection from '../Landing/FAQ';
+import PalmsLearningMoment from '../Components/PalmsLearningMoment';
+
 
 function Home() {
   return (
-    <div  className="pt-[72px]">
-     <Hero />
-     <AboutSection />
-     <ServicesSection />
-     <ImpactSection />
-     <TestimonialsSection />
-     <MembershipCTASection />
-     <FAQSection />
-    
+    <div className="pt-[72px]">
+
+      <Hero />
+      <PalmsLearningMoment />
+      <AboutSection />
+      <ServicesSection />
+      <ImpactSection />
+      <TestimonialsSection />
+      <MembershipCTASection />
+      <FAQSection />
+
     </div>
   )
 }
