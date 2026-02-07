@@ -70,8 +70,11 @@ const PalmsLearningMoment = () => {
       p-10
       text-white
       overflow-hidden
+      border-l-4 border-b-4 border-[var(--palms-green)]
     "
                 >
+
+                    
                     {/* ambient glow */}
                     <div className="absolute -top-24 -left-24 w-72 h-72 bg-white/10 rounded-full blur-[80px]" />
                     <div className="absolute bottom-0 right-0 w-48 h-48 bg-[var(--palms-green)]/10 rounded-full blur-[60px]" />
@@ -178,7 +181,7 @@ const PalmsLearningMoment = () => {
               rounded-t-xl 
               shadow-[0_10px_30px_rgba(19,41,75,0.35)]
               hover:shadow-[0_12px_40px_rgba(19,41,75,0.5)]
-              transition-all
+              transition-all border-t-4 border-[var(--palms-green)]
             "
                     >
                         Are u ready for the change →

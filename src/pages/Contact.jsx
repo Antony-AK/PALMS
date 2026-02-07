@@ -1,12 +1,20 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import HologramGlobe from "../Components/HologramGlobe";
+import { lazy, Suspense } from "react";
+
+const HologramGlobe = lazy(() => import("../Components/HologramGlobe"));
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
     const sectionRef = useRef(null);
+    const [showGlobe, setShowGlobe] = useState(false);
+
+    useEffect(() => {
+        const t = setTimeout(() => setShowGlobe(true), 400);
+        return () => clearTimeout(t);
+    }, []);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -32,12 +40,16 @@ const Contact = () => {
     }, []);
 
     return (
-     <section
-  ref={sectionRef}
-  className="relative w-full min-h-screen bg-white px-6 pt-36 pb-16 overflow-hidden"
->
+        <section
+            ref={sectionRef}
+            className="relative w-full min-h-screen bg-white px-6 pt-36 pb-16 overflow-hidden"
+        >
 
-            <HologramGlobe />
+            {showGlobe && (
+                <Suspense fallback={null}>
+                    <HologramGlobe />
+                </Suspense>
+            )}
 
             <div className="relative z-10 max-w-[1260px] mx-auto">
 
@@ -49,7 +61,7 @@ const Contact = () => {
 
                     <h1 className="text-4xl md:text-6xl w-full font-semibold leading-tight text-[var(--palms-blue)]">
                         Conversations
-                       
+
                         that begin
                         <br />
                         with intent

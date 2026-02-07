@@ -100,6 +100,32 @@ body {
 }
 
 
+/* 🔒 Prevent initial paint flash (CRITICAL) */
+.hero-title,
+.hero-sub {
+  clip-path: inset(0 0 100% 0);
+}
+
+.hero-actions > * {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px) scale(0.96);
+}
+
+.hero-image {
+  clip-path: inset(12% 12% 12% 12%);
+  transform: scale(1.03);
+}
+
+
+/* 🔒 HERO IMAGE – HARD LOCK INITIAL STATE */
+.hero-image {
+  opacity: 0;
+  clip-path: inset(14% 14% 14% 14%);
+  transform: scale(1.06);
+}
+
+
 
 @keyframes fadeDown {
   from {

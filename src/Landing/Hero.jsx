@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useLayoutEffect } from "react";
 import hero from "../assets/hero1.jpg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,49 +9,59 @@ const Hero = () => {
   const imageWrapperRef = useRef(null);
   const sectionRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const ctx = gsap.context(() => {
 
-      // HERO ENTRANCE
-      const tl = gsap.timeline({ delay: 0.4 });
-
-      // ensure buttons are visible by default
-      gsap.set(".hero-actions > *", { autoAlpha: 1 });
-
-      // Headline – elegant reveal
-      tl.from(".hero-title", {
+      // 🔒 LOCK INITIAL STATE (before first paint)
+      gsap.set(".hero-title", {
         clipPath: "inset(0 0 100% 0)",
-        duration: 1.1,
+      });
+
+      gsap.set(".hero-sub", {
+        clipPath: "inset(0 0 100% 0)",
+      });
+
+      gsap.set(".hero-actions > *", {
+        autoAlpha: 0,
+        y: 10,
+        scale: 0.96,
+      });
+
+      gsap.set(".hero-image", {
+        clipPath: "inset(12% 12% 12% 12%)",
+        scale: 1.03,
+      });
+
+      const tl = gsap.timeline({ delay: 0.35 });
+
+      tl.to(".hero-title", {
+        clipPath: "inset(0 0 0% 0)",
+        duration: 1.15,
         ease: "power2.out",
       })
-
-        // Subtext – calm follow
-        .from(".hero-sub", {
-          clipPath: "inset(0 0 100% 0)",
+        .to(".hero-sub", {
+          clipPath: "inset(0 0 0% 0)",
           duration: 0.9,
           ease: "power2.out",
         }, "-=0.75")
-
-        // Buttons – premium settle (NO DISAPPEAR)
-        .from(".hero-actions > *", {
-          autoAlpha: 0,
-          scale: 0.98,
-          y: 8,
-          duration: 0.65,
-          ease: "power2.out",
-          stagger: 0.15,
+        .to(".hero-actions > *", {
+          autoAlpha: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.6,
+          stagger: 0.14,
+          ease: "expo.out",
         }, "-=0.6")
-
-        // Image – slow cinematic unmask
-        .from(".hero-image", {
-          clipPath: "inset(12% 12% 12% 12%)",
-          scale: 1.03,
-          duration: 1.4,
-          ease: "power2.out",
+        .to(".hero-image", {
+          opacity: 1,
+          clipPath: "inset(0% 0% 0% 0%)",
+          scale: 1,
+          duration: 1.8,
+          ease: "power3.out",
         }, "-=0.9");
 
 
-      // EXISTING SCROLL IMAGE EXPAND
+      // 🧠 SCROLL IMAGE EXPAND
       gsap.to(imageWrapperRef.current, {
         width: "100%",
         borderRadius: "0px",
@@ -68,6 +78,8 @@ const Hero = () => {
 
     return () => ctx.revert();
   }, []);
+
+
 
 
   return (

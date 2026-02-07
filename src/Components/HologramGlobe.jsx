@@ -6,6 +6,8 @@ import * as THREE from "three";
 
 function GlobeModel() {
   const ref = useRef();
+  const isVisible = useRef(true);
+
   const { scene } = useGLTF("/models/hologram_globe_using_geometry_nodes.glb");
 
 
@@ -30,20 +32,18 @@ function GlobeModel() {
 
 
 
-  useFrame((state, delta) => {
-    if (ref.current) {
-      ref.current.rotation.y += delta * 0.15;
+useFrame((state, delta) => {
+  if (!isVisible.current || !ref.current) return;
 
+  ref.current.rotation.y += delta * 0.12;
 
-
-      ref.current.traverse((child) => {
-        if (child.material?.emissiveIntensity) {
-          child.material.emissiveIntensity =
-            1.8 + Math.sin(state.clock.elapsedTime * 0.8) * 0.3;
-        }
-      });
+  ref.current.traverse((child) => {
+    if (child.material?.emissiveIntensity) {
+      child.material.emissiveIntensity =
+        1.6 + Math.sin(state.clock.elapsedTime * 0.6) * 0.25;
     }
   });
+});
 
 
   return (
@@ -57,6 +57,8 @@ function GlobeModel() {
 
   );
 }
+
+
 
 
 const HologramGlobe = () => {
