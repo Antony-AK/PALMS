@@ -25,6 +25,8 @@ const MembershipCTASection = () => {
           },
         }
       );
+
+      
     }, sectionRef);
 
     return () => ctx.revert();
@@ -33,77 +35,116 @@ const MembershipCTASection = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full px-6 py-18 bg-[var(--palms-grey-light)]"
+      className="w-full px-6 py-14 bg-[var(--palms-grey-light)]"
     >
       <div className="max-w-[1280px] mx-auto">
 
-        <div className="max-w-[820px] mx-auto text-center">
+        <div className="max-w-[960px] mx-auto text-center space-y-16">
 
-          {/* PRIMARY CTA */}
-          <span className="cta-reveal text-lg text-gray-500 block mb-6">
-            Membership
-          </span>
+          {/* INTRO */}
+          <div className="space-y-6">
+            <span className="cta-reveal text-sm tracking-widest uppercase text-gray-500">
+              PALMS Membership
+            </span>
 
-          <h2 className="cta-reveal text-4xl md:text-6xl font-semibold leading-tight text-[var(--palms-blue)]">
-            A commitment to
-            <br />
-            continuous learning
-          </h2>
+            <h2 className="cta-reveal text-4xl md:text-6xl font-semibold text-[var(--palms-blue)] leading-tight">
+              A commitment to continuous learning
 
-          <p className="cta-reveal mt-8 text-lg text-[var(--palms-grey)] max-w-[640px] mx-auto">
-            PALMS membership is designed for individuals and professionals
-            who value reflection, structured learning, and long-term growth.
-            Members participate in regular programmes that strengthen
-            thinking, leadership, and personal effectiveness.
-          </p>
+              and conscious growth
+            </h2>
 
-          <div className="cta-reveal mt-14 flex flex-col sm:flex-row items-center justify-center gap-6">
-            <button className="btn-primary px-8 py-3">
-              Become a member
-            </button>
-
-            <button className="text-sm text-[var(--palms-green)] flex items-center gap-1 hover:underline underline-offset-4 transition">
-              Explore membership structure →
-            </button>
+            <p className="cta-reveal text-lg text-[var(--palms-grey)] max-w-[770px] mx-auto leading-relaxed">
+              PALMS Membership supports individuals and organisations through
+              consistent, structured learning experiences that strengthen leadership,
+              personal effectiveness, and long-term thinking.
+            </p>
           </div>
 
-          {/* DIVIDER */}
-          <div className="cta-reveal mt-20 mb-10 h-px bg-gray-300/60 max-w-[160px] mx-auto" />
 
-          {/* SOFT OPT-IN FORM */}
-          {/* <div className="cta-reveal max-w-[520px] mx-auto">
-            <p className="text-sm text-[var(--palms-grey)] mb-4">
-              Prefer to stay informed? Receive programme updates and learning insights.
-            </p>
 
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <input
-                type="email"
-                required
-                placeholder="Your email address"
-                className="w-full sm:w-[320px] px-4 py-3 text-sm bg-white
-                           border border-gray-300 rounded-md
-                           focus:outline-none focus:border-[var(--palms-blue)]"
-              />
+          {/* MEMBERSHIP TYPES */}
+          <div className="grid md:grid-cols-2 gap-12 text-left">
+            <div className="
+  cta-reveal group bg-white rounded-2xl p-10
+  shadow-sm border border-black/5
+  transition-all duration-500 ease-out
+  hover:-translate-y-2 hover:shadow-xl
+">
+              <span className="
+  block w-12 h-[3px] mb-6
+  bg-[var(--palms-green)]
+ origin-left
+  transition-transform duration-500
+  scale-x-100
+" />
 
-              <button
-                type="submit"
-                className="px-6 py-3 text-sm font-medium
-                           border border-[var(--palms-blue)]
-                           text-[var(--palms-blue)]
-                           rounded-md
-                           hover:bg-[var(--palms-blue)]
-                           hover:text-white transition"
-              >
-                Get updates
-              </button>
-            </form>
+              <h3 className="text-xl font-semibold text-[var(--palms-blue)] mb-3">
+                Individual Membership
+              </h3>
+
+              <p className="text-[var(--palms-grey)] leading-relaxed">
+                Designed for professionals, students, and self-driven learners who value
+                reflection, structured learning, and long-term leadership development.
+              </p>
+
+            </div>
+
+            <div className="
+  cta-reveal group bg-white rounded-2xl p-10
+  shadow-sm border border-black/5
+  transition-all duration-500 ease-out
+  hover:-translate-y-2 hover:shadow-xl
+">
+              <span className="
+  block w-12 h-[3px] mb-6
+  bg-[var(--palms-green)] origin-left
+  transition-transform duration-500
+  scale-x-100
+" />
+
+              <h3 className="text-xl font-semibold text-[var(--palms-blue)] mb-2">
+                Corporate Membership
+              </h3>
+              <p className="text-[var(--palms-grey)] leading-relaxed">
+                Designed for organisations that value structured people development,
+                leadership capability, and long-term cultural excellence.
+              </p>
+            </div>
+          </div>
+
+          {/* <div className="cta-reveal flex justify-center ">
+            <div className="w-[140px] h-px bg-black/10 relative overflow-hidden">
+              <span className="
+      absolute left-0 top-0 h-full w-full
+      bg-[var(--palms-green)]
+      scale-x-0 origin-left
+      animate-[grow_2s_ease-in-out_infinite]
+    " />
+            </div>
           </div> */}
 
+
+          {/* CTA */}
+          <div className="
+  cta-reveal 
+
+  rounded-2xl
+  px-10 
+  flex flex-col sm:flex-row
+  items-center justify-center gap-6
+">
+            <button className="btn-primary px-10 py-4">
+              Begin your membership journey
+            </button>
+
+            <button className="btn-secondary">
+              View membership structure →
+            </button>
+
+          </div>
+
         </div>
+
 
       </div>
     </section>

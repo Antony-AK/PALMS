@@ -54,6 +54,18 @@ const TestimonialsSection = () => {
     );
   }, [activeIndex]);
 
+  // Auto-rotate testimonials
+useEffect(() => {
+  const interval = setInterval(() => {
+    setActiveIndex((prev) =>
+      prev === testimonials.length - 1 ? 0 : prev + 1
+    );
+  }, 2500); // 4.5s feels premium & calm
+
+  return () => clearInterval(interval);
+}, []);
+
+
   return (
     <section className="w-full bg-white px-6 py-14">
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32 items-start">
