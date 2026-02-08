@@ -59,8 +59,6 @@ useFrame((state, delta) => {
 }
 
 
-
-
 const HologramGlobe = () => {
   return (
     <div className="absolute right-0 top-[50%] h-[80%] w-[45%] hidden lg:block pointer-events-none animate-fadeIn">
@@ -97,7 +95,6 @@ const HologramGlobe = () => {
           position={[0, 0, -4]}
           intensity={1.4}
         />
-
 
 
         <Suspense fallback={null}>

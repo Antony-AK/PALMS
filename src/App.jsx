@@ -10,6 +10,8 @@ import Footer from './Landing/Footer';
 
 import { useEffect } from "react";
 import { initSmoothScroll } from "./utils/smoothScroll";
+import WhoAreWe from './pages/WhoAreWe';
+import ServiceDetail from './pages/ServiceDetail';
 
 
 
@@ -25,6 +27,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path='/whoweare' element={<WhoAreWe />} />
+          <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
