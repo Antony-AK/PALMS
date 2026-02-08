@@ -33,14 +33,14 @@ const MembershipCTASection = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full px-6 py-28 bg-[var(--palms-grey-light)]"
+      className="w-full px-6 py-18 bg-[var(--palms-grey-light)]"
     >
       <div className="max-w-[1280px] mx-auto">
 
         <div className="max-w-[820px] mx-auto text-center">
 
           {/* PRIMARY CTA */}
-          <span className="cta-reveal text-xs text-gray-500 block mb-6">
+          <span className="cta-reveal text-lg text-gray-500 block mb-6">
             Membership
           </span>
 

@@ -35,7 +35,7 @@ const AboutSection = () => {
 
                 {/* LEFT COLUMN */}
                 <div className="w-full flex flex-col  mx-auto ">
-                    <span className="about-reveal text-xs  text-gray-500 block mb-4 ">
+                    <span className="about-reveal text-lg  text-gray-500 block mb-4 ">
                         About PALMS
                     </span>
 

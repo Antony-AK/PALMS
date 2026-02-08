@@ -79,18 +79,18 @@ const ServicesSection = () => {
 
 
     return (
-        <section ref={sectionRef} className="w-full bg-white px-6 py-16">
+        <section ref={sectionRef} className="w-full bg-white px-6 ">
             <div className="max-w-[1280px] mx-auto">
 
                 {/* HEADER */}
-                <div className="max-w-[720px] mb-20">
-                    <span className="text-xs  text-gray-500 block mb-4">
+                <div className="w-full mb-20">
+                    <span className="text-lg  text-gray-500 block mb-4">
                         Our services
                     </span>
 
                     <h2 className="text-4xl md:text-6xl font-semibold leading-tight text-[var(--palms-blue)]">
                         Learning programmes
-                        <br />
+                        
                         designed for
                         <br />
                         lasting growth
@@ -210,7 +210,7 @@ const ServicesSection = () => {
                 </div>
 
                 {/* CTA */}
-                <div className="mt-20">
+                <div className="mt-10">
                     <button className="btn-primary">
                         Explore all programmes
                     </button>

@@ -58,7 +58,7 @@ const FAQItem = ({ item, isOpen, onClick }) => {
 
 
     return (
-        <div className="border-b border-gray-200 py-8 cursor-pointer">
+        <div className="border-b border-gray-200 py-8 cursor-pointer ">
             <button
                 onClick={onClick}
                 className="w-full flex justify-between items-start text-left"
@@ -97,12 +97,12 @@ const FAQSection = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
     return (
-        <section className="w-full bg-white px-6 py-44">
+        <section className="w-full bg-white px-6 py-16">
             <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32">
 
                 {/* LEFT — CONTEXT */}
                 <div className="max-w-[420px]">
-                    <span className="text-xs text-gray-500 block mb-6">
+                    <span className="text-lg text-gray-500 block mb-6">
                         Frequently asked
                     </span>
 

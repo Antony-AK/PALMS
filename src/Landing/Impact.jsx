@@ -53,12 +53,12 @@ const ImpactSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-white px-6 py-40">
+    <section ref={sectionRef} className="w-full bg-white px-6 py-16">
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24">
 
         {/* LEFT – AUTHORITY STATEMENT */}
         <div className="impact-reveal">
-          <span className="text-xs  text-gray-500 block mb-6">
+          <span className="text-lg  text-gray-500 block mb-6">
             Our impact
           </span>
 

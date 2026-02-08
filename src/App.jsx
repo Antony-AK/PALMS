@@ -1,7 +1,7 @@
 
 import Navbar from './Components/Navbar';
 import './index.css'
-import React from 'react';  // ✅ add this line
+import React from 'react';  
 import Home from './pages/Home';
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
@@ -16,10 +16,6 @@ import ServiceDetail from './pages/ServiceDetail';
 
 
 function App() {
-
-
-
-
 
   return (
     <div id="smooth-wrapper">

@@ -55,12 +55,12 @@ const TestimonialsSection = () => {
   }, [activeIndex]);
 
   return (
-    <section className="w-full bg-white px-6 py-44">
+    <section className="w-full bg-white px-6 py-14">
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32 items-start">
 
         {/* LEFT — ACTIVE QUOTE */}
         <div>
-          <span className="text-xs mb-5 text-gray-500 block">
+          <span className="text-lg mb-5 text-gray-500 block">
             Voices from our community
           </span>
 
