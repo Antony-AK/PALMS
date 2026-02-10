@@ -304,7 +304,7 @@ const PalmsTimeline = () => {
 
     return (
         <section className="w-full py-32">
-            <h3 className="text-3xl font-semibold text-[var(--palms-blue)] mb-20">
+            <h3 className="text-3xl font-semibold text-center text-[var(--palms-blue)] mb-20">
                 The PALMS Journey
             </h3>
 
@@ -318,7 +318,7 @@ const PalmsTimeline = () => {
                     d="M 80 80 H 1520 Q 1560 80 1560 120 V 200 Q 1560 240 1520 240 H 80 Q 40 240 40 280 V 360 Q 40 400 80 400 H 1520"
                     fill="none"
                     stroke="#E5E7EB"
-                    strokeWidth="18"
+                    strokeWidth="48"
                     strokeLinecap="round"
                 />
 
@@ -328,7 +328,7 @@ const PalmsTimeline = () => {
                     d="M 80 80 H 1520 Q 1560 80 1560 120 V 200 Q 1560 240 1520 240 H 80 Q 40 240 40 280 V 360 Q 40 400 80 400 H 1520"
                     fill="none"
                     stroke="url(#palmsGradient)"
-                    strokeWidth="24"
+                    strokeWidth="64"
                     strokeLinecap="round"
                 />
 

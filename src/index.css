@@ -64,6 +64,30 @@ body {
   background-color: var(--palms-grey-light);
 }
 
+.hero-title {
+  text-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+
+.btn-primary {
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.hero-noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+
+.hero-dynamic-title span,
+.hero-dynamic-sub span {
+  will-change: transform, opacity;
+}
+
+
+
 /* Entry animation */
 .fade-down {
   animation: fadeDown 0.6s ease forwards;
@@ -201,4 +225,24 @@ body {
   0% { transform: scaleX(0); }
   50% { transform: scaleX(1); }
   100% { transform: scaleX(0); }
+}
+
+
+.bg-palms-blue { background: var(--palms-blue); }
+.bg-palms-blue-soft { background: rgba(20, 58, 120, 0.06); }
+.bg-palms-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--palms-blue) 0%,
+    #0f2f66 100%
+  );
+}
+
+
+.card-hover {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px -20px rgba(20,58,120,0.4);
 }

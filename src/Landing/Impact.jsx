@@ -53,97 +53,91 @@ const ImpactSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-white px-6 py-16">
-      <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24">
+  <section
+  ref={sectionRef}
+  className="relative w-full px-6 py-12 overflow-hidden bg-white"
+>
+  <div className="absolute right-0 top-0 h-full w-[48%] bg-[var(--palms-blue)] rounded-4xl me-10" />
 
-        {/* LEFT – AUTHORITY STATEMENT */}
-        <div className="impact-reveal">
-          <span className="text-lg  text-gray-500 block mb-6">
-            Our impact
-          </span>
+  <div className="relative max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24">
 
-          <h2 className="text-4xl md:text-6xl font-semibold leading-tight text-[var(--palms-blue)] max-w-[520px]">
-            Learning as a
-            <br />
-            lifelong practice,
-            <br />
-            shaped over
-            <br />
-            decades
-          </h2>
+    {/* LEFT – NARRATIVE */}
+    <div className="impact-reveal">
+      <span className="text-lg  text-gray-500 tracking-widest uppercase  block mb-6">
+        Our impact
+      </span>
 
-          <p className="mt-10 text-lg text-[var(--palms-grey)] max-w-[520px]">
-            Since 2000, PALMS Training & Consulting has remained committed
-            to enabling individuals and organisations to think clearly,
-            lead responsibly, and grow continuously through structured
-            learning experiences.
-          </p>
-        </div>
+      <h2 className="text-4xl md:text-6xl font-semibold leading-tight text-[var(--palms-blue)] max-w-[520px]">
+        Learning as a
+        <br />
+        lifelong practice,
+        <br />
+        shaped over
+        <br />
+        decades
+      </h2>
 
-        {/* RIGHT – EVIDENCE SYSTEM */}
-        <div className="relative pl-10 impact-reveal">
+      <p className="mt-10 text-lg text-[var(--palms-grey)] max-w-[520px] leading-relaxed">
+        Since 2000, PALMS has remained committed to enabling individuals and
+        organisations to think clearly, lead responsibly, and grow continuously
+        through structured, value-driven learning experiences.
+      </p>
+    </div>
 
-          {/* Vertical Accent Line */}
-          <div className="absolute left-0 top-0 h-full w-[2px] bg-[var(--palms-blue)]/20"></div>
+    {/* RIGHT – IMPACT SYSTEM */}
+    <div className="relative pl-14 impact-reveal ">
 
-          <div className="flex flex-col gap-20">
+      {/* Gradient rail */}
+      <div className="absolute left-0 top-0  h-full w-[3px] bg-gradient-to-b from-[var(--palms-green)] via-[var(--palms-green)] to-transparent" />
 
-            {/* METRIC */}
-            <div className="impact-reveal">
-              <h3
-                className="text-7xl font-semibold text-[var(--palms-green)] impact-number"
-                data-value="25"
-              >
-                0
-              </h3>
-              <p className="mt-4 text-base font-medium text-black">
-                Years of professional learning initiatives
-              </p>
-              <p className="mt-3 text-sm text-[var(--palms-grey)] max-w-[420px]">
-                A sustained commitment to leadership development,
-                management thinking, and behavioural growth.
-              </p>
-            </div>
+      <div className="flex flex-col gap-16 ">
 
-            {/* METRIC */}
-            <div className="impact-reveal">
-              <h3
-                className="text-7xl font-semibold text-[var(--palms-green)] impact-number"
-                data-value="12"
-              >
-                0
-              </h3>
-              <p className="mt-4 text-base font-medium text-black">
-                Structured programmes conducted annually
-              </p>
-              <p className="mt-3 text-sm text-[var(--palms-grey)] max-w-[420px]">
-                Regular monthly learning programmes designed
-                exclusively for members.
-              </p>
-            </div>
+        {/* CARD */}
+        {[
+          {
+            value: 25,
+            title: "Years of professional learning initiatives",
+            desc:
+              "A sustained commitment to leadership development, management thinking, and behavioural growth.",
+          },
+          {
+            value: 12,
+            title: "Structured programmes conducted annually",
+            desc:
+              "Regular monthly learning programmes designed exclusively for members.",
+          },
+          {
+            value: 1000,
+            title: "Professionals and learners impacted",
+            desc:
+              "Individuals across industries engaged through workshops, programmes, and experiential learning.",
+          },
+        ].map((item, i) => (
+          <div
+            key={i}
+            className="impact-reveal bg-white rounded-3xl p-10 shadow-[0_30px_80px_rgba(0,0,0,0.08)]"
+          >
+            <h3
+              className="text-7xl font-semibold text-[var(--palms-green)] impact-number"
+              data-value={item.value}
+            >
+              0
+            </h3>
 
-            {/* METRIC */}
-            <div className="impact-reveal">
-              <h3
-                className="text-7xl font-semibold text-[var(--palms-green)] impact-number"
-                data-value="1000"
-              >
-                0+
-              </h3>
-              <p className="mt-4 text-base font-medium text-black">
-                Professionals and learners impacted
-              </p>
-              <p className="mt-3 text-sm text-[var(--palms-grey)] max-w-[420px]">
-                Individuals across industries engaged through
-                classroom programmes, workshops, and experiential learning.
-              </p>
-            </div>
+            <p className="mt-4 text-base font-semibold text-[var(--palms-blue)]">
+              {item.title}
+            </p>
 
+            <p className="mt-3 text-sm text-[var(--palms-grey)] leading-relaxed max-w-[420px]">
+              {item.desc}
+            </p>
           </div>
-        </div>
-
+        ))}
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
   );
 };
 

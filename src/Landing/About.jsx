@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from "react";
+import React, { useRef, useEffect } from "react";
 import aboutImg from "../assets/about.jpg";
 import aboutImg2 from "../assets/hero2.webp";
 import gsap from "gsap";
@@ -7,35 +7,35 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection = () => {
-      const sectionRef = useRef(null);
+    const sectionRef = useRef(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(".about-reveal", {
-        opacity: 0,
-        y: 60,
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.15,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 60%",
-        },
-      });
-    }, sectionRef);
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.from(".about-reveal", {
+                opacity: 0,
+                y: 60,
+                duration: 1,
+                ease: "power3.out",
+                stagger: 0.15,
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top 60%",
+                },
+            });
+        }, sectionRef);
 
-    return () => ctx.revert();
-  }, []);
+        return () => ctx.revert();
+    }, []);
 
     return (
         <section
-         ref={sectionRef}
-          className="w-full bg-white px-6 py-24">
+            ref={sectionRef}
+            className="w-full bg-white px-6 py-24">
             <div className="max-w-[1280px]  mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 ">
 
                 {/* LEFT COLUMN */}
-                <div className="w-full flex flex-col  mx-auto ">
-                    <span className="about-reveal text-lg  text-gray-500 block mb-4 ">
+                <div className="w-full flex flex-col relative">
+                    <span className="about-reveal text-lg tracking-widest uppercase text-gray-500 block mb-6">
                         About PALMS
                     </span>
 
@@ -84,7 +84,7 @@ const AboutSection = () => {
                                 Learn more about PALMS
                             </button>
 
-                            <button className="text-sm text-[var(--palms-green)] flex items-center gap-1 hover:underline underline-offset-4">
+                            <button className="btn-secondary">
                                 Our approach →
                             </button>
                         </div>

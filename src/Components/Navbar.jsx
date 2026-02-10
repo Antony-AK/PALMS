@@ -61,6 +61,10 @@ const Navbar = () => {
                             Who Are We
                         </NavLink>
 
+                        <NavLink to="/memberships" className={linkClass}>
+                            Memberships
+                        </NavLink>
+
                         <div
                             className="relative"
                             onMouseEnter={() => setShowServices(true)}
@@ -69,8 +73,8 @@ const Navbar = () => {
                             {/* SERVICES LINK */}
                             <span
                                 className={`nav-link cursor-pointer ${showServices
-                                        ? "text-[var(--palms-green)]"
-                                        : "text-[var(--palms-grey)] hover:text-[var(--palms-green)]"
+                                    ? "text-[var(--palms-green)]"
+                                    : "text-[var(--palms-grey)] hover:text-[var(--palms-green)]"
                                     }`}
                                 role="button"
                                 aria-haspopup="true"
@@ -170,22 +174,16 @@ const Navbar = () => {
                         </div>
 
 
-
-
-                        <NavLink to="/ourteam" className={linkClass}>
-                            Our Team
+                        <NavLink to="/blogs" className={linkClass}>
+                            Mindspace
                         </NavLink>
 
                         <NavLink to="/gallery" className={linkClass}>
                             Gallery
                         </NavLink>
 
-                        <NavLink to="/blogs" className={linkClass}>
-                            Mindspace
-                        </NavLink>
-
-                        <NavLink to="/memberships" className={linkClass}>
-                            Memberships
+                        <NavLink to="/ourteam" className={linkClass}>
+                            Our Team
                         </NavLink>
 
                         <NavLink to="/contact" className={linkClass}>

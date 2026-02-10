@@ -15,12 +15,12 @@ const WhoAreWe = () => {
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
 
-            // SECTION REVEAL
+            /* ================= BASIC SECTION REVEAL ================= */
             gsap.from(".who-reveal", {
                 y: 32,
-                autoAlpha: 0,
+                autoAlpha: 1,
                 duration: 1,
-                stagger: 0.14,
+                stagger: 0.12,
                 ease: "power3.out",
                 scrollTrigger: {
                     trigger: sectionRef.current,
@@ -28,18 +28,27 @@ const WhoAreWe = () => {
                 },
             });
 
-            // DIVIDER GROW
-            gsap.from(".who-divider", {
-                width: 0,
-                duration: 1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: ".who-divider",
-                    start: "top 85%",
-                },
+
+
+            /* ================= EXPERIENCE RAIL (.group) FIX ================= */
+            gsap.utils.toArray(".group").forEach((el, i) => {
+                gsap.from(el, {
+                    y: 60,
+                    autoAlpha: 0,
+                    scale: 0.96,
+                    duration: 1,
+                    ease: "power4.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 85%",
+                    },
+                });
+
             });
 
-            // SCROLL PROGRESS LINE
+
+
+            /* ================= SCROLL PROGRESS LINE ================= */
             gsap.to(progressRef.current, {
                 height: "100%",
                 ease: "none",
@@ -47,7 +56,6 @@ const WhoAreWe = () => {
                     trigger: sectionRef.current,
                     start: "top 10%",
                     end: "bottom 90%",
-
                     scrub: true,
                 },
             });
@@ -57,145 +65,207 @@ const WhoAreWe = () => {
         return () => ctx.revert();
     }, []);
 
+
     return (
         <section
             ref={sectionRef}
-            className="relative w-full bg-white py-32 px-6 overflow-hidden"
+            className="relative w-full bg-white py-12  overflow-hidden"
         >
 
-            {/* 🧭 SIDE SCROLL INDICATOR */}
-            <div className="absolute left-8 top-0 bottom-0 hidden lg:flex items-center">
-                <div className="relative h-full w-[2px] bg-black/10 overflow-hidden">
-                    <span
-                        ref={progressRef}
-                        className="absolute top-0 left-0 w-full bg-[var(--palms-green)]"
-                        style={{ height: "0%" }}
-                    />
+
+            <section className="relative bg-palms-gradient text-white py-40 overflow-hidden">
+                <div className="absolute inset-0 opacity-10">
+                    {/* subtle noise or grid */}
                 </div>
-            </div>
+
+                <div className="max-w-[1100px] mx-auto px-6 relative z-10">
+                    <h1 className="text-5xl md:text-7xl font-semibold leading-tight">
+                        Building leaders<br />
+                        who think, decide,<br />
+                        and act with purpose
+                    </h1>
+
+                    <p className="mt-8 text-xl text-white/80 max-w-[620px]">
+                        PALMS partners with individuals and organisations to develop
+                        leadership capability, professional clarity, and sustainable growth
+                        through value-driven learning.
+                    </p>
+                </div>
+            </section>
 
 
 
 
-            <div className="max-w-[1200px] mx-auto space-y-28">
+
+            <div className="max-w-[1300px] mx-auto space-y-28">
 
                 {/* ================= WHO WE ARE ================= */}
-                <div className="max-w-[900px]">
-                    <h2 className="who-reveal text-3xl md:text-5xl font-semibold text-[var(--palms-blue)]">
-                        Who We Are
-                    </h2>
-                    <div className="mt-6 h-[3px] w-12 bg-[var(--palms-green)] rounded-full opacity-80" />
+                <section className="py-32 bg-white">
+                    <div className="grid md:grid-cols-2 gap-20 max-w-[1200px] mx-auto px-2">
+
+                        {/* LEFT — CONTENT */}
+                        <div className="space-y-8">
+
+                            <h2 className="text-4xl font-semibold text-[var(--palms-blue)]">
+                                Who we are
+                            </h2>
+
+                            <p className="text-xl text-[var(--palms-grey)] leading-relaxed">
+                                PALMS is a leadership and management development institution
+                                focused on building clarity, capability, and purposeful growth
+                                in individuals and organisations.
+                            </p>
+
+                            <p className="text-[var(--palms-grey)] leading-relaxed">
+                                We believe leadership is shaped by how people think, decide,
+                                and respond - not merely by titles or roles. Our work centres
+                                on strengthening mindset, self-awareness, and practical
+                                leadership behaviour that translates into real-world impact.
+                            </p>
 
 
-                    <p className="who-reveal mt-8 text-[var(--palms-grey)] leading-relaxed text-base md:text-lg">
-                        <strong>PALMS (Pearlcity Academy for Leadership and Management Skills)</strong> is a
-                        professional training and consulting institution dedicated to enriching lives
-                        and strengthening organizations through purposeful, value-based learning.
-                    </p>
 
-                    <p className="who-reveal mt-4 text-[var(--palms-grey)] leading-relaxed">
-                        We work closely with <strong>corporate houses, business owners, professionals,
-                            and students</strong> to develop leadership capability, improve work culture,
-                        and enhance personal and organizational effectiveness in a rapidly evolving
-                        professional environment.
-                    </p>
+                        </div>
 
-                    <div className="who-reveal mt-14 rounded-2xl overflow-hidden shadow-lg">
-                        <img
-                            src={hero}
-                            alt="PALMS Leadership Training"
-                            className="w-full h-[360px] object-cover"
-                        />
+                        {/* RIGHT — IMAGE */}
+                        <div className="relative">
+                            <div className="absolute -inset-6 bg-palms-blue-soft rounded-3xl" />
+                            <img
+                                src={hero}
+                                alt="PALMS leadership learning environment"
+                                className="relative rounded-3xl shadow-xl"
+                            />
+                        </div>
+
                     </div>
+                </section>
 
-                </div>
+
 
                 {/* ================= IMPACT STRIP ================= */}
-                <div className="who-reveal flex flex-col md:flex-row gap-12 md:gap-20 border-l-2 border-[var(--palms-blue)]/20 pl-8">
-                    <div><div className="mb-3 text-[var(--palms-green)]">
-                        <Target size={40} />
-                    </div>
-                        <h4 className="text-sm flex uppercase tracking-wider text-[var(--palms-blue)]">
-                            Our Purpose
-                        </h4>
+                <section className="bg-palms-blue text-white py-32">
+                    <div className="grid md:grid-cols-2 gap-24 max-w-[1200px] mx-auto px-6">
 
-
-                        <div className="mt-6 h-[3px] w-12 bg-[var(--palms-green)] rounded-full opacity-80" />
-
-                        <p className="mt-4 text-[var(--palms-grey)] leading-relaxed">
-                            To provide high-quality, value-driven training programmes that enable
-                            individuals to lead meaningful professional and personal lives, while
-                            contributing positively to their organizations and society.
-                        </p>
-                    </div>
-
-                    <div>
-                        <div className="mb-3 text-[var(--palms-green)]">
-                            <Lightbulb size={40} />
+                        <div>
+                            <Target size={44} className="text-[var(--palms-green)]" />
+                            <h3 className="mt-6 text-3xl font-semibold">Our purpose</h3>
+                            <p className="mt-4 text-white/80 leading-relaxed">
+                                To enable individuals and organisations to lead meaningful,
+                                value-driven professional lives while contributing positively
+                                to society.
+                            </p>
                         </div>
-                        <h4 className="text-sm uppercase tracking-wider text-[var(--palms-blue)]">
-                            Our Belief
-                        </h4>
-                        <div className="mt-6 h-[3px] w-12 bg-[var(--palms-green)] rounded-full opacity-80" />
 
-                        <p className="mt-4 text-[var(--palms-grey)] leading-relaxed">
-                            Sustainable growth is achieved when individuals develop the right mindset,
-                            leadership values, and practical skills — enabling long-term success rather
-                            than short-term performance.
-                        </p>
+                        <div>
+                            <Lightbulb size={44} className="text-[var(--palms-green)]" />
+                            <h3 className="mt-6 text-3xl font-semibold">Our belief</h3>
+                            <p className="mt-4 text-white/80 leading-relaxed">
+                                Sustainable success comes from mindset, values, and capability -
+                                not short-term performance alone.
+                            </p>
+                        </div>
+
                     </div>
-                </div>
+                </section>
+
 
                 {/* ================= WHAT WE ENABLE ================= */}
-                <div className="grid md:grid-cols-2 gap-20 items-start">
-                    <div className="who-reveal">
-                        <h3 className="text-2xl font-semibold text-[var(--palms-blue)]">
-                            What We Enable
-                        </h3>
-                        <div className="mt-6 h-[3px] w-12 bg-[var(--palms-green)] rounded-full opacity-80" />
+                <div className="relative grid md:grid-cols-2 gap-28 items-start">
 
+                    {/* LEFT — STICKY NARRATIVE */}
+                    <div className="sticky top-32 space-y-10">
 
-                        <p className="mt-6 text-[var(--palms-grey)] leading-relaxed">
-                            PALMS designs and delivers structured learning experiences that support
-                            transformation at both individual and organizational levels by addressing
-                            mindset, behaviour, and capability development.
+                        <div>
+                            <h3 className="text-4xl font-semibold text-[var(--palms-blue)] leading-tight">
+                                What we enable
+                            </h3>
+
+                            <div className="mt-6 h-[3px] w-14 bg-[var(--palms-green)] rounded-full" />
+                        </div>
+
+                        <p className="text-[var(--palms-grey)] text-lg leading-relaxed max-w-[440px]">
+                            We enable deep, lasting transformation by shaping how people think,
+                            decide, and lead - not just what they do.
                         </p>
 
-                        <ul className="mt-8 space-y-4 text-[var(--palms-grey)] text-sm">
-                            <li className="relative pl-6">
-                                <span className="absolute left-0 top-[7px] w-2 h-2 rounded-full bg-[var(--palms-green)]" />
-                                Leadership and management capability development
-                            </li>
-                            <li className="relative pl-6">
-                                <span className="absolute left-0 top-[7px] w-2 h-2 rounded-full bg-[var(--palms-green)]" />
-                                Personality enhancement and self-development programmes
-                            </li>
-                            <li className="relative pl-6">
-                                <span className="absolute left-0 top-[7px] w-2 h-2 rounded-full bg-[var(--palms-green)]" />
-                                Workplace effectiveness, productivity, and work culture improvement
-                            </li>
-                            <li className="relative pl-6">
-                                <span className="absolute left-0 top-[7px] w-2 h-2 rounded-full bg-[var(--palms-green)]" />
-                                Communication skills, team building, and professional excellence
-                            </li>
-                        </ul>
+                        {/* APPROACH PANEL */}
+                        <div className="relative mt-16 rounded-2xl bg-[var(--palms-blue)] p-8 text-white overflow-hidden">
+                            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
+
+                            <p className="relative text-sm uppercase tracking-wider text-white ">
+                                Our approach
+                            </p>
+                            <div className="mt-4 h-[3px] w-12 bg-[var(--palms-green)] rounded-full" />
+
+
+                            <p className="relative mt-4 text-sm leading-relaxed opacity-90">
+                                Experiential learning, guided reflection, real-life cases, and
+                                facilitated dialogue - designed to create insight, clarity,
+                                and application.
+                            </p>
+                        </div>
+
                     </div>
 
-                    <div className="who-reveal bg-[var(--palms-blue)]/5 rounded-2xl p-10">
-                        <p className="text-sm uppercase tracking-wider text-[var(--palms-blue)]">
-                            Our Approach
-                        </p>
-                        <div className="mt-6 h-[3px] w-12 bg-[var(--palms-green)] rounded-full opacity-80" />
+                    {/* RIGHT — EXPERIENCE RAIL */}
+                    <div className="relative space-y-24 pl-10">
 
-                        <p className="mt-4 text-[var(--palms-grey)] leading-relaxed">
-                            Our programmes combine experiential learning, reflection, real-life case
-                            discussions, and guided facilitation to ensure learning is relevant,
-                            engaging, and directly applicable in professional and personal contexts.
-                        </p>
+                        {/* Vertical line */}
+                        <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[var(--palms-blue)]/15" />
+
+                        {[
+                            {
+                                index: "01",
+                                title: "Leadership & management capability",
+                                desc: "Developing leaders who think clearly, take responsibility, and lead people with confidence."
+                            },
+                            {
+                                index: "02",
+                                title: "Personality & self-development",
+                                desc: "Strengthening self-awareness, emotional intelligence, confidence, and professional presence."
+                            },
+                            {
+                                index: "03",
+                                title: "Workplace effectiveness & culture",
+                                desc: "Improving productivity, collaboration, trust, and healthy work culture across teams."
+                            },
+                            {
+                                index: "04",
+                                title: "Communication & professional excellence",
+                                desc: "Building clarity in communication, credibility in relationships, and excellence in execution."
+                            }
+                        ].map((item, i) => (
+                            <div key={i} className="relative group">
+
+                                {/* DOT */}
+                                <span className="absolute -left-[11px] top-2 w-5 h-5 rounded-full
+                         bg-white border-4 border-[var(--palms-green)]
+                         transition-transform group-hover:scale-110" />
+
+                                <div className="pl-10">
+                                    <span className="text-xs tracking-widest text-[var(--palms-green)]">
+                                        {item.index}
+                                    </span>
+
+                                    <h4 className="mt-2 text-xl font-semibold text-[var(--palms-blue)]">
+                                        {item.title}
+                                    </h4>
+
+                                    <p className="mt-3 text-sm text-[var(--palms-grey)] leading-relaxed max-w-[520px]">
+                                        {item.desc}
+                                    </p>
+                                </div>
+
+                            </div>
+                        ))}
+
                     </div>
+
                 </div>
 
-                <PalmsTimeline />
+                <section className="bg-palms-blue-soft py-10 w-full">
+                    <PalmsTimeline />
+                </section>
 
                 {/* ================= PROGRAMME SPECTRUM ================= */}
                 <div className="space-y-10">
@@ -268,43 +338,54 @@ const WhoAreWe = () => {
                 </div>
 
 
-                <div className="w-full flex">
+                <div className="mt-32 grid md:grid-cols-3 gap-20 items-center
+                bg-[var(--palms-blue)]/5 rounded-3xl p-16">
 
+                    {/* LEFT — MISSION */}
+                    <div className="md:col-span-2 space-y-8">
 
-                    <div className="w-full flex flex-col gap-10">
-                        {/* ================= MISSION & OBJECTIVES ================= */}
-                        <div className="who-reveal max-w-[900px]">
+                        <div>
                             <h3 className="text-2xl font-semibold text-[var(--palms-blue)]">
-                                Our Mission & Objectives
+                                Our mission & objectives
                             </h3>
-                            <div className="mt-6 h-[3px] w-12 bg-[var(--palms-green)] rounded-full opacity-80" />
-
-
-                            <ul className="mt-6 space-y-3 text-[var(--palms-grey)] text-sm leading-relaxed">
-                                <li>• Deliver high-quality training programmes at an affordable and accessible cost</li>
-                                <li>• Enhance individual work efficiency and organizational productivity</li>
-                                <li>• Develop leadership qualities and responsible, value-driven professionals</li>
-                                <li>• Promote ethical values, positive work culture, and lifelong learning</li>
-                            </ul>
+                            <div className="mt-4 h-[3px] w-12 bg-[var(--palms-green)] rounded-full" />
                         </div>
 
-                        {/* ================= CLOSING STATEMENT ================= */}
-                        <div className="who-reveal text-[var(--palms-grey)] text-base md:text-lg max-w-[800px]">
-                            PALMS exists to support individuals and organizations on their journey toward
-                            clarity, confidence, and leadership excellence — enabling sustainable growth
-                            in an ever-changing professional and business landscape.
+                        <ul className="space-y-4 text-[var(--palms-grey)] text-md leading-relaxed">
+                            <li>• Deliver high-quality training programmes that are accessible and impactful</li>
+                            <li>• Enhance individual work efficiency and organisational productivity</li>
+                            <li>• Develop responsible, value-driven leaders and professionals</li>
+                            <li>• Promote ethical thinking, positive work culture, and lifelong learning</li>
+                        </ul>
 
-                        </div>
+                        <p className="pt-6 text-[var(--palms-grey)] text-base leading-relaxed max-w-[640px]">
+                            PALMS exists to support individuals and organisations on their journey
+                            toward clarity, confidence, and leadership excellence - enabling
+                            sustainable growth in an ever-changing professional landscape.
+                        </p>
 
                     </div>
 
-                    <div className=" w-[35%] h-[200px] mt-5 opacity-85">
+                    {/* RIGHT — IMAGE */}
+                    <div className="relative">
+                        <div className="absolute -inset-4 bg-[var(--palms-blue)]/10 rounded-2xl" />
                         <img
                             src={img}
-                            className="rounded-xl "
+                            alt="PALMS learning environment"
+                            className="relative rounded-2xl shadow-lg"
                         />
                     </div>
+
                 </div>
+
+
+                <section className="bg-palms-gradient text-white py-40 text-center">
+                    <h3 className="text-4xl md:text-5xl font-semibold max-w-[900px] leading-16 mx-auto">
+                        Building clarity, confidence, and leadership excellence
+                        for a rapidly changing professional world.
+                    </h3>
+                </section>
+
 
             </div>
         </section>

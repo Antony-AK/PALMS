@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import pd from "../assets/pd1.jpg"
+import pd from "../assets/pdnew.jpg"
 import md from "../assets/md2.webp"
 import soft from "../assets/skills1.png"
 import training from "../assets/corporate.jpg"
@@ -79,127 +79,134 @@ const ServicesSection = () => {
 
 
     return (
-        <section ref={sectionRef} className="w-full bg-white px-6 ">
+        <section
+            ref={sectionRef}
+            className="relative w-full px-6 py-32
+             bg-white overflow-hidden"
+        >
             <div className="max-w-[1280px] mx-auto">
 
-                {/* HEADER */}
-                <div className="w-full mb-20">
-                    <span className="text-lg  text-gray-500 block mb-4">
-                        Our services
+                <div className="w-full mb-24 max-w-[960px]">
+                    <span className="text-lg tracking-widest uppercase text-gray-500 block mb-6">
+                        Our programmes
                     </span>
 
-                    <h2 className="text-4xl md:text-6xl font-semibold leading-tight text-[var(--palms-blue)]">
-                        Learning programmes
-                        
-                        designed for
+                    <h2 className="text-4xl md:text-6xl font-semibold leading-[1.1]
+                 text-[var(--palms-blue)]">
+                        Learning experiences designed
                         <br />
-                        lasting growth
+                        for lasting growth
                     </h2>
 
-                    <p className="mt-8 text-lg text-[var(--palms-grey)]">
-                        PALMS delivers structured learning experiences that support
-                        individual excellence, leadership capability, and organisational
-                        effectiveness.
+                    <p className="mt-8 text-lg text-[var(--palms-grey)] max-w-[720px]">
+                        PALMS delivers structured, value-driven learning programmes that
+                        strengthen individuals, leaders, and organisations over time.
                     </p>
                 </div>
+
 
                 {/* SERVICES LIST */}
                 <div className="flex w-full gap-20">
 
-                    <div className=" flex flex-col divide-y w-full divide-gray-300">
+                    <div className="flex flex-col w-full space-y-8">
 
-                        {services.map((service) => (
-                            <div
-                                key={service.id}
-                                onMouseEnter={() => {
-                                    setHoveredId(service.id);
-                                }}
-                                onMouseLeave={() => setHoveredId(null)}
-                                className="
-                                       service-row group flex flex-col justify-between md:flex-row gap-10
-                                       px-10 py-10 rounded-xl cursor-pointer
-                                       transition-all duration-300 ease-out
-                                       hover:bg-[var(--palms-grey-light)]
-                                       hover:scale-[1.01]
-                                       hover:shadow-sm 
-                                     "
+                        {services.map((service, index) => {
+                            const isBlue = index % 2 === 1;
 
-                            >
-                                <div className="flex items-center ">
-                                    <div className="md:w-[120px]">
-                                        <span className="text-4xl font-medium text-[var(--palms-green)]">
-                                            {service.id}
-                                        </span>
+                            return (
+                                <div
+                                    key={service.id}
+                                    onMouseEnter={() => setHoveredId(service.id)}
+                                    onMouseLeave={() => setHoveredId(null)}
+                                    className={`
+    service-row group relative
+    flex flex-col lg:flex-row gap-12 items-center justify-between
+    p-12 rounded-3xl
+    transition-all duration-500 ease-out
+    hover:-translate-y-2
+    hover:shadow-[0_30px_80px_rgba(0,0,0,0.18)]
+    ${isBlue
+                                            ? "bg-[var(--palms-blue)] text-white"
+                                            : "bg-[var(--palms-blue)] text-white "
+                                        }
+  `}
+                                >
+
+
+                                    <div className="flex items-center ">
+                                        <div className="md:w-[120px]">
+                                            <span
+                                                className={`
+    text-xs tracking-widest px-3 py-1 rounded-full
+    ${isBlue
+                                                        ? "bg-[var(--palms-green)] text-white"
+                                                        : "bg-[var(--palms-green)] text-white"
+                                                    }
+  `}
+                                            >
+                                                {service.id}
+                                            </span>
+
+
+                                        </div>
+
+                                        <div>
+                                            <h3
+                                                className={`
+    mt-4 text-2xl md:text-3xl font-semibold
+    transition-transform duration-300
+    group-hover:translate-x-1
+    ${isBlue
+                                                        ? "text-white"
+                                                        : "text-white"
+                                                    }
+  `}
+                                            >
+                                                {service.title}
+                                            </h3>
+
+
+                                            <p
+                                                className={`
+    mt-4 text-sm md:text-base leading-relaxed max-w-[620px]
+    ${isBlue
+                                                        ? "text-white/80"
+                                                        : "text-white/80"
+                                                    }
+  `}
+                                            >
+                                                {service.desc}
+                                            </p>
+
+                                        </div>
                                     </div>
 
-                                    <div>
-                                        <h3
-                                            className="
-                                          text-2xl font-semibold text-black
-                                          transition-all duration-300 ease-out
-                                          group-hover:text-[var(--palms-blue)]
-                                          group-hover:scale-[1.03]
-                                          origin-left
-                                        "
-                                        >
-                                            {service.title}
-                                        </h3>
+                                    <div className="hidden lg:block relative w-[340px] h-[200px] shrink-0">
 
-                                        <p
+                                    
+                                            <div className="absolute -inset-4 rounded-2xl bg-white/20" />
+                                       
+
+                                        <img
+                                            src={service.image}
+                                            alt={service.title}
                                             className="
-                                             mt-3 text-sm text-[var(--palms-grey)] max-w-[640px]
-                                             transition-all duration-300 ease-out
-                                             group-hover:translate-y-[-2px]
-                                             group-hover:text-opacity-90
-                                           "
-                                        >
-                                            {service.desc}
-                                        </p>
+      relative w-full h-full object-cover rounded-2xl
+      shadow-lg
+      transition-transform duration-500
+      group-hover:scale-[1.03]
+    "
+                                        />
                                     </div>
-                                </div>
 
-                                <div className="hidden lg:block relative w-[350px] h-[180px] rounded-lg group">
 
-                                    {/* BACK LAYER (SHADOW CARD) */}
-                                    <div
-                                        className="
-      absolute
-      left-[-16px]
-      bottom-[-16px]
-      w-full
-      h-full
-      rounded-lg
-      bg-[var(--palms-blue)]
-      z-0
-      transition-transform duration-500 ease-out
-      group-hover:translate-x-1
-      group-hover:translate-y-1
-    "
-                                    />
 
-                                    {/* IMAGE LAYER */}
-                                    <img
-                                        src={service.image}
-                                        alt={service.title}
-                                        className="
-      relative z-10
-      w-full h-full
-      object-cover
-      rounded-lg
-      scale-[1.04]
-      transition-all duration-500 ease-out
-      group-hover:scale-100
-    "
-                                    />
+
 
                                 </div>
 
-
-
-                            </div>
-
-
-                        ))}
+                            );
+                        })}
 
                     </div>
 
