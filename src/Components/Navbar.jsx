@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "../assets/logo1.png"
+import logo from "../assets/Silverlogo.png"
 import { NavLink, useNavigate } from "react-router-dom";
 
 
@@ -12,12 +12,21 @@ export const servicesNav = [
     { id: "05", title: "Outbound Training Programmes", slug: "outbound" },
 ];
 
+export const membershipsNav = [
+    { id: "01", title: "Corporate Membership", slug: "corporate" },
+    { id: "02", title: "Individual Membership", slug: "individual" },
+    { id: "03", title: "DOT Programme", slug: "dot" },
+];
+
+
 
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [showServices, setShowServices] = useState(false);
     const navigate = useNavigate();
+    const [showMemberships, setShowMemberships] = useState(false);
+
 
 
     useEffect(() => {
@@ -44,14 +53,14 @@ const Navbar = () => {
                 ? "bg-white/90 backdrop-blur-md shadow-sm"
                 : "bg-white "}
       `}>
-            <div className="max-w-[1280px] mx-auto flex items-center justify-between px-6 py-4">
+            <div className="max-w-[1280px] mx-auto flex items-center justify-between px-6 py-5">
 
                 {/* Logo */}
 
 
                 {/* Navigation */}
                 <nav className=" flex items-center gap-18 font-medium">
-                    <NavLink to="/" ><div className="w-44 h-10 -mt-5 text-lg font-semibold tracking-tight text-[var(--palms-blue)]">
+                    <NavLink to="/" ><div className="w-18 h-10 -mt-7 text-lg font-semibold tracking-tight text-[var(--palms-blue)]">
                         <img src={logo} className="object-cover" alt="" />
                     </div>
                     </NavLink>
@@ -61,9 +70,92 @@ const Navbar = () => {
                             Who Are We
                         </NavLink>
 
-                        <NavLink to="/memberships" className={linkClass}>
-                            Memberships
-                        </NavLink>
+                        <div
+                            className="relative"
+                            onMouseEnter={() => setShowMemberships(true)}
+                            onMouseLeave={() => setShowMemberships(false)}
+                        >
+                            {/* NAV LINK */}
+                            <span
+                                className={`nav-link cursor-pointer  ${showMemberships
+                                    ? "text-[var(--palms-green)]"
+                                    : "text-[var(--palms-grey)] hover:text-[var(--palms-green)]"
+                                    }`}
+                            >
+                                Memberships
+                            </span>
+
+                            {/* MEGA PANEL */}
+                            <div
+                                className={`
+      absolute left-1/2 -translate-x-1/2 top-full
+      w-[600px]
+      rounded-3xl
+      bg-[var(--palms-blue)]
+      text-white
+      shadow-[0_40px_80px_rgba(0,0,0,0.25)]
+      transition-all duration-400
+      ${showMemberships
+                                        ? "opacity-100 translate-y-0 pointer-events-auto"
+                                        : "opacity-0 translate-y-4 pointer-events-none"
+                                    }
+    `}
+                            >
+                                <div className="grid grid-cols-2 gap-12 p-10">
+
+                                    {/* LEFT SIDE — HEADING BLOCK */}
+                                    <div>
+                                        <h3 className="text-2xl font-semibold leading-tight">
+                                            Structured membership pathways
+                                        </h3>
+
+                                        <p className="mt-6 text-white/70 text-sm leading-relaxed">
+                                            Long-term learning engagement models designed for individuals
+                                            and organisations committed to sustained growth.
+                                        </p>
+
+                                        <div className="mt-10 h-[3px] w-14 bg-[var(--palms-green)] rounded-full" />
+                                    </div>
+
+                                    {/* RIGHT SIDE — ITEMS */}
+                                    <div className="space-y-6">
+                                        {membershipsNav.map((membership) => (
+                                            <div
+                                                key={membership.id}
+                                                onClick={() => {
+                                                    setShowMemberships(false);
+                                                    navigate(`/memberships/${membership.slug}`);
+                                                }}
+                                                className="
+              group cursor-pointer
+              flex items-center justify-between
+              border-b border-white/10
+              pb-4
+              transition-all duration-300
+              hover:border-[var(--palms-green)]
+            "
+                                            >
+                                                <div>
+                                                    <p className="text-lg font-medium group-hover:text-[var(--palms-green)] transition">
+                                                        {membership.title}
+                                                    </p>
+                                                    <span className="text-xs text-white/50">
+                                                        Programme {membership.id}
+                                                    </span>
+                                                </div>
+
+                                                <span className="opacity-0 translate-x-[-6px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                                                    →
+                                                </span>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
 
                         <div
                             className="relative"
@@ -90,86 +182,68 @@ const Navbar = () => {
                             <div
                                 className={`
     absolute left-1/2 -translate-x-1/2 top-full
-    w-[460px]
+   
+    w-[750px]
     rounded-3xl
-    bg-white
-    shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)]
-    border border-black/5
-    transition-all duration-300 ease-out
+    bg-[var(--palms-blue)]
+    text-white
+    shadow-[0_40px_80px_rgba(0,0,0,0.25)]
+    transition-all duration-300
     ${showServices
                                         ? "opacity-100 translate-y-0 pointer-events-auto"
-                                        : "opacity-0 translate-y-2 pointer-events-none"}
+                                        : "opacity-0 translate-y-4 pointer-events-none"
+                                    }
   `}
                             >
-                                {/* ITEMS */}
-                                <div className="px-6 py-6 ">
-                                    {servicesNav.map((service) => (
-                                        <div
-                                            key={service.id}
-                                            onClick={() => {
-                                                setShowServices(false);
-                                                navigate(`/services/${service.slug}`);
-                                            }}
-                                            className="
-          group cursor-pointer
-          rounded-2xl px-5 py-4
-          transition-all duration-300
-          hover:bg-[var(--palms-grey-light)]
-        "
-                                            role="menuitem"
-                                        >
-                                            <div className="flex items-start gap-4">
-                                                {/* INDEX PILL */}
-                                                <div
-                                                    className="
-              mt-[2px]
-              flex items-center justify-center
-              w-8 h-8
-              rounded-full
-              bg-[var(--palms-green)]/10
-              text-[var(--palms-green)]
-              text-xs font-semibold
-              transition-all
-              group-hover:bg-[var(--palms-green)]
-              group-hover:text-white
-            "
-                                                >
-                                                    {service.id}
-                                                </div>
+                                <div className="grid grid-cols-[1.2fr_2fr] gap-5 p-10 ">
 
-                                                {/* TEXT */}
-                                                <div className="flex-1">
-                                                    <p
-                                                        className="
-                text-[15px] font-medium text-[var(--palms-blue)]
-                transition-all
-                group-hover:translate-x-1
-              "
-                                                    >
-                                                        {service.title}
-                                                    </p>
+                                    {/* LEFT BLOCK */}
+                                    <div>
+                                        <h3 className="text-2xl font-semibold leading-tight">
+                                            Behavioural & Leadership Programmes
+                                        </h3>
 
-                                                    <p className="mt-1 text-xs text-[var(--palms-grey)]">
-                                                        Structured learning programme
-                                                    </p>
-                                                </div>
+                                        <p className="mt-6 text-white/70 text-sm leading-relaxed">
+                                            Structured capability-building interventions designed to create
+                                            measurable behavioural and organisational impact.
+                                        </p>
 
-                                                {/* ARROW */}
-                                                <span
-                                                    className="
-              text-[var(--palms-grey)]
-              opacity-0 translate-x-[-6px]
-              transition-all duration-300
-              group-hover:opacity-100 group-hover:translate-x-0
-            "
-                                                >
-                                                    →
+                                        <div className="mt-10 h-[3px] w-14 bg-[var(--palms-green)] rounded-full" />
+                                    </div>
+
+                                    {/* RIGHT LIST — TWO COLUMN GRID */}
+                                    <div className="grid grid-cols-2 gap-x-14 gap-y-8">
+
+                                        {servicesNav.map((service) => (
+                                            <div
+                                                key={service.id}
+                                                onClick={() => {
+                                                    setShowServices(false);
+                                                    navigate(`/services/${service.slug}`);
+                                                }}
+                                                className="
+            group cursor-pointer
+            border-b border-white/10
+            pb-3
+            transition-all duration-300
+            hover:border-[var(--palms-green)]
+          "
+                                            >
+                                                <p className="text-md font-medium group-hover:text-[var(--palms-green)] transition">
+                                                    {service.title}
+                                                </p>
+
+                                                <span className="text-xs text-white/50">
+                                                    Programme {service.id}
                                                 </span>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ))}
+
+                                    </div>
+
                                 </div>
                             </div>
+
 
                         </div>
 

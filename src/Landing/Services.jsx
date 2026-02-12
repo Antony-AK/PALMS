@@ -1,11 +1,11 @@
 import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import pd from "../assets/pdnew.jpg"
-import md from "../assets/md2.webp"
-import soft from "../assets/skills1.png"
-import training from "../assets/corporate.jpg"
-import outbaond from "../assets/outbond1.png"
+import pd from "../assets/pdtamil.jpg"
+import md from "../assets/manaetamil.jpg"
+import soft from "../assets/skillstamil.jpg"
+import training from "../assets/corporatetamil.jpg"
+import outbaond from "../assets/outbondtamil.jpg"
 
 
 gsap.registerPlugin(ScrollTrigger);

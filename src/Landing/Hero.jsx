@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useLayoutEffect } from "react";
-import hero from "../assets/hero1.jpg";
+import hero from "../assets/herotamil.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import logo from "../assets/Silverlogo.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -137,11 +138,11 @@ const Hero = () => {
       subEl.innerText = HERO_CONTENT[0].sub;
 
       // 🔁 LOOP
-    introTl.call(() => {
-  gsap.timeline({ repeat: -1 })
-    .call(swapContent)
-    .to({}, { duration: 3 });
-});
+      introTl.call(() => {
+        gsap.timeline({ repeat: -1 })
+          .call(swapContent)
+          .to({}, { duration: 3 });
+      });
 
 
 
@@ -168,7 +169,7 @@ const Hero = () => {
 
 
   return (
-    <section ref={sectionRef} className="w-full hero-noise overflow-hidden">
+    <section ref={sectionRef} className="w-full hero-noise overflow-hidden relative">
 
       {/* TEXT */}
       <div className="relative z-20 max-w-[1160px] mx-auto text-center px-6 pt-20 pb-16">
@@ -186,6 +187,11 @@ const Hero = () => {
           <button className="btn-secondary">Explore programs</button>
         </div>
       </div>
+
+      <div className="image absolute top-20 left-[38%]  w-[350px] h-[350px] opacity-20 slow-spin">
+        <img src={logo} alt="" />
+      </div>
+
 
 
       {/* IMAGE */}

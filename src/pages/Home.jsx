@@ -8,7 +8,7 @@ import ServicesSection from '../Landing/Services';
 import PortfolioSection from '../Landing/Portfolio';
 import TestimonialsSection from '../Landing/Testimonials';
 import MembershipCTASection from '../Landing/MembershipCTA';
-import Footer from '../Landing/Footer';
+import Footer from '../Components/Footer';
 import FAQSection from '../Landing/FAQ';
 import PalmsLearningMoment from '../Components/PalmsLearningMoment';
 

@@ -70,7 +70,7 @@ const PalmsLearningMoment = () => {
       p-10
       text-white
       overflow-hidden
-      border-l-4 border-b-4 border-[var(--palms-green)]
+      border-l-8 border-b-8 border-[var(--palms-green)]
     "
                 >
 

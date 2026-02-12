@@ -2,6 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { servicesData } from "../data/servicesData";
 import { useLayoutEffect, useRef } from "react";
+import pdbig from "../assets/pdbig.jpg"
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -56,7 +58,7 @@ const ServiceDetail = () => {
     });
 
     return () => ctx.revert();
-  }, []);
+  }, [service]);
 
 
   if (!service) {
@@ -64,27 +66,27 @@ const ServiceDetail = () => {
   }
 
   return (
-    <section className="w-full bg-white px-6 pt-40 pb-32">
+    <section className="w-full bg-white px-6 pt-36 pb-32">
       <div className="max-w-[1280px] mx-auto space-y-32">
 
         {/* ================= HERO ================= */}
-        <div className="relative grid lg:grid-cols-2 gap-20 items-center">
+        <div className="relative grid lg:grid-cols-2 gap-16 h-[500px] items-center">
 
           {/* BACKGROUND INDEX */}
           <span className="absolute -top-24 -left-10 text-[180px] font-bold text-black/5 select-none">
             {service.id}
           </span>
 
-          <div className="space-y-10 relative z-10">
-            <span className="inline-block text-xs tracking-[0.3em] uppercase text-[var(--palms-green)]">
+          <div className="space-y-8 relative z-10">
+            <span className="inline-block text-lg tracking-[0.3em] font-bold uppercase text-[var(--palms-green)]">
               Programme
             </span>
 
-            <h1 className="text-5xl md:text-6xl xl:text-7xl font-semibold text-[var(--palms-blue)] leading-[1.05]">
+            <h1 className="text-5xl md:text-6xl  font-semibold text-[var(--palms-blue)] leading-[1.05]">
               {service.title}
             </h1>
 
-            <p className="text-xl text-[var(--palms-grey)] max-w-[560px] leading-relaxed">
+            <p className="text-lg text-[var(--palms-grey)] max-w-[560px] leading-relaxed">
               {service.heroDesc}
             </p>
 
@@ -102,11 +104,11 @@ const ServiceDetail = () => {
 
           {/* IMAGE */}
           <div className="relative">
-            <div className="absolute -inset-8 rounded-[40px] bg-gradient-to-br from-[var(--palms-blue)]/10 to-transparent" />
+            <div className="absolute -inset-8 rounded-[40px] bg-[var(--palms-blue)] " />
             <img
               src={service.image}
               alt={service.title}
-              className="relative rounded-[32px] w-full h-[460px] object-cover"
+              className="relative rounded-[32px] w-full h-[400px] object-cover"
             />
           </div>
         </div>
@@ -120,7 +122,7 @@ const ServiceDetail = () => {
 
           {/* LEFT – PINNED */}
           <div ref={deliverLeftRef} className="pt-10">
-            <h3 className="text-2xl font-semibold text-[var(--palms-blue)]">
+            <h3 className="text-5xl font-semibold text-[var(--palms-blue)]">
               What this programme delivers
             </h3>
             <p className="mt-6 text-[var(--palms-grey)] max-w-[460px]">
@@ -142,7 +144,7 @@ const ServiceDetail = () => {
 
             {/* POINTS */}
             <div ref={deliverRightRef} className="space-y-14 pl-10 pb-20">
-              {service.highlights.map((item, i) => (
+              {service.highlights?.map((item, i) => (
                 <div
                   key={i}
                   className="relative py-6"
@@ -161,6 +163,39 @@ const ServiceDetail = () => {
         </div>
 
 
+        {/* ================= MODULES (FEATURE STRIP) ================= */}
+        <section className="bg-palms-gradient text-white py-18">
+
+          <div className="max-w-[1200px] mx-auto px-10">
+
+            <h2 className="text-4xl font-semibold mb-20">
+              Learning modules
+              <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
+
+            </h2>
+
+
+            <div className="space-y-10">
+
+              {service.modules?.map((item, i) => (
+                <div key={i} className="flex gap-10 items-start">
+
+                  <span className="text-5xl font-bold text-white/20">
+                    0{i + 1}
+                  </span>
+
+                  <p className="text-2xl leading-relaxed max-w-[900px]">
+                    {item}
+                  </p>
+
+                </div>
+              ))}
+
+            </div>
+
+          </div>
+
+        </section>
 
         {/* ================= WHO + OUTCOMES ================= */}
         <div className="grid md:grid-cols-2 gap-28">
@@ -170,7 +205,7 @@ const ServiceDetail = () => {
             </h3>
 
             <ul className="mt-10 space-y-6">
-              {service.whoItsFor.map((item, i) => (
+              {service.whoItsFor?.map((item, i) => (
                 <li key={i} className="text-[var(--palms-grey)] text-lg leading-relaxed">
                   {item}
                 </li>
@@ -179,12 +214,12 @@ const ServiceDetail = () => {
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold text-[var(--palms-blue)]">
+            <h3 className="text-xl mt-10 font-semibold text-[var(--palms-blue)]">
               Outcomes you can expect
             </h3>
 
             <ul className="mt-10 space-y-6">
-              {service.outcomes.map((item, i) => (
+              {service.outcomes?.map((item, i) => (
                 <li key={i} className="flex gap-4 text-[var(--palms-grey)] text-lg">
                   <span className="mt-2 w-2 h-2 rounded-full bg-[var(--palms-green)]" />
                   {item}
@@ -195,90 +230,129 @@ const ServiceDetail = () => {
         </div>
 
 
-        {/* ================= MODULES (FEATURE STRIP) ================= */}
-        <div className="rounded-[48px] bg-[var(--palms-blue)] px-16 py-24 text-white">
-          <h3 className="text-4xl font-semibold max-w-[620px] leading-tight">
-            Learning modules designed for real-world impact
-          </h3>
+        <section className="relative py-10 overflow-hidden">
 
-          <div className="grid md:grid-cols-2 gap-10 mt-16">
-            {service.modules.map((item, i) => (
-              <div
-                key={i}
-                className="rounded-2xl bg-white/10 px-8 py-6 text-lg backdrop-blur-md"
-              >
-                {item}
-              </div>
-            ))}
+          {/* BACKGROUND IMAGE LAYER */}
+          <div className="absolute right-0 top-0 w-[45%] h-full bg-[var(--palms-blue)] opacity-100 pointer-events-none border-8 border-[var(--palms-blue)]">
+            {/* <img
+      // src={pdbig}
+      alt=""
+      className="w-full h-full object-fill bg-[var(--palms-blue)"
+    /> */}
           </div>
-        </div>
 
+          <div className="relative max-w-[1200px] mx-auto px-6">
 
-        <div className="max-w-[900px]">
-          <h3 className="text-2xl font-semibold text-[var(--palms-blue)]">
-            How learning happens
-          </h3>
+            {/* HEADER */}
+            <div className="mb-24">
+              <h2 className="text-4xl font-semibold text-[var(--palms-blue)]">
+                How learning happens
+              </h2>
+              <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
+            </div>
 
-          <div className="mt-10 space-y-6">
-            {service.methodology.map((item, i) => (
-              <div
-                key={i}
-                className="flex gap-6 items-start"
-              >
-                <span className="text-[var(--palms-green)] font-semibold">
-                  0{i + 1}
-                </span>
-                <p className="text-lg text-[var(--palms-grey)] leading-relaxed">
-                  {item}
-                </p>
+            {/* STRUCTURE */}
+            <div className="relative">
+
+              {/* LEFT ACCENT SPINE */}
+              <div className="absolute -left-10 top-0 bottom-0 w-[3px] bg-[var(--palms-green)]/20" />
+
+              <div className="space-y-10 pl-5">
+
+                {service.methodology?.map((item, i) => (
+                  <div
+                    key={i}
+                    className="relative group "
+                  >
+
+                    {/* NUMBER */}
+                    <span className="absolute -left-16 text-6xl font-bold text-gray-200 select-none">
+                      0{i + 1}
+                    </span>
+
+                    {/* CARD PANEL */}
+                    <div className="
+              relative
+              bg-white
+              border border-[var(--palms-blue)]
+              rounded-3xl
+              px-12 py-10
+             ml-2
+              border-l-4 border-bg-[var(--palms-blue)]
+              shadow-[0_20px_60px_rgba(0,0,0,0.06)]
+              transition-all duration-500
+              group-hover:-translate-y-2
+              group-hover:shadow-[0_30px_80px_rgba(0,0,0,0.1)]
+            ">
+
+                      <div className="h-[3px] w-10 bg-[var(--palms-green)] mb-6" />
+
+                      <p className="text-xl text-[var(--palms-blue)] leading-relaxed max-w-[720px]">
+                        {item}
+                      </p>
+
+                    </div>
+
+                  </div>
+                ))}
+
               </div>
-            ))}
+
+            </div>
+
           </div>
-        </div>
+
+        </section>
 
 
-
-        {/* ================= APPROACH ================= */}
-        <div className="max-w-[820px]">
-          <h3 className="text-2xl font-semibold text-[var(--palms-blue)]">
-            Our approach
-          </h3>
-          <p className="mt-6 text-lg text-[var(--palms-grey)] leading-relaxed">
-            {service.approach}
-          </p>
-        </div>
-
-        <div className="bg-[var(--palms-grey-light)] rounded-3xl px-12 py-16">
-          <h3 className="text-2xl font-semibold text-[var(--palms-blue)]">
-            Why organisations choose PALMS
-          </h3>
-
-          <div className="grid md:grid-cols-2 gap-6 mt-10">
-            {service.whyPalms.map((item, i) => (
-              <div key={i} className="flex gap-4 text-[var(--palms-grey)]">
-                <span className="mt-2 w-2 h-2 rounded-full bg-[var(--palms-green)]" />
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
 
 
         {/* ================= FINAL CTA ================= */}
-        <div className="text-center py-32">
-          <h4 className="text-4xl font-semibold text-[var(--palms-blue)] mb-8">
-            Ready to create meaningful impact?
-          </h4>
+        <section className="py-20 bg-[var(--palms-blue)]/5 ">
 
-          <p className="text-lg text-[var(--palms-grey)] mb-12 max-w-[560px] mx-auto">
-            Let’s design a learning experience aligned with your people,
-            culture, and business goals.
-          </p>
+          <div className="max-w-[1200px] mx-auto px-10">
 
-          <button className="btn-primary px-16 py-6 text-lg">
+            <h2 className="text-3xl font-semibold text-center text-[var(--palms-blue)] mb-16">
+              Why organisations choose PALMS
+            </h2>
+
+            <div className="space-y-16">
+
+              {service.whyPalms?.map((item, i) => (
+                <div
+                  key={i}
+                  className={`max-w-[800px] ${i % 2 === 0 ? "" : "ml-auto"
+                    }`}
+                >
+                  <div className="bg-[var(--palms-blue)] text-white p-10 rounded-3xl shadow-lg border-b-8 border-[var(--palms-green)]">
+                    <p className="text-lg text-white leading-relaxed">
+                      {item}
+                    </p>
+                  </div>
+                </div>
+              ))}
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <section className="bg-palms-gradient text-white py-26 text-center">
+
+          <h2 className="text-6xl font-semibold max-w-[900px] mx-auto leading-tight">
+            Let’s create meaningful,
+            measurable impact together.
+          </h2>
+
+          <button className="mt-16 bg-white text-[var(--palms-blue)]
+  px-20 py-6 rounded-full text-xl
+  transition-all duration-300 hover:scale-105">
             Talk to PALMS
           </button>
-        </div>
+
+        </section>
+
 
 
       </div>

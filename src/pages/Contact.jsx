@@ -39,186 +39,163 @@ const Contact = () => {
         return () => ctx.revert();
     }, []);
 
-    return (
-        <section
-            ref={sectionRef}
-            className="relative w-full min-h-screen bg-white px-6 pt-36 pb-16 overflow-hidden"
-        >
+  return (
+  <section
+    ref={sectionRef}
+    className="relative w-full min-h-screen bg-[#f5f7fb] px-6 pt-18 pb-20 overflow-hidden"
+  >
 
-            {showGlobe && (
-                <Suspense fallback={null}>
-                    <HologramGlobe />
-                </Suspense>
-            )}
+    {showGlobe && (
+      <Suspense fallback={null}>
+        <HologramGlobe />
+      </Suspense>
+    )}
 
-            <div className="relative z-10 max-w-[1260px] mx-auto">
+    <div className="relative z-10 max-w-full mx-auto">
 
-                {/* HERO STATEMENT */}
-                <div className="contact-reveal mb-32 w-full">
-                    <span className="text-xs text-gray-500 block mb-8">
-                        Contact PALMS
-                    </span>
+      {/* HERO */}
+      <div className="contact-reveal mb-28 text-white p-20 bg-palms-gradient ">
+        <span className="text-xs text-white/60 block mb-8">
+          Contact PALMS
+        </span>
 
-                    <h1 className="text-4xl md:text-6xl w-full font-semibold leading-tight text-[var(--palms-blue)]">
-                        Conversations
+        <h1 className="text-5xl md:text-6xl font-semibold leading-tight">
+          Conversations that begin with intent
+        </h1>
 
-                        that begin
-                        <br />
-                        with intent
-                    </h1>
-
-                    <p className="mt-10 text-xl text-[var(--palms-grey)] max-w-[720px]">
-                        PALMS welcomes thoughtful enquiries — from individuals,
-                        professionals, and organisations seeking clarity,
-                        learning, and long-term development.
-                    </p>
-                </div>
-
-                {/* INTENT BLOCKS */}
-                <div className="contact-reveal grid grid-cols-1 md:grid-cols-3 gap-20 mb-36">
-
-                    {/* ITEM 01 */}
-                    <div className="group relative pl-8">
-                        {/* Accent line */}
-                        <span className="absolute left-0 top-0 h-full w-[2px] bg-[var(--palms-blue)]/20 
-                     group-hover:bg-[var(--palms-blue)] transition-all duration-300" />
-
-                        <span className="text-xs tracking-widest text-[var(--palms-grey)] block mb-4">
-                            01
-                        </span>
-
-                        <p className="text-base font-medium text-[var(--palms-blue)] mb-4">
-                            Membership enquiries
-                        </p>
-
-                        <p className="text-sm text-[var(--palms-grey)] leading-relaxed">
-                            For individuals interested in joining PALMS
-                            and participating in regular learning programmes.
-                        </p>
-                    </div>
-
-                    {/* ITEM 02 */}
-                    <div className="group relative pl-8">
-                        <span className="absolute left-0 top-0 h-full w-[2px] bg-[var(--palms-blue)]/20 
-                     group-hover:bg-[var(--palms-blue)] transition-all duration-300" />
-
-                        <span className="text-xs tracking-widest text-[var(--palms-grey)] block mb-4">
-                            02
-                        </span>
-
-                        <p className="text-base font-medium text-[var(--palms-blue)] mb-4">
-                            Corporate partnerships
-                        </p>
-
-                        <p className="text-sm text-[var(--palms-grey)] leading-relaxed">
-                            Organisations seeking leadership development,
-                            training programmes, or long-term capability building.
-                        </p>
-                    </div>
-
-                    {/* ITEM 03 */}
-                    <div className="group relative pl-8">
-                        <span className="absolute left-0 top-0 h-full w-[2px] bg-[var(--palms-blue)]/20 
-                     group-hover:bg-[var(--palms-blue)] transition-all duration-300" />
-
-                        <span className="text-xs tracking-widest text-[var(--palms-grey)] block mb-4">
-                            03
-                        </span>
-
-                        <p className="text-base font-medium text-[var(--palms-blue)] mb-4">
-                            General communication
-                        </p>
-
-                        <p className="text-sm text-[var(--palms-grey)] leading-relaxed">
-                            Media, academic collaboration, or
-                            conversations aligned with PALMS values.
-                        </p>
-                    </div>
-
-                </div>
+        <p className="mt-10 text-lg text-white/70">
+          PALMS welcomes thoughtful enquiries - from individuals,
+          professionals, and organisations seeking clarity,
+          learning, and long-term development.
+        </p>
+      </div>
 
 
-                {/* FORM */}
-                <div className="contact-reveal max-w-[720px]">
+      {/* CONTENT SECTION */}
+      <div className="contact-reveal bg-white rounded-3xl max-w-[1200px] shadow-xl p-14">
 
-                    <form
-                        onSubmit={(e) => e.preventDefault()}
-                        className="space-y-14"
-                    >
+        {/* INTENT BLOCKS */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-24">
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                            <div>
-                                <label className="text-sm font-medium text-black block mb-3">
-                                    Your name
-                                </label>
-                                <input
-                                    type="text"
-                                    required
-                                    className="w-full border-b border-gray-300
-                             py-3 text-sm bg-transparent
-                             focus:outline-none
-                             focus:border-[var(--palms-blue)]"
-                                />
-                            </div>
+          {[
+            {
+              id: "01",
+              title: "Membership enquiries",
+              desc: "For individuals interested in joining PALMS and participating in regular learning programmes."
+            },
+            {
+              id: "02",
+              title: "Corporate partnerships",
+              desc: "Organisations seeking leadership development, training programmes, or long-term capability building."
+            },
+            {
+              id: "03",
+              title: "General communication",
+              desc: "Media, academic collaboration, or conversations aligned with PALMS values."
+            }
+          ].map((item) => (
+            <div key={item.id} className="group">
 
-                            <div>
-                                <label className="text-sm font-medium text-black block mb-3">
-                                    Email address
-                                </label>
-                                <input
-                                    type="email"
-                                    required
-                                    className="w-full border-b border-gray-300
-                             py-3 text-sm bg-transparent
-                             focus:outline-none
-                             focus:border-[var(--palms-blue)]"
-                                />
-                            </div>
-                        </div>
+              <div className="w-12 h-12 rounded-full bg-[var(--palms-blue)]/10 text-[var(--palms-blue)] flex items-center justify-center font-semibold mb-6">
+                {item.id}
+              </div>
 
-                        <div>
-                            <label className="text-sm font-medium text-black block mb-3">
-                                Message
-                            </label>
-                            <textarea
-                                rows="4"
-                                required
-                                className="w-full border-b border-gray-300
-                           py-3 text-sm bg-transparent resize-none
-                           focus:outline-none
-                           focus:border-[var(--palms-blue)]"
-                            />
-                        </div>
+              <p className="text-base font-medium text-[var(--palms-blue)] mb-4">
+                {item.title}
+              </p>
 
-                        <div className="pt-6">
-                            <button className="btn-primary px-10 py-3">
-                                Send message
-                            </button>
-                        </div>
-
-                    </form>
-
-                    {/* QUIET REASSURANCE */}
-                    <p className="mt-10 text-xs text-[var(--palms-grey)] max-w-[520px]">
-                        We read every message with care and respond personally.
-                        PALMS does not engage in automated or promotional communication.
-                    </p>
-
-                </div>
-
-                {/* CONTACT DETAILS — SUBTLE */}
-                {/* <div className="contact-reveal mt-40 pt-16 border-t border-gray-200 text-sm text-[var(--palms-grey)] space-y-4">
-          <p>
-            PALMS Training & Consulting · Thoothukudi, Tamil Nadu
-          </p>
-          <p>
-            0461-2330856 · 82203 44477 · info@palmsindia.org
-          </p>
-        </div> */}
+              <p className="text-sm text-[var(--palms-grey)] leading-relaxed">
+                {item.desc}
+              </p>
 
             </div>
-        </section>
-    );
+          ))}
+
+        </div>
+
+
+        {/* FORM SECTION */}
+        <div className="grid md:grid-cols-2 gap-20">
+
+          {/* FORM */}
+          <form onSubmit={(e) => e.preventDefault()} className="space-y-10">
+
+            <div>
+              <label className="text-sm font-medium text-[var(--palms-blue)] block mb-3">
+                Your name
+              </label>
+              <input
+                type="text"
+                required
+                className="w-full border border-gray-200 rounded-xl px-5 py-3 text-sm
+                           focus:outline-none focus:border-[var(--palms-blue)] focus:ring-2 focus:ring-[var(--palms-blue)]/10 transition"
+              />
+            </div>
+
+            <div>
+              <label className="text-sm font-medium text-[var(--palms-blue)] block mb-3">
+                Email address
+              </label>
+              <input
+                type="email"
+                required
+                className="w-full border border-gray-200 rounded-xl px-5 py-3 text-sm
+                           focus:outline-none focus:border-[var(--palms-blue)] focus:ring-2 focus:ring-[var(--palms-blue)]/10 transition"
+              />
+            </div>
+
+            <div>
+              <label className="text-sm font-medium text-[var(--palms-blue)] block mb-3">
+                Message
+              </label>
+              <textarea
+                rows="4"
+                required
+                className="w-full border border-gray-200 rounded-xl px-5 py-3 text-sm resize-none
+                           focus:outline-none focus:border-[var(--palms-blue)] focus:ring-2 focus:ring-[var(--palms-blue)]/10 transition"
+              />
+            </div>
+
+            <button className="px-12 py-4 bg-[var(--palms-blue)] text-white rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
+              Send message
+            </button>
+
+          </form>
+
+
+          {/* SIDE INFO CARD */}
+          <div className="bg-[var(--palms-blue)] text-white rounded-3xl p-12 flex flex-col justify-between">
+
+            <div>
+              <h3 className="text-2xl font-semibold mb-6">
+                We respond personally
+              </h3>
+
+              <p className="text-white/70 leading-relaxed mb-10">
+                Every enquiry is read carefully and answered
+                with intention. PALMS does not engage in
+                automated or promotional communication.
+              </p>
+            </div>
+
+            <div className="text-sm text-white/60 space-y-3">
+              <p>PALMS Training & Consulting</p>
+              <p>Thoothukudi · Tamil Nadu</p>
+              <p>0461-2330856 · 82203 44477</p>
+              <p>info@palmsindia.org</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+);
+
 };
 
 export default Contact;
