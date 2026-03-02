@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const API = "http://localhost:5000/api/issues/published";
+const API = "https://palms-backend-bwad.onrender.com/api/issues/published";
 
 const LatestIssue = () => {
   const [latest, setLatest] = useState(null);

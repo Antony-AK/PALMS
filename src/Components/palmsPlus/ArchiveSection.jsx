@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Lock } from "lucide-react";
 
-const API = "http://localhost:5000/api/issues/published";
+const API = "https://palms-backend-bwad.onrender.com/api/issues/published";
 
 const ArchiveSection = () => {
   const [issues, setIssues] = useState([]);

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AdminLayout from "../Admin/components/AdminLayout";
 
-const API = "http://localhost:5000/api/subscribers";
+const API = "https://palms-backend-bwad.onrender.com/api/subscribers";
 
 const AdminSubscribers = () => {
 

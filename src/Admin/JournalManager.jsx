@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import AdminLayout from "../Admin/components/AdminLayout";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
-// const API = "https://palms-backend-bwad.onrender.com/api/issues";
-const API = "http://localhost:5000/api/issues";
+const API = "https://palms-backend-bwad.onrender.com/api/issues";
+// const API = "http://localhost:5000/api/issues";
 
 
 const JournalManager = () => {
