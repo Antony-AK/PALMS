@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import logo from "../assets/logo-white.jpg"
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -77,6 +78,35 @@ const Footer = () => {
               </p>
             </div>
 
+            <div className="my-5 flex gap-6">
+              <a
+                href="https://www.facebook.com/palmstraining/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[var(--palms-blue)] transition-all duration-300"
+              >
+                <FaFacebookF size={14} />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/palmsindia/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[var(--palms-blue)] transition-all duration-300"
+              >
+                <FaLinkedinIn size={14} />
+              </a>
+
+              <a
+                href="https://www.instagram.com/palmsindia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[var(--palms-blue)] transition-all duration-300"
+              >
+                <FaInstagram size={14} />
+              </a>
+            </div>
+
             <div className=" flex flex-col sm:flex-row justify-between gap-6 text-xs text-white/50">
 
               <span>
@@ -111,7 +141,21 @@ const Footer = () => {
 
 
       </div>
+
+      {/* POWERED BY */}
+<div className="border-t border-white/10 mt-10 py-6 text-center text-md text-white/50">
+  Powered by{" "}
+  <a
+    href="https://tecnowok.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-white hover:text-[var(--palms-green)] transition"
+  >
+    Tecnowok
+  </a>
+</div>
     </footer>
+    
   );
 };
 

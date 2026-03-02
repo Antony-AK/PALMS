@@ -6,47 +6,34 @@ import md from "../assets/manaetamil.jpg"
 import soft from "../assets/skillstamil.jpg"
 import training from "../assets/corporatetamil.jpg"
 import outbaond from "../assets/outbondtamil.jpg"
+import retreat from "../assets/retreat.jpg"
+import yatra from "../assets/yatra.jpg"
+import consulting from "../assets/consulting.png"
+import summercamp from "../assets/summercamp.jpg"
+import { useNavigate } from "react-router-dom";
 
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
-    {
-        id: "01",
-        title: "Personality Development",
-        desc: "Structured programmes that help individuals build confidence...",
-        image: pd,
-    },
-    {
-        id: "02",
-        title: "Management Development",
-        desc: "Learning initiatives designed to strengthen managerial capability...",
-        image: md,
-    },
-    {
-        id: "03",
-        title: "Leadership & Skill Workshops",
-        desc: "Focused workshops that develop leadership mindset...",
-        image: soft,
-    },
-    {
-        id: "04",
-        title: "Corporate Training Programmes",
-        desc: "Customised learning interventions aligned with organisational goals...",
-        image: training,
-    },
-    {
-        id: "05",
-        title: "Outbound Training Programmes",
-        desc: "Experiential learning programmes that foster teamwork...",
-        image: outbaond,
-    },
+  { id: "01", title: "Personality Development", slug: "personality", image: pd },
+  { id: "02", title: "Management Development", slug: "management", image: md },
+  { id: "03", title: "Leadership & Skill Workshops", slug: "leadership", image: soft },
+  { id: "04", title: "Corporate Training Programmes", slug: "corporate", image: training },
+  { id: "05", title: "Outbound Training Programmes", slug: "outbound", image: outbaond },
+
+  { id: "06", title: "Summer Leadership Camp", slug: "summer-camp", image: summercamp },
+  { id: "07", title: "Business Consultancy", slug: "consultancy", image: consulting },
+  { id: "08", title: "Business Yatra", slug: "business-yatra", image: yatra },
+  { id: "09", title: "Business Retreat", slug: "business-retreat", image: retreat },
 ];
 
 
 const ServicesSection = () => {
     const sectionRef = useRef(null);
     const [hoveredId, setHoveredId] = useState(null);
+    const navigate = useNavigate();
+
 
 
     useEffect(() => {
@@ -108,108 +95,67 @@ const ServicesSection = () => {
                 {/* SERVICES LIST */}
                 <div className="flex w-full gap-20">
 
-                    <div className="flex flex-col w-full space-y-8">
+                    <div className="grid md:grid-cols-2 gap-10">
 
-                        {services.map((service, index) => {
-                            const isBlue = index % 2 === 1;
+                        {services.map((service) => (
+                            <div
+                                key={service.id}
+                                onClick={() => navigate(`/services/${service.slug}`)}
+                                className="
+service-row group relative rounded-3xl overflow-hidden cursor-pointer
+transition-all duration-500 shadow-[0_20px_60px_rgba(0,0,0,0.12)]
+hover:-translate-y-3 hover:shadow-[0_30px_90px_rgba(0,0,0,0.25)]
+border border-white/40
+"
+                            >
 
-                            return (
-                                <div
-                                    key={service.id}
-                                    onMouseEnter={() => setHoveredId(service.id)}
-                                    onMouseLeave={() => setHoveredId(null)}
-                                    className={`
-    service-row group relative
-    flex flex-col lg:flex-row gap-12 items-center justify-between
-    p-12 rounded-3xl
-    transition-all duration-500 ease-out
-    hover:-translate-y-2
-    hover:shadow-[0_30px_80px_rgba(0,0,0,0.18)]
-    ${isBlue
-                                            ? "bg-[var(--palms-blue)] text-white"
-                                            : "bg-[var(--palms-blue)] text-white "
-                                        }
-  `}
-                                >
+                                {/* Image */}
+                                <img
+                                    src={service.image}
+                                    alt={service.title}
+                                    className="w-full h-[380px] object-cover
+        transition-transform duration-700 group-hover:scale-105"
+                                />
 
+                                <div className="
+absolute inset-0 rounded-3xl
+opacity-0 group-hover:opacity-100
+transition duration-500
+bg-gradient-to-tr from-[var(--palms-green)]/20 via-transparent to-white/20
+" />
 
-                                    <div className="flex items-center ">
-                                        <div className="md:w-[120px]">
-                                            <span
-                                                className={`
-    text-xs tracking-widest px-3 py-1 rounded-full
-    ${isBlue
-                                                        ? "bg-[var(--palms-green)] text-white"
-                                                        : "bg-[var(--palms-green)] text-white"
-                                                    }
-  `}
-                                            >
-                                                {service.id}
-                                            </span>
+                                {/* Dark Gradient Overlay */}
+<div className="absolute inset-0 
+bg-gradient-to-t from-black/80 via-black/40 to-transparent
+transition duration-500" />
 
+                                {/* Content */}
+                                <div className="absolute bottom-10 left-10 text-white">
 
-                                        </div>
+                                    <span className="text-xs tracking-widest bg-white/20 px-3 py-1 rounded-full">
+                                        {service.id}
+                                    </span>
 
-                                        <div>
-                                            <h3
-                                                className={`
-    mt-4 text-2xl md:text-3xl font-semibold
-    transition-transform duration-300
-    group-hover:translate-x-1
-    ${isBlue
-                                                        ? "text-white"
-                                                        : "text-white"
-                                                    }
-  `}
-                                            >
-                                                {service.title}
-                                            </h3>
+<h3 className="
+mt-5 text-2xl md:text-3xl font-semibold
+max-w-[300px] leading-snug
+transition-all duration-500
+group-hover:translate-y-[-4px]
+">                                        {service.title}
+                                    </h3>
 
-
-                                            <p
-                                                className={`
-    mt-4 text-sm md:text-base leading-relaxed max-w-[620px]
-    ${isBlue
-                                                        ? "text-white/80"
-                                                        : "text-white/80"
-                                                    }
-  `}
-                                            >
-                                                {service.desc}
-                                            </p>
-
-                                        </div>
-                                    </div>
-
-                                    <div className="hidden lg:block relative w-[340px] h-[200px] shrink-0">
-
-                                    
-                                            <div className="absolute -inset-4 rounded-2xl bg-white/20" />
-                                       
-
-                                        <img
-                                            src={service.image}
-                                            alt={service.title}
-                                            className="
-      relative w-full h-full object-cover rounded-2xl
-      shadow-lg
-      transition-transform duration-500
-      group-hover:scale-[1.03]
-    "
-                                        />
-                                    </div>
-
-
-
-
+                                    <div className="
+mt-4 h-[2px] w-0 bg-[var(--palms-green)]
+transition-all duration-500
+group-hover:w-16
+" />
 
                                 </div>
 
-                            );
-                        })}
+                            </div>
+                        ))}
 
                     </div>
-
 
 
 

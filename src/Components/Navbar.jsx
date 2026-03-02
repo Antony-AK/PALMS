@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "../assets/Silverlogo.png"
+import logo from "../assets/logo1.png"
 import { NavLink, useNavigate } from "react-router-dom";
 
 
@@ -10,6 +10,11 @@ export const servicesNav = [
     { id: "03", title: "Leadership & Skill Workshops", slug: "leadership" },
     { id: "04", title: "Corporate Training Programmes", slug: "corporate" },
     { id: "05", title: "Outbound Training Programmes", slug: "outbound" },
+    { id: "06", title: "Summer Leadership Camp", slug: "summer-camp" },
+    { id: "07", title: "Business Consultancy", slug: "consultancy" },
+    { id: "08", title: "Business Yatra", slug: "business-yatra" },
+    { id: "09", title: "Business Retreat", slug: "business-retreat" },
+
 ];
 
 export const membershipsNav = [
@@ -55,16 +60,13 @@ const Navbar = () => {
       `}>
             <div className="max-w-[1280px] mx-auto flex items-center justify-between px-6 py-5">
 
-                {/* Logo */}
-
-
                 {/* Navigation */}
                 <nav className=" flex items-center gap-18 font-medium">
-                    <NavLink to="/" ><div className="w-18 h-10 -mt-7 text-lg font-semibold tracking-tight text-[var(--palms-blue)]">
+                    <NavLink to="/" ><div className="w-44 h-10 -mt-5 text-lg font-semibold tracking-tight text-[var(--palms-blue)]">
                         <img src={logo} className="object-cover" alt="" />
                     </div>
                     </NavLink>
-                    <div className="hidden md:flex mt-1 items-center gap-8 text-md font-medium">
+                    <div className="hidden md:flex  items-center gap-8 text-md font-medium">
 
                         <NavLink to="/whoweare" className={linkClass}>
                             Who Are We
@@ -212,8 +214,7 @@ const Navbar = () => {
                                     </div>
 
                                     {/* RIGHT LIST — TWO COLUMN GRID */}
-                                    <div className="grid grid-cols-2 gap-x-14 gap-y-8">
-
+                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-5">
                                         {servicesNav.map((service) => (
                                             <div
                                                 key={service.id}
@@ -247,9 +248,13 @@ const Navbar = () => {
 
                         </div>
 
+                          <NavLink to="/events" className={linkClass}>
+                            Events
+                        </NavLink>
 
-                        <NavLink to="/blogs" className={linkClass}>
-                            Mindspace
+
+                        <NavLink to="/palmsplus" className={linkClass}>
+                            Palms Plus
                         </NavLink>
 
                         <NavLink to="/gallery" className={linkClass}>

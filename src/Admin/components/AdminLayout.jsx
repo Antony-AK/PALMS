@@ -25,6 +25,12 @@ const AdminLayout = ({ children }) => {
             <Link to="/admin/gallery" className="block hover:text-[var(--palms-green)]">
               Gallery
             </Link>
+
+            <Link to="/admin/journals" className="block hover:text-[var(--palms-green)]">NewsLetter </Link>
+        
+              <Link to="/admin/subscribers" className="block hover:text-[var(--palms-green)]">Subscribers</Link>
+          
+          <Link to="/admin/events" className="block hover:text-[var(--palms-green)]">Events</Link>
           </nav>
         </div>
 

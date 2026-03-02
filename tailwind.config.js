@@ -6,10 +6,10 @@ export default {
   ],
   theme: {
     extend: {
-       fontFamily: {
+      fontFamily: {
         coyoto: ['Coyoto', 'sans-serif'],
-       }
+      }
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')]
 };

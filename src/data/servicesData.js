@@ -3,6 +3,11 @@ import md from "../assets/manaetamil.jpg"
 import soft from "../assets/skillstamil.jpg"
 import training from "../assets/corporatetamil.jpg"
 import outbaond from "../assets/outbondtamil.jpg"
+import retreat from "../assets/retreat.jpg"
+import yatra from "../assets/yatra.jpg"
+import consulting from "../assets/consulting.png"
+import summercamp from "../assets/summercamp.jpg"
+
 export const servicesData = [
 
   /* ======================================================
@@ -336,5 +341,262 @@ export const servicesData = [
 
     duration: "1–2 days (customisable)"
   },
+  /* ======================================================
+   06. BUSINESS RETREAT
+====================================================== */
+{
+  slug: "business-retreat",
+  id: "06",
+  title: "Business Retreat",
+  shortDesc:
+    "Strategic offsite retreats designed to align leadership vision, strengthen collaboration, and accelerate business growth through focused reflection and planning.",
+
+  heroDesc:
+    "Our Business Retreats are structured offsite strategic experiences designed for leadership teams and growing organisations seeking clarity, alignment, and renewed direction. Combining facilitated strategy sessions, reflective dialogue, and structured planning frameworks, these retreats help organisations realign priorities, strengthen collaboration, and build actionable roadmaps for sustainable business growth.",
+
+  image: retreat,
+
+  highlights: [
+    "Facilitated strategic alignment sessions to clarify organisational vision and priorities.",
+    "Leadership collaboration exercises to strengthen trust and shared ownership.",
+    "Structured planning frameworks for short-term execution and long-term growth.",
+    "Opportunity for leadership reset away from operational distractions.",
+    "Integration of culture, strategy, and performance alignment."
+  ],
+
+  whoItsFor: [
+    "Founders and executive leadership teams.",
+    "Growing organisations preparing for scale.",
+    "Family businesses seeking structured strategic alignment.",
+    "Companies navigating transition, expansion, or restructuring."
+  ],
+
+  outcomes: [
+    "Clear strategic roadmap aligned with business objectives.",
+    "Stronger leadership alignment and decision clarity.",
+    "Improved cross-functional collaboration and accountability.",
+    "Renewed organisational focus and performance momentum."
+  ],
+
+  modules: [
+    "Vision clarity and strategic direction setting.",
+    "Leadership alignment and accountability mapping.",
+    "Business model review and growth planning.",
+    "Execution roadmap development.",
+    "Culture and performance alignment."
+  ],
+
+  methodology: [
+    "Facilitated offsite strategic workshops.",
+    "Structured reflection and leadership dialogue.",
+    "Strategic planning tools and frameworks.",
+    "Action planning with measurable accountability."
+  ],
+
+  whyPalms: [
+    "Structured facilitation ensuring productive and outcome-driven retreats.",
+    "Strategic business expertise combined with behavioural leadership insight.",
+    "Clear output documentation and execution clarity.",
+    "Designed for real business impact — not just discussion."
+  ],
+
+  approach:
+    "A structured offsite facilitation model combining strategic thinking, leadership alignment, and actionable execution planning.",
+
+  duration: "2–3 days (customisable)"
+},
+
+/* ======================================================
+   07. BUSINESS YATRA
+====================================================== */
+{
+  slug: "business-yatra",
+  id: "07",
+  title: "Business Yatra",
+  shortDesc:
+    "Immersive business exposure journeys designed to inspire entrepreneurial thinking, innovation, and market insight.",
+
+  heroDesc:
+    "Business Yatra is an immersive experiential learning journey designed to expose entrepreneurs, business leaders, and emerging professionals to real-world business ecosystems. Through curated industry visits, leadership interactions, and reflective dialogue, participants gain practical insight into business models, innovation practices, and growth strategies.",
+
+  image: yatra,
+
+  highlights: [
+    "Exposure to diverse business models and operational excellence practices.",
+    "Direct interaction with founders and industry leaders.",
+    "Learning through observation, reflection, and structured insight capture.",
+    "Inspiration for innovation, scalability, and entrepreneurial thinking."
+  ],
+
+  whoItsFor: [
+    "Entrepreneurs and startup founders.",
+    "Family business successors.",
+    "Business school students and aspiring entrepreneurs.",
+    "Corporate innovation teams."
+  ],
+
+  outcomes: [
+    "Broader market perspective and strategic thinking expansion.",
+    "Practical insights into scalable business practices.",
+    "Stronger entrepreneurial confidence and clarity.",
+    "Improved innovation mindset and adaptability."
+  ],
+
+  modules: [
+    "Industry exposure visits.",
+    "Leadership interaction sessions.",
+    "Business model analysis.",
+    "Reflection and insight documentation.",
+    "Application planning for participant ventures."
+  ],
+
+  methodology: [
+    "Curated business exposure journeys.",
+    "Facilitated reflection discussions.",
+    "Strategic insight capture frameworks.",
+    "Action-oriented implementation mapping."
+  ],
+
+  whyPalms: [
+    "Carefully curated industry exposure.",
+    "Structured learning — beyond passive visits.",
+    "Direct access to experienced business leaders.",
+    "Focused on practical, applicable business insight."
+  ],
+
+  approach:
+    "Learning through immersion, observation, structured reflection, and strategic application to accelerate entrepreneurial growth.",
+
+  duration: "1–3 days (based on programme design)"
+},
+
+/* ======================================================
+   08. CONSULTANCY
+====================================================== */
+{
+  slug: "consultancy",
+  id: "08",
+  title: "Business Consultancy",
+  shortDesc:
+    "Strategic consulting services focused on organisational growth, operational efficiency, leadership development, and sustainable performance improvement.",
+
+  heroDesc:
+    "Our Business Consultancy services provide structured strategic advisory support to organisations seeking clarity, scalability, and measurable performance improvement. Through diagnostic analysis, leadership consultation, and performance mapping, we help businesses optimise processes, strengthen culture, and align strategy with execution.",
+
+  image: consulting,
+
+  highlights: [
+    "Comprehensive organisational diagnostic and performance assessment.",
+    "Strategic advisory for business growth and operational efficiency.",
+    "Leadership capability enhancement and accountability alignment.",
+    "Process optimisation and workflow improvement.",
+    "Culture strengthening aligned with business objectives."
+  ],
+
+  whoItsFor: [
+    "Small and medium enterprises seeking structured growth.",
+    "Family businesses requiring professional systems integration.",
+    "Startups preparing for scale.",
+    "Organisations facing performance or structural challenges."
+  ],
+
+  outcomes: [
+    "Clear growth and operational improvement roadmap.",
+    "Improved systems, processes, and accountability structures.",
+    "Stronger leadership clarity and performance culture.",
+    "Sustainable business performance enhancement."
+  ],
+
+  modules: [
+    "Organisational diagnostic assessment.",
+    "Strategic growth planning.",
+    "Operational process optimisation.",
+    "Leadership alignment and capability development.",
+    "Performance monitoring frameworks."
+  ],
+
+  methodology: [
+    "Data-driven business analysis.",
+    "Stakeholder interviews and leadership workshops.",
+    "Strategic roadmap development.",
+    "Ongoing advisory and performance review."
+  ],
+
+  whyPalms: [
+    "Structured, evidence-based consulting approach.",
+    "Strong integration of leadership and operational strategy.",
+    "Focus on measurable, sustainable business outcomes.",
+    "Long-term partnership orientation."
+  ],
+
+  approach:
+    "A structured diagnostic-to-execution consulting framework ensuring clarity, alignment, and measurable business impact.",
+
+  duration: "Project-based (custom scope and timeline)"
+},
+
+/* ======================================================
+   09. SUMMER CAMP
+====================================================== */
+{
+  slug: "summer-camp",
+  id: "09",
+  title: "Summer Leadership Camp",
+  shortDesc:
+    "Engaging developmental camps designed to build confidence, communication skills, creativity, and leadership qualities among students.",
+
+  heroDesc:
+    "Our Summer Leadership Camp is a structured developmental programme designed to nurture confidence, communication ability, teamwork, and leadership qualities in students. Through interactive activities, experiential challenges, and guided reflection, participants build essential life skills that support academic success and personal growth.",
+
+  image: summercamp,
+
+  highlights: [
+    "Builds confidence and self-expression through structured activities.",
+    "Enhances communication and teamwork skills.",
+    "Encourages creativity, problem-solving, and leadership thinking.",
+    "Provides a safe and engaging developmental environment.",
+    "Balances learning with fun, interaction, and growth."
+  ],
+
+  whoItsFor: [
+    "School students (age groups customisable).",
+    "Parents seeking structured skill development programmes.",
+    "Educational institutions organising seasonal camps."
+  ],
+
+  outcomes: [
+    "Improved confidence and public speaking comfort.",
+    "Stronger teamwork and collaboration skills.",
+    "Enhanced creativity and structured thinking ability.",
+    "Positive behavioural growth and leadership awareness."
+  ],
+
+  modules: [
+    "Confidence and communication activities.",
+    "Creative problem-solving challenges.",
+    "Team-building games and leadership tasks.",
+    "Personal growth and mindset development.",
+    "Reflection and goal-setting exercises."
+  ],
+
+  methodology: [
+    "Experiential learning games and activities.",
+    "Facilitated group discussions.",
+    "Creative workshops and presentations.",
+    "Behavioural reinforcement through guided feedback."
+  ],
+
+  whyPalms: [
+    "Safe, structured, and professionally designed learning environment.",
+    "Experienced facilitators with youth development expertise.",
+    "Balanced focus on skill-building and engagement.",
+    "Strong emphasis on confidence and character growth."
+  ],
+
+  approach:
+    "An experiential, student-focused development model combining structured learning, engagement, and guided personal growth.",
+
+  duration: "3–10 days (customisable)"
+},
 
 ];
