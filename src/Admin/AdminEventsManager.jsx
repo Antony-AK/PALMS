@@ -178,19 +178,48 @@ const AdminEventsManager = () => {
                     View Landing Page
                 </a> */}
 
-                <div className="grid grid-cols-2 gap-4">
-                    <input type="date" name="date" value={formData.date} onChange={handleChange} className="input-style" />
-                    <input type="time" name="time" value={formData.time} onChange={handleChange} className="input-style" />
+                <div className="grid md:grid-cols-2 gap-6">
+
+                    <div className="flex flex-col gap-2">
+                        <label className="text-sm font-medium text-gray-600">
+                            Publish Date
+                        </label>
+
+                        <input
+                            type="date"
+                            className="input-style px-4 py-3 rounded-xl "
+                        />
+                    </div>
+
+                    <div className="flex flex-col gap-2">
+                        <label className="text-sm font-medium text-gray-600">
+                            Publish Time
+                        </label>
+
+                        <input
+                            type="time"
+                            className="border px-4 py-3 input-style rounded-xl"
+                        />
+                    </div>
+
                 </div>
 
                 <input name="venue" placeholder="Venue" value={formData.venue} onChange={handleChange} className="input-style" />
                 <input name="speaker" placeholder="Speaker" value={formData.speaker} onChange={handleChange} className="input-style" />
 
                 <div className="grid grid-cols-3 gap-4">
-                    <input name="price" type="number" placeholder="Price" value={formData.price} onChange={handleChange} className="input-style" />
+                    <input name="price" type="number" placeholder="Price" value={formData.price} onChange={handleChange} className="input-style " />
                     <input name="seatsAvailable" type="number" placeholder="Seats Available" value={formData.seatsAvailable} onChange={handleChange} className="input-style" />
-                    <input type="date" name="deadline" value={formData.deadline} onChange={handleChange} className="input-style" />
-                </div>
+                    <div className="flex flex-col gap-2">
+                        <label className="text-sm font-medium text-gray-600">
+                            Expiry Date
+                        </label>
+
+                        <input
+                            type="date"
+                            className="border px-4 input-style py-3 rounded-xl"
+                        />
+                    </div>                </div>
 
                 <select name="status" value={formData.status} onChange={handleChange} className="input-style">
                     <option value="draft">Draft</option>

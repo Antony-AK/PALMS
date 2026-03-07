@@ -15,8 +15,12 @@ const Contact = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const t = setTimeout(() => setShowGlobe(true), 400);
-    return () => clearTimeout(t);
+    const isDesktop = window.innerWidth >= 1024; // lg breakpoint
+
+    if (isDesktop) {
+      const t = setTimeout(() => setShowGlobe(true), 400);
+      return () => clearTimeout(t);
+    }
   }, []);
 
   useEffect(() => {
@@ -55,28 +59,29 @@ const Contact = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-screen bg-[#f5f7fb] px-6 pt-18 pb-20 overflow-hidden"
-    >
+      className="relative w-full min-h-screen bg-[#f5f7fb] px-5 sm:px-6 md:px-8 pt-14 sm:pt-16 md:pt-18 pb-16 sm:pb-18 md:pb-20 overflow-hidden"    >
 
       {showGlobe && (
-        <Suspense fallback={null}>
-          <HologramGlobe />
-        </Suspense>
+        <div className="hidden lg:block">
+          <Suspense fallback={null}>
+            <HologramGlobe />
+          </Suspense>
+        </div>
       )}
 
       <div className="relative z-10 max-w-full mx-auto">
 
         {/* HERO */}
-        <div className="contact-reveal mb-28 text-white p-20 bg-palms-gradient ">
+        <div className="contact-reveal mb-16 sm:mb-20 md:mb-28 text-white p-8 sm:p-12 md:p-16 lg:p-20 bg-palms-gradient rounded-2xl">
           <span className="text-xs text-white/60 block mb-8">
             Contact PALMS
           </span>
 
-          <h1 className="text-5xl md:text-6xl font-semibold leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
             Conversations that begin with intent
           </h1>
 
-          <p className="mt-10 text-lg text-white/70">
+          <p className="mt-6 sm:mt-8 md:mt-10 text-sm sm:text-base md:text-lg text-white/70">
             PALMS welcomes thoughtful enquiries - from individuals,
             professionals, and organisations seeking clarity,
             learning, and long-term development.
@@ -85,46 +90,8 @@ const Contact = () => {
 
 
         {/* CONTENT SECTION */}
-        <div className="contact-reveal bg-white rounded-3xl max-w-[1200px] shadow-xl p-14">
+        <div className="contact-reveal bg-white rounded-3xl max-w-[1200px] shadow-xl p-6 sm:p-8 md:p-10 lg:p-14 mx-auto">
 
-          {/* INTENT BLOCKS */}
-          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-24">
-
-            {[
-              {
-                id: "01",
-                title: "Membership enquiries",
-                desc: "For individuals interested in joining PALMS and participating in regular learning programmes."
-              },
-              {
-                id: "02",
-                title: "Corporate partnerships",
-                desc: "Organisations seeking leadership development, training programmes, or long-term capability building."
-              },
-              {
-                id: "03",
-                title: "General communication",
-                desc: "Media, academic collaboration, or conversations aligned with PALMS values."
-              }
-            ].map((item) => (
-              <div key={item.id} className="group">
-
-                <div className="w-12 h-12 rounded-full bg-[var(--palms-blue)]/10 text-[var(--palms-blue)] flex items-center justify-center font-semibold mb-6">
-                  {item.id}
-                </div>
-
-                <p className="text-base font-medium text-[var(--palms-blue)] mb-4">
-                  {item.title}
-                </p>
-
-                <p className="text-sm text-[var(--palms-grey)] leading-relaxed">
-                  {item.desc}
-                </p>
-
-              </div>
-            ))}
-
-          </div> */}
 
           {/* PARTNERSHIP & CAREER OPPORTUNITIES */}
           <div className="contact-reveal mb-24">
@@ -147,7 +114,7 @@ const Contact = () => {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
 
                 {[
                   {
@@ -205,7 +172,7 @@ const Contact = () => {
 
 
           {/* FORM SECTION */}
-          <div className="grid md:grid-cols-2 gap-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14 md:gap-20">
 
             {/* FORM */}
             <form onSubmit={(e) => {
@@ -222,7 +189,7 @@ const Contact = () => {
                 <input
                   type="text"
                   required
-                  className="w-full border border-gray-200 rounded-xl px-5 py-3 text-sm
+                  className="w-full border border-gray-200 rounded-xl px-4 sm:px-5 py-2.5 sm:py-3 text-sm
                            focus:outline-none focus:border-[var(--palms-blue)] focus:ring-2 focus:ring-[var(--palms-blue)]/10 transition"
                 />
               </div>
@@ -234,7 +201,7 @@ const Contact = () => {
                 <input
                   type="email"
                   required
-                  className="w-full border border-gray-200 rounded-xl px-5 py-3 text-sm
+                  className="w-full border border-gray-200 rounded-xl px-4 sm:px-5 py-2.5 sm:py-3 text-sm
                            focus:outline-none focus:border-[var(--palms-blue)] focus:ring-2 focus:ring-[var(--palms-blue)]/10 transition"
                 />
               </div>
@@ -273,7 +240,7 @@ const Contact = () => {
                 />
               </div>
 
-              <button className="px-12 py-4 bg-[var(--palms-blue)] text-white rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
+              <button className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 text-sm sm:text-base bg-[var(--palms-blue)] text-white rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
                 Send message
               </button>
 
@@ -281,7 +248,7 @@ const Contact = () => {
 
 
             {/* SIDE INFO CARD */}
-            <div className="bg-[var(--palms-blue)] text-white rounded-3xl p-12 flex flex-col justify-between">
+            <div className="bg-[var(--palms-blue)] text-white rounded-3xl p-8 sm:p-10 md:p-12 flex flex-col justify-between">
 
               <div>
                 <h3 className="text-2xl font-semibold mb-6">

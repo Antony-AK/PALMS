@@ -1,14 +1,16 @@
 import React, { useRef, useEffect, useLayoutEffect } from "react";
-import hero from "../assets/herotamil.png";
+import hero from "../assets/herotamil.webp";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import logo from "../assets/Silverlogo.png"
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const imageWrapperRef = useRef(null);
   const sectionRef = useRef(null);
+  const navigate = useNavigate();
 
   const HERO_CONTENT = [
     {
@@ -172,24 +174,26 @@ const Hero = () => {
     <section ref={sectionRef} className="w-full hero-noise overflow-hidden relative">
 
       {/* TEXT */}
-      <div className="relative z-20 max-w-[1160px] mx-auto text-center px-6 pt-20 pb-16">
-        <h1 className="hero-title text-4xl md:text-7xl font-semibold leading-tight text-[var(--palms-blue)]">
+      <div className="relative z-20 max-w-[1160px] mx-auto text-center px-5 sm:px-6 md:px-8 pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16">
+        <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-tight text-[var(--palms-blue)]">
           <span className="hero-dynamic-title block"></span>
         </h1>
 
-        <p className="hero-sub mt-6 text-sm md:text-lg text-[var(--palms-grey)] max-w-[720px] mx-auto">
+        <p className="hero-sub mt-5 sm:mt-6 text-sm sm:text-base md:text-lg text-[var(--palms-grey)] max-w-[720px] mx-auto">
           <span className="hero-dynamic-sub block"></span>
         </p>
 
 
-        <div className="hero-actions mt-8 flex items-center justify-center gap-4">
-          <button className="btn-primary">Become a member</button>
-          <button className="btn-secondary">Explore programs</button>
+        <div className="hero-actions mt-7 sm:mt-8 flex  sm:flex-row items-center justify-center gap-3 sm:gap-4">          <button onClick={() => navigate("/memberships/individual")} className="btn-primary">Become a member</button>
+          <button onClick={() => navigate("/events")} className="btn-secondary">Explore programs</button>
         </div>
       </div>
 
-      <div className="image absolute top-20 left-[38%]  w-[350px] h-[350px] opacity-20 slow-spin">
-        <img src={logo} alt="" />
+      <div className="image absolute top-16 sm:top-20 left-1/2 -translate-x-1/2 
+w-[200px] sm:w-[260px] md:w-[320px] lg:w-[350px] 
+h-[200px] sm:h-[260px] md:h-[320px] lg:h-[350px] 
+opacity-20 slow-spin pointer-events-none">
+        <img src={logo} alt="hero" />
       </div>
 
 
@@ -197,8 +201,11 @@ const Hero = () => {
       {/* IMAGE */}
       <div
         ref={imageWrapperRef}
-        className="hero-image w-[80%] mx-auto h-[480px] relative overflow-hidden rounded-4xl"
-      >
+        className="hero-image 
+w-[87%] sm:w-[88%] md:w-[85%] lg:w-[80%] 
+mx-auto 
+h-[260px] sm:h-[320px] md:h-[400px] lg:h-[480px] 
+relative overflow-hidden rounded-3xl sm:rounded-4xl"      >
         <div className="hero-overlay absolute inset-0 bg-[var(--palms-blue)] opacity-40 z-10" />
         <img
           src={hero}

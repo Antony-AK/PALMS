@@ -11,6 +11,7 @@ import MembershipCTASection from '../Landing/MembershipCTA';
 import Footer from '../Components/Footer';
 import FAQSection from '../Landing/FAQ';
 import PalmsLearningMoment from '../Components/PalmsLearningMoment';
+import LandingEventsSection from '../Landing/LandingEventsSection';
 
 
 function Home() {
@@ -21,6 +22,7 @@ function Home() {
       <PalmsLearningMoment />
       <AboutSection />
       <ServicesSection />
+      <LandingEventsSection />
       <ImpactSection />
       <TestimonialsSection />
       <MembershipCTASection />

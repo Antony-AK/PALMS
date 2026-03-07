@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { servicesData } from "../data/servicesData";
 import { useLayoutEffect, useRef } from "react";
 import pdbig from "../assets/pdbig.jpg"
@@ -17,11 +17,18 @@ const ServiceDetail = () => {
   const deliverLeftRef = useRef(null);
   const deliverRightRef = useRef(null);
   const progressRef = useRef(null);
+  const navigate = useNavigate();
 
 
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
+
+
+    const mm = gsap.matchMedia();
+
+    // ✅ DESKTOP / LAPTOP
+    mm.add("(min-width: 1024px)", () => {
 
       ScrollTrigger.create({
         trigger: deliverSectionRef.current,
@@ -54,6 +61,10 @@ const ServiceDetail = () => {
         }
       );
 
+       });
+      mm.add("(max-width: 1023px)", () => {
+      gsap.set(progressRef.current, { scaleY: 1 });
+    });
 
     });
 
@@ -66,14 +77,14 @@ const ServiceDetail = () => {
   }
 
   return (
-    <section className="w-full bg-white px-6 pt-36 pb-32">
-      <div className="max-w-[1280px] mx-auto space-y-32">
+    <section className="w-full bg-white px-5 sm:px-6 md:px-8 pt-32 sm:pt-32 md:pt-36 pb-20 sm:pb-28 md:pb-32">
+      <div className="max-w-[1280px] mx-auto space-y-16 sm:space-y-24 md:space-y-32">
 
         {/* ================= HERO ================= */}
-        <div className="relative grid lg:grid-cols-2 gap-16 h-[500px] items-center">
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 md:gap-16 items-center min-h-[420px] lg:h-[500px]">
 
           {/* BACKGROUND INDEX */}
-          <span className="absolute -top-24 -left-10 text-[180px] font-bold text-black/5 select-none">
+          <span className="absolute -top-16 sm:-top-20 md:-top-24 -left-6 sm:-left-8 md:-left-10 text-[90px] sm:text-[140px] md:text-[180px] font-bold text-black/5 select-none">
             {service.id}
           </span>
 
@@ -86,11 +97,11 @@ const ServiceDetail = () => {
               {service.title}
             </h1>
 
-            <p className="text-lg text-[var(--palms-grey)] max-w-[560px] leading-relaxed">
+            <p className="text-base sm:text-lg text-[var(--palms-grey)] max-w-[560px] leading-relaxed">
               {service.heroDesc}
             </p>
 
-            <div className="flex items-center gap-8 pt-6">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 pt-6">
               <button className="btn-primary px-12 py-5">
                 Enquire now
               </button>
@@ -104,12 +115,11 @@ const ServiceDetail = () => {
 
           {/* IMAGE */}
           <div className="relative">
-            <div className="absolute -inset-8 rounded-[40px] bg-[var(--palms-blue)] " />
+            <div className="absolute -inset-4 md:-inset-8 rounded-[40px] bg-[var(--palms-blue)] " />
             <img
               src={service.image}
               alt={service.title}
-              className="relative rounded-[32px] w-full h-[400px] object-cover"
-            />
+              className="relative rounded-[32px] w-full h-[260px] sm:h-[320px] md:h-[400px] object-cover" />
           </div>
         </div>
 
@@ -117,12 +127,11 @@ const ServiceDetail = () => {
         {/* ================= WHAT IT DELIVERS (PINNED) ================= */}
         <div
           ref={deliverSectionRef}
-          className="grid md:grid-cols-2 gap-20 justify-center items-start"
-        >
+className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 md:gap-20 justify-center items-start"        >
 
           {/* LEFT – PINNED */}
           <div ref={deliverLeftRef} className="pt-10">
-            <h3 className="text-5xl font-semibold text-[var(--palms-blue)]">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--palms-blue)]">
               What this programme delivers
             </h3>
             <p className="mt-6 text-[var(--palms-grey)] max-w-[460px]">
@@ -164,9 +173,9 @@ const ServiceDetail = () => {
 
 
         {/* ================= MODULES (FEATURE STRIP) ================= */}
-        <section className="bg-palms-gradient text-white py-18">
+        <section className="bg-palms-gradient text-white py-14 sm:py-16 md:py-18">
 
-          <div className="max-w-[1200px] mx-auto px-10">
+          <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-10">
 
             <h2 className="text-4xl font-semibold mb-20">
               Learning modules
@@ -180,11 +189,11 @@ const ServiceDetail = () => {
               {service.modules?.map((item, i) => (
                 <div key={i} className="flex gap-10 items-start">
 
-                  <span className="text-5xl font-bold text-white/20">
+                  <span className="text-3xl md:text-5xl font-bold text-white/20">
                     0{i + 1}
                   </span>
 
-                  <p className="text-2xl leading-relaxed max-w-[900px]">
+                  <p className="text-lg sm:text-xl md:text-2xl leading-relaxed max-w-[900px]">
                     {item}
                   </p>
 
@@ -198,8 +207,8 @@ const ServiceDetail = () => {
         </section>
 
         {/* ================= WHO + OUTCOMES ================= */}
-        <div className="grid md:grid-cols-2 gap-28">
-          <div className="bg-[var(--palms-grey-light)] rounded-3xl px-12 py-16">
+        <div className="text-lg sm:text-xl md:text-2xl leading-relaxed max-w-[900px]">
+          <div className="bg-[var(--palms-grey-light)] rounded-3xl px-6 sm:px-8 md:px-12 py-10 sm:py-14 md:py-16">
             <h3 className="text-xl font-semibold text-[var(--palms-blue)]">
               Who this programme is for
             </h3>
@@ -241,7 +250,7 @@ const ServiceDetail = () => {
     /> */}
           </div>
 
-          <div className="relative max-w-[1200px] mx-auto px-6">
+       <div className="relative max-w-[1200px] mx-auto px-5 sm:px-6 md:px-8">
 
             {/* HEADER */}
             <div className="mb-24">
@@ -338,16 +347,15 @@ const ServiceDetail = () => {
 
         </section>
 
-        <section className="bg-palms-gradient text-white py-26 text-center">
-
-          <h2 className="text-6xl font-semibold max-w-[900px] mx-auto leading-tight">
+<section className="bg-palms-gradient text-white py-16 sm:py-20 md:py-26 text-center px-5 sm:px-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold max-w-[900px] mx-auto leading-tight">
             Let’s create meaningful,
             measurable impact together.
           </h2>
 
-          <button className="mt-16 bg-white text-[var(--palms-blue)]
-  px-20 py-6 rounded-full text-xl
-  transition-all duration-300 hover:scale-105">
+          <button onClick={() => navigate("/contact")} className="mt-10 sm:mt-14 md:mt-16 bg-white text-[var(--palms-blue)]
+px-10 sm:px-14 md:px-20 py-4 sm:py-5 md:py-6 rounded-full text-base sm:text-lg md:text-xl
+transition-all duration-300 hover:scale-105">
             Talk to PALMS
           </button>
 

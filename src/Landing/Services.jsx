@@ -1,15 +1,15 @@
 import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import pd from "../assets/pdtamil.jpg"
-import md from "../assets/manaetamil.jpg"
-import soft from "../assets/skillstamil.jpg"
-import training from "../assets/corporatetamil.jpg"
-import outbaond from "../assets/outbondtamil.jpg"
-import retreat from "../assets/retreat.jpg"
-import yatra from "../assets/yatra.jpg"
-import consulting from "../assets/consulting.png"
-import summercamp from "../assets/summercamp.jpg"
+import pd from "../assets/pdtamil.webp"
+import md from "../assets/manaetamil.webp"
+import soft from "../assets/skillstamil.webp"
+import training from "../assets/corporatetamil.webp"
+import outbaond from "../assets/outbondtamil.webp"
+import retreat from "../assets/retreat.webp"
+import yatra from "../assets/yatra.webp"
+import consulting from "../assets/consulting.webp"
+import summercamp from "../assets/summercamp.webp"
 import { useNavigate } from "react-router-dom";
 
 
@@ -68,24 +68,22 @@ const ServicesSection = () => {
     return (
         <section
             ref={sectionRef}
-            className="relative w-full px-6 py-32
-             bg-white overflow-hidden"
+            className="relative w-full px-5 sm:px-6 md:px-8 py-16 sm:py-20 bg-white overflow-hidden"
         >
             <div className="max-w-[1280px] mx-auto">
 
-                <div className="w-full mb-24 max-w-[960px]">
-                    <span className="text-lg tracking-widest uppercase text-gray-500 block mb-6">
+                <div className="w-full mb-16 sm:mb-20 md:mb-24 max-w-[960px]">
+                    <span className="text-sm sm:text-base md:text-lg tracking-widest uppercase text-gray-500 block mb-6">
                         Our programmes
                     </span>
 
-                    <h2 className="text-4xl md:text-6xl font-semibold leading-[1.1]
-                 text-[var(--palms-blue)]">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] text-[var(--palms-blue)]">
                         Learning experiences designed
                         <br />
                         for lasting growth
                     </h2>
 
-                    <p className="mt-8 text-lg text-[var(--palms-grey)] max-w-[720px]">
+                    <p className="mt-6 sm:mt-8 text-base sm:text-lg text-[var(--palms-grey)] max-w-[720px]">
                         PALMS delivers structured, value-driven learning programmes that
                         strengthen individuals, leaders, and organisations over time.
                     </p>
@@ -93,81 +91,77 @@ const ServicesSection = () => {
 
 
                 {/* SERVICES LIST */}
-                <div className="flex w-full gap-20">
+                <div className="flex w-full ">
 
-                    <div className="grid md:grid-cols-2 gap-10">
+                    {/* SERVICES GRID */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
-                        {services.map((service) => (
-                            <div
-                                key={service.id}
-                                onClick={() => navigate(`/services/${service.slug}`)}
-                                className="
-service-row group relative rounded-3xl overflow-hidden cursor-pointer
-transition-all duration-500 shadow-[0_20px_60px_rgba(0,0,0,0.12)]
-hover:-translate-y-3 hover:shadow-[0_30px_90px_rgba(0,0,0,0.25)]
-border border-white/40
-"
-                            >
+  {services.map((service) => (
+    <div
+      key={service.id}
+      onClick={() => navigate(`/services/${service.slug}`)}
+      className="
+        service-row group relative rounded-2xl overflow-hidden cursor-pointer
+        transition-all duration-500
+        border border-gray-200
+        hover:-translate-y-2 hover:shadow-xl
+        bg-white
+      "
+    >
 
-                                {/* Image */}
-                                <img
-                                    src={service.image}
-                                    alt={service.title}
-                                    className="w-full h-[380px] object-cover
-        transition-transform duration-700 group-hover:scale-105"
-                                />
+      {/* Image */}
+      <div className="relative h-[260px] overflow-hidden">
+        <img
+          src={service.image}
+          alt={service.title}
+          className="
+            w-full h-full object-cover
+            transition-transform duration-700
+            group-hover:scale-105
+          "
+        />
 
-                                <div className="
-absolute inset-0 rounded-3xl
-opacity-0 group-hover:opacity-100
-transition duration-500
-bg-gradient-to-tr from-[var(--palms-green)]/20 via-transparent to-white/20
-" />
+        {/* Gradient Overlay */}
+        <div className="
+          absolute inset-0
+          bg-gradient-to-t from-black/70 via-black/30 to-transparent
+        " />
+      </div>
 
-                                {/* Dark Gradient Overlay */}
-<div className="absolute inset-0 
-bg-gradient-to-t from-black/80 via-black/40 to-transparent
-transition duration-500" />
+      {/* Content */}
+      <div className="absolute bottom-5 sm:bottom-6 left-5 sm:left-6 text-white">
 
-                                {/* Content */}
-                                <div className="absolute bottom-10 left-10 text-white">
+        <span className="text-[10px] tracking-widest bg-white/20 px-2 py-1 rounded-full">
+          {service.id}
+        </span>
 
-                                    <span className="text-xs tracking-widest bg-white/20 px-3 py-1 rounded-full">
-                                        {service.id}
-                                    </span>
+        <h3 className="
+          mt-3 text-lg font-semibold
+          max-w-[200px]
+          transition-all duration-300
+          group-hover:translate-y-[-2px]
+        ">
+          {service.title}
+        </h3>
 
-<h3 className="
-mt-5 text-2xl md:text-3xl font-semibold
-max-w-[300px] leading-snug
-transition-all duration-500
-group-hover:translate-y-[-4px]
-">                                        {service.title}
-                                    </h3>
+        <div className="
+          mt-3 h-[2px] w-0 bg-[var(--palms-green)]
+          transition-all duration-300
+          group-hover:w-12
+        " />
 
-                                    <div className="
-mt-4 h-[2px] w-0 bg-[var(--palms-green)]
-transition-all duration-500
-group-hover:w-16
-" />
+      </div>
 
-                                </div>
+    </div>
+  ))}
 
-                            </div>
-                        ))}
-
-                    </div>
+</div>
 
 
 
 
                 </div>
 
-                {/* CTA */}
-                <div className="mt-10">
-                    <button className="btn-primary">
-                        Explore all programmes
-                    </button>
-                </div>
 
             </div>
         </section>

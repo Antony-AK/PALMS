@@ -303,16 +303,18 @@ const PalmsTimeline = () => {
 
 
     return (
-        <section className="w-full py-32">
+        <section className="w-full py-16 sm:py-24 md:py-32">
             <h3 className="text-3xl font-semibold text-center text-[var(--palms-blue)] mb-20">
                 The PALMS Journey
             </h3>
 
-            <svg
-                ref={svgRef}
-                viewBox="0 0 1600 520"
-                className="w-full overflow-visible"
-            >
+           <div className="w-full overflow-x-auto pb-6">
+  <div className="min-w-[1200px] snap-center">
+    <svg
+      ref={svgRef}
+      viewBox="0 0 1600 520"
+      className="w-full h-auto overflow-visible"
+    >
                 {/* TRACK */}
                 <path
                     d="M 80 80 H 1520 Q 1560 80 1560 120 V 200 Q 1560 240 1520 240 H 80 Q 40 240 40 280 V 360 Q 40 400 80 400 H 1520"
@@ -426,6 +428,8 @@ const PalmsTimeline = () => {
                 ))}
 
             </svg>
+            </div>
+            </div>
         </section>
     );
 };

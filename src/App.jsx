@@ -1,6 +1,6 @@
 import Navbar from './Components/Navbar';
 import './index.css'
-import React from 'react';
+import React, { lazy } from 'react';
 import Home from './pages/Home';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css'
@@ -12,22 +12,23 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import WhoAreWe from './pages/WhoAreWe';
 import ServiceDetail from './pages/ServiceDetail';
 import MembershipDetail from './pages/MembershipDetail';
-import Gallery from './pages/Gallery/Gallery';
-import FolderView from './pages/Gallery/FolderView';
+const Gallery = lazy(() => import("./pages/Gallery/Gallery"));
+const FolderView = lazy(() => import("./pages/Gallery/FolderView"));
+const PalmsPlus = lazy(() => import("./pages/PalmsPlus"));
+const Events = lazy(() => import("./pages/Events"));
+const EventDetails = lazy(() => import("./pages/events/EventDetails"));
 
-import AdminLogin from './Admin/Login';
 import ProtectedRoute from './Admin/components/ProtectedRoute';
-import Dashboard from './Admin/Dashboard';
-import GalleryManager from './Admin/GalleryManager';
-import PalmsPlus from './pages/PalmsPlus';
-import JournalManager from './Admin/JournalManager';
-import AdminSubscribers from './Admin/AdminSubscribers';
+
 import JoinFranchise from './pages/contact/JoinFranchise';
 import JoinTrainer from './pages/contact/JoinTrainer';
 import JoinAssociate from './pages/contact/JoinAssociate';
-import Events from './pages/Events';
-import AdminEventsManager from './Admin/AdminEventsManager';
-import EventDetails from './pages/events/EventDetails';
+const AdminLogin = lazy(() => import("./Admin/Login"));
+const Dashboard = lazy(() => import("./Admin/Dashboard"));
+const GalleryManager = lazy(() => import("./Admin/GalleryManager"));
+const JournalManager = lazy(() => import("./Admin/JournalManager"));
+const AdminSubscribers = lazy(() => import("./Admin/AdminSubscribers"));
+const AdminEventsManager = lazy(() => import("./Admin/AdminEventsManager"));
 
 function App() {
 

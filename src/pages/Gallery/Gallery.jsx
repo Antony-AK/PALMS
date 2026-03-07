@@ -30,27 +30,25 @@ const [loading, setLoading] = useState(true);
       {/* <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-[var(--palms-green)] opacity-20 blur-[140px] rounded-full" /> */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500 opacity-10 blur-[140px] rounded-full" />
 
-      <div className="relative max-w-[1400px] mx-auto px-6 py-24">
-
+<div className="relative max-w-[1400px] mx-auto px-5 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24">
         {/* HERO */}
-        <div className="text-center mb-16">
+        <div className="text-center mt-5 mb-16">
           <span className="text-xs tracking-widest text-[var(--palms-green)] uppercase">
             Visual Archive
           </span>
 
-          <h1 className="text-6xl font-semibold mt-2 mb-6 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mt-2 mb-4 sm:mb-6 tracking-tight">
             Gallery
           </h1>
 
-          <p className="text-[var(--palms-blue)] max-w-[600px] mx-auto text-lg leading-relaxed">
+          <p className="text-[var(--palms-blue)] max-w-[600px] mx-auto text-sm sm:text-base md:text-lg leading-relaxed">
             Moments captured from leadership journeys, workshops,
             and meaningful learning engagements.
           </p>
         </div>
 
         {/* EDITORIAL LAYOUT */}
-        <div className="space-y-32">
-
+<div className="space-y-16 sm:space-y-24 md:space-y-32">
           {folders.map((folder, index) => {
 
             const isReverse = index % 2 !== 0;
@@ -58,12 +56,11 @@ const [loading, setLoading] = useState(true);
             return (
               <div
                 key={folder._id}
-                className={`flex flex-col lg:flex-row items-center gap-16 ${isReverse ? "lg:flex-row-reverse" : ""
-                  }`}
+                className={`flex flex-col lg:flex-row items-center gap-10 sm:gap-14 md:gap-16 ${isReverse ? "lg:flex-row-reverse" : ""}`}
               >
 
                 {/* IMAGE */}
-                <div className="relative w-full lg:w-2/4">
+                <div className="relative w-full lg:w-2/4 max-w-[520px] lg:max-w-none mx-auto lg:mx-0">
 
                   {/* BACK LAYER CARD */}
                   <div className="
@@ -106,13 +103,7 @@ const [loading, setLoading] = useState(true);
                     <img
                       src={folder.coverImage?.url}
                       alt={folder.name}
-                      className="
-        w-full
-        h-[350px]
-        object-cover
-        transition duration-1000
-        group-hover:scale-105
-      "
+                className="w-full h-[220px] sm:h-[280px] md:h-[320px] lg:h-[350px] object-cover transition duration-1000 group-hover:scale-105"
                     />
 
                     {/* Overlay */}
@@ -125,30 +116,23 @@ const [loading, setLoading] = useState(true);
                 </div>
 
                 {/* CONTENT */}
-                <div className="w-full lg:w-1/3 text-left">
+                <div className="w-full lg:w-1/3 text-center lg:text-left">
 
                   <span className="text-white/40 text-sm tracking-widest">
                     0{index + 1}
                   </span>
 
-                  <h3 className="text-3xl font-semibold mt-4 mb-6">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mt-3 sm:mt-4 mb-4 sm:mb-6">
                     {folder.name}
                   </h3>
 
-                  <p className="text-[var(--palms-blue)] mb-8 leading-relaxed">
-                    Explore captured moments and reflections from this experience.
+                  <p className="text-[var(--palms-blue)] mb-6 sm:mb-8 text-sm sm:text-base leading-relaxed">
+                    {folder.description || "Explore captured moments and reflections from this experience."}
                   </p>
 
                   <button
                     onClick={() => navigate(`/gallery/${folder.slug}`)}
-                    className="
-                      px-8 py-3
-                      rounded-full
-                      bg-[var(--palms-green)]
-                      text-white
-                      transition
-                      hover:scale-105
-                    "
+                    className="px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-full bg-[var(--palms-green)] text-white transition hover:scale-105"
                   >
                     View Gallery
                   </button>

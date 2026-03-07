@@ -58,19 +58,18 @@ const FAQItem = ({ item, isOpen, onClick }) => {
 
 
     return (
-        <div className="border-b border-gray-200 py-8 cursor-pointer ">
+        <div className="border-b border-gray-200 py-6 sm:py-7 md:py-8 cursor-pointer">
             <button
                 onClick={onClick}
                 className="w-full flex justify-between items-start text-left"
             >
-                <h4 className="text-lg font-medium text-[var(--palms-blue)] max-w-[520px] cursor-pointer">
+                <h4 className="text-base sm:text-lg font-medium text-[var(--palms-blue)] max-w-[520px]">
                     {item.q}
                 </h4>
                 <span
                     ref={iconRef}
-                    className="ml-6 w-6 h-6 text-[var(--palms-blue)]
-             inline-flex items-center justify-center
-             origin-center"
+                    className="ml-4 sm:ml-6 w-6 h-6 text-[var(--palms-blue)]
+inline-flex items-center justify-center origin-center"
                 >
                     <span className="text-xl leading-none text-[var(--palms-green)] select-none">
                         {isOpen ? "−" : "+"}
@@ -85,7 +84,7 @@ const FAQItem = ({ item, isOpen, onClick }) => {
                 ref={contentRef}
                 className="overflow-hidden h-0 opacity-0"
             >
-                <p className="mt-6 text-sm text-[var(--palms-grey)] max-w-[640px] leading-relaxed">
+                <p className="mt-4 sm:mt-6 text-sm sm:text-base text-[var(--palms-grey)] max-w-[640px] leading-relaxed">
                     {item.a}
                 </p>
             </div>
@@ -97,22 +96,22 @@ const FAQSection = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
     return (
-        <section className="w-full bg-white px-6 py-16">
-            <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32">
+        <section className="w-full bg-white px-5 sm:px-6 md:px-8 py-14 sm:py-16 md:py-20">
+            <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 sm:gap-20 lg:gap-32">
 
                 {/* LEFT — CONTEXT */}
-                <div className="max-w-[420px]">
-                    <span className="text-lg text-gray-500 block mb-6">
+                <div className="max-w-[420px] w-full">
+                    <span className="text-sm sm:text-base md:text-lg text-gray-500 block mb-6">
                         Frequently asked
                     </span>
 
-                    <h2 className="text-4xl md:text-6xl font-semibold leading-tight text-[var(--palms-blue)]">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-[var(--palms-blue)]">
                         Clarifying
                         <br />
                         questions
                     </h2>
 
-                    <p className="mt-10 text-lg text-[var(--palms-grey)]">
+                    <p className="mt-6 sm:mt-8 md:mt-10 text-base sm:text-lg text-[var(--palms-grey)]">
                         Answers to common questions about PALMS, our programmes,
                         and how membership works.
                     </p>

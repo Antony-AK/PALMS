@@ -69,23 +69,22 @@ const WhoAreWe = () => {
     return (
         <section
             ref={sectionRef}
-            className="relative w-full bg-white py-12  overflow-hidden"
-        >
+            className="relative w-full bg-white py-10 sm:py-12 md:py-16 overflow-hidden"        >
 
 
-            <section className="relative bg-palms-gradient text-white py-40 overflow-hidden">
+            <section className="relative bg-palms-gradient text-white py-20 sm:py-28 md:py-36 lg:py-40 overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                     {/* subtle noise or grid */}
                 </div>
 
-                <div className="max-w-[1100px] mx-auto px-6 relative z-10">
-                    <h1 className="text-5xl md:text-7xl font-semibold leading-tight">
+                <div className="max-w-[1100px] mx-auto px-5 sm:px-6 md:px-8 relative z-10">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-tight">
                         Building leaders<br />
                         who think, decide,<br />
                         and act with purpose
                     </h1>
 
-                    <p className="mt-8 text-xl text-white/80 max-w-[620px]">
+                    <p className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-white/80 max-w-[620px]">
                         PALMS partners with individuals and organisations to develop
                         leadership capability, professional clarity, and sustainable growth
                         through value-driven learning.
@@ -97,11 +96,11 @@ const WhoAreWe = () => {
 
 
 
-            <div className="max-w-[1300px] mx-auto space-y-28">
+            <div className="max-w-[1300px] mx-auto space-y-16 sm:space-y-20 md:space-y-28">
 
                 {/* ================= WHO WE ARE ================= */}
-                <section className="py-32 bg-white">
-                    <div className="grid md:grid-cols-2 gap-20 max-w-[1200px] mx-auto px-2">
+                <section className="py-16 sm:py-24 md:py-32 bg-white">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 md:gap-20 max-w-[1200px] mx-auto px-5 sm:px-6">
 
                         {/* LEFT — CONTENT */}
                         <div className="space-y-8">
@@ -143,8 +142,8 @@ const WhoAreWe = () => {
 
 
                 {/* ================= IMPACT STRIP ================= */}
-                <section className="bg-palms-blue text-white py-32">
-                    <div className="grid md:grid-cols-2 gap-24 max-w-[1200px] mx-auto px-6">
+                <section className="bg-palms-blue text-white py-16 sm:py-24 md:py-32">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 md:gap-24 max-w-[1200px] mx-auto px-5 sm:px-6">
 
                         <div>
                             <Target size={44} className="text-[var(--palms-green)]" />
@@ -170,10 +169,10 @@ const WhoAreWe = () => {
 
 
                 {/* ================= WHAT WE ENABLE ================= */}
-                <div className="relative grid md:grid-cols-2 gap-28 items-start">
+                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-16 sm:gap-20 md:gap-28 items-start px-5 sm:px-6">
 
                     {/* LEFT — STICKY NARRATIVE */}
-                    <div className="sticky top-32 space-y-10">
+                    <div className="sticky top-20 sm:top-24 md:top-32 space-y-6 sm:space-y-8 md:space-y-10">
 
                         <div>
                             <h3 className="text-4xl font-semibold text-[var(--palms-blue)] leading-tight">
@@ -208,7 +207,7 @@ const WhoAreWe = () => {
                     </div>
 
                     {/* RIGHT — EXPERIENCE RAIL */}
-                    <div className="relative space-y-24 pl-10">
+                    <div className="relative space-y-14 sm:space-y-18 md:space-y-24 pl-6 sm:pl-8 md:pl-10">
 
                         {/* Vertical line */}
                         <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[var(--palms-blue)]/15" />
@@ -268,13 +267,13 @@ const WhoAreWe = () => {
                 </section>
 
                 {/* ================= PROGRAMME SPECTRUM ================= */}
-                <div className="space-y-10">
+                <div className="space-y-10 mx-5">
                     <h3 className="who-reveal text-2xl font-semibold text-[var(--palms-blue)]">
                         Programme Spectrum
                     </h3>
                     <div className="mt-6 h-[3px] w-12 bg-[var(--palms-green)] rounded-full opacity-80" />
 
-                    <div className="grid md:grid-cols-3 gap-10">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
 
                         {/* CARD 1 */}
                         <div className="who-reveal group relative ">
@@ -282,7 +281,7 @@ const WhoAreWe = () => {
                             <div className="absolute inset-0 -left-2  bg-[var(--palms-blue)] rounded-2xl translate-y-2" />
 
                             {/* Inner Card */}
-                            <div className="relative bg-white rounded-2xl h-[250px] p-8 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
+                            <div className="relative bg-white rounded-2xl h-[220px] sm:h-[240px] md:h-[250px] p-8 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
                                 <span className="block h-[3px] w-10 bg-[var(--palms-green)] rounded-full mb-4 transition-all group-hover:w-16" />
 
                                 <strong className="block text-[var(--palms-blue)] group-hover:text-[var(--palms-green)] transition">
@@ -300,7 +299,7 @@ const WhoAreWe = () => {
                         <div className="who-reveal group relative">
                             <div className="absolute inset-0 -left-2  bg-[var(--palms-blue)] rounded-2xl translate-y-2" />
 
-                            <div className="relative bg-white rounded-2xl h-[250px] p-8 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
+                            <div className="relative bg-white rounded-2xl h-[220px] sm:h-[240px] md:h-[250px] p-8 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
                                 <span className="block h-[3px] w-10 bg-[var(--palms-green)] rounded-full mb-4 transition-all group-hover:w-16" />
 
                                 <strong className="block text-[var(--palms-blue)] group-hover:text-[var(--palms-green)] transition">
@@ -319,7 +318,7 @@ const WhoAreWe = () => {
                         <div className="who-reveal group relative">
                             <div className="absolute inset-0 -left-2  bg-[var(--palms-blue)] rounded-2xl translate-y-2" />
 
-                            <div className="relative bg-white rounded-2xl h-[250px] p-8 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
+                            <div className="relative bg-white rounded-2xl h-[220px] sm:h-[240px] md:h-[250px] p-8 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
                                 <span className="block h-[3px] w-10 bg-[var(--palms-green)] rounded-full mb-4 transition-all group-hover:w-16" />
 
                                 <strong className="block text-[var(--palms-blue)] group-hover:text-[var(--palms-green)] transition">
@@ -338,8 +337,8 @@ const WhoAreWe = () => {
                 </div>
 
 
-                <div className="mt-32 grid md:grid-cols-3 gap-20 items-center
-                bg-[var(--palms-blue)]/5 rounded-3xl p-16">
+                <div className="mt-16 sm:mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-14 md:gap-20 items-center
+bg-[var(--palms-blue)]/5 rounded-3xl p-8 sm:p-12 md:p-16">
 
                     {/* LEFT — MISSION */}
                     <div className="md:col-span-2 space-y-8">
@@ -379,8 +378,8 @@ const WhoAreWe = () => {
                 </div>
 
 
-                <section className="bg-palms-gradient text-white py-40 text-center">
-                    <h3 className="text-4xl md:text-5xl font-semibold max-w-[900px] leading-16 mx-auto">
+                <section className="bg-palms-gradient text-white py-20 sm:py-28 md:py-40 text-center">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold max-w-[900px] leading-relaxed mx-auto px-5 sm:px-6">
                         Building clarity, confidence, and leadership excellence
                         for a rapidly changing professional world.
                     </h3>

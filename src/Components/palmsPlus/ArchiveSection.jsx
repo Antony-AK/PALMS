@@ -31,28 +31,27 @@ const ArchiveSection = () => {
   };
 
   return (
-    <section className="bg-[#f4f6f9] py-16 px-6">
-      <div className="max-w-6xl mx-auto">
+<section className="bg-[#f4f6f9] py-12 sm:py-14 md:py-16 px-5 sm:px-6 md:px-8">
+        <div className="max-w-6xl mx-auto">
 
-        <h2 className="text-4xl text-[var(--palms-blue)] text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[var(--palms-blue)] text-center">
           Archive
         </h2>
 
-        <div className="mt-14 grid md:grid-cols-3 gap-16 ">
-
+<div className="mt-10 sm:mt-12 md:mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-16">
+  
           {issues.map((issue) => {
             const locked = !issue.isFree && !isSubscriber;
 
             return (
-              <div key={issue._id} className="group relative bg-white p-5">
+              <div key={issue._id} className="group relative bg-white p-4 sm:p-5">
 
                 <div className="relative overflow-hidden  shadow-lg ">
 
                   <img
                     src={issue.coverImage?.url}
                     alt={issue.title}
-                    className="w-full h-[480px] object-cover group-hover:scale-105 transition duration-300"
-                  />
+className="w-full h-[260px] sm:h-[360px] md:h-[420px] lg:h-[480px] object-cover group-hover:scale-105 transition duration-300"                  />
 
                   {locked && (
                     <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-white">
@@ -62,7 +61,7 @@ const ArchiveSection = () => {
                 </div>
 
                 <div className="mt-8 text-center">
-                  <h3 className="text-xl text-[var(--palms-blue)]">
+                  <h3 className="text-lg sm:text-xl text-[var(--palms-blue)]">
                     {issue.title}
                   </h3>
 
@@ -78,7 +77,7 @@ const ArchiveSection = () => {
                   </p>
 
                   {issue.description && (
-                    <p className="text-sm text-gray-600 mt-4 px-4 leading-relaxed line-clamp-3">
+                    <p className="text-xs sm:text-sm text-gray-600 mt-3 sm:mt-4 px-2 sm:px-4 leading-relaxed line-clamp-3">
                       {issue.description}
                     </p>
                   )}
@@ -88,7 +87,7 @@ const ArchiveSection = () => {
                       !locked && issue?.pdfFile?.url
                         ? getDownloadUrl(issue.pdfFile.url, issue.title)
                         : "#"
-                    } className={`mt-6 inline-block px-6 py-3 rounded-lg ${locked
+                    } className={`mt-5 sm:mt-6 inline-block px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base ${locked
                       ? "bg-gray-200 text-gray-400 cursor-not-allowed"
                       : "bg-[var(--palms-blue)] text-white"
                       }`}

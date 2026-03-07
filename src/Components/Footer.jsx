@@ -35,25 +35,24 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className="w-full  bg-[var(--palms-blue)] text-white px-6 pt-16"
-    >
+      className="w-full bg-[var(--palms-blue)] text-white px-5 sm:px-6 md:px-8 pt-14 sm:pt-16"    >
       <div className="max-w-[1280px] mx-auto">
 
-        <div className="flex flex-col lg:flex-row justify-between gap-32">
+        <div className="flex flex-col lg:flex-row justify-between gap-12 sm:gap-16 lg:gap-32">
 
           {/* LEFT — BRAND ANCHOR */}
           <div className="max-w-[520px]">
-            <div className="w-72 h-24  text-lg bg-transparent font-semibold tracking-tight text-[var(--palms-blue)]">
+            <div className="w-56 sm:w-64 md:w-72 h-20 sm:h-22 md:h-24 bg-transparent font-semibold tracking-tight">
               <img src={logo} className="object-cover" alt="" />
             </div>
 
-            <p className="text-md text-white/70 leading-relaxed">
+            <p className="text-sm sm:text-md text-white/70 leading-relaxed">
               Creating positive social change by empowering individuals
               and organisations through value-based training, reflective
               learning, and leadership development.
             </p>
 
-            <p className="mt-10 text-xs uppercase tracking-widest text-white/50">
+            <p className="mt-6 sm:mt-8 md:mt-10 text-xs uppercase tracking-widest text-white/50">
               Established 2000 · India
             </p>
           </div>
@@ -61,7 +60,7 @@ const Footer = () => {
           {/* RIGHT — COORDINATES */}
           <div className="flex flex-col justify-between">
 
-            <div className="space-y-6 text-sm text-white/80">
+            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base text-white/80">
               <p>
                 20/1, W.D. Road<br />
                 Thoothukudi – 628 003<br />
@@ -78,13 +77,12 @@ const Footer = () => {
               </p>
             </div>
 
-            <div className="my-5 flex gap-6">
+            <div className="my-4 sm:my-5 flex gap-4 sm:gap-6">
               <a
                 href="https://www.facebook.com/palmstraining/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[var(--palms-blue)] transition-all duration-300"
-              >
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[var(--palms-blue)] hover:scale-110 transition-all duration-300"              >
                 <FaFacebookF size={14} />
               </a>
 
@@ -92,8 +90,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/palmsindia/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[var(--palms-blue)] transition-all duration-300"
-              >
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[var(--palms-blue)] hover:scale-110 transition-all duration-300"              >
                 <FaLinkedinIn size={14} />
               </a>
 
@@ -101,13 +98,12 @@ const Footer = () => {
                 href="https://www.instagram.com/palmsindia"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[var(--palms-blue)] transition-all duration-300"
-              >
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[var(--palms-blue)] hover:scale-110 transition-all duration-300"              >
                 <FaInstagram size={14} />
               </a>
             </div>
 
-            <div className=" flex flex-col sm:flex-row justify-between gap-6 text-xs text-white/50">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6 text-xs text-white/50">
 
               <span>
                 © {new Date().getFullYear()} PALMS Training & Consulting
@@ -128,12 +124,12 @@ const Footer = () => {
 
         </div>
 
-        <div className="relative  overflow-hidden h-[300px]">
+        <div className="relative overflow-hidden h-[120px] sm:h-[180px] md:h-[240px] lg:h-[300px]">
           <h1
-            className="text-[160px] md:text-[250px] font-extrabold font-coyoto
-               tracking-[0.1em] text-white/10
-               text-left select-none"
-            aria-hidden="true"
+            className="text-[80px] sm:text-[120px] md:text-[180px] lg:text-[250px]
+font-extrabold font-coyoto
+tracking-[0.1em] text-white/10
+text-left select-none"
           >
             PALMS
           </h1>
@@ -143,19 +139,19 @@ const Footer = () => {
       </div>
 
       {/* POWERED BY */}
-<div className="border-t border-white/10 mt-10 py-6 text-center text-md text-white/50">
-  Powered by{" "}
-  <a
-    href="https://tecnowok.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-white hover:text-[var(--palms-green)] transition"
-  >
-    Tecnowok
-  </a>
-</div>
+      <div className="border-t border-white/10 mt-0 sm:mt-10 py-5 sm:py-6 text-center text-sm sm:text-md text-white/50">
+        Powered by{" "}
+        <a
+          href="https://tecnowok.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-[var(--palms-green)] transition"
+        >
+          Tecnowok
+        </a>
+      </div>
     </footer>
-    
+
   );
 };
 

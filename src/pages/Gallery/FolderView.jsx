@@ -15,23 +15,23 @@ const FolderView = () => {
   const [loading, setLoading] = useState(true);
 
 
-useEffect(() => {
-  const fetchFolder = async () => {
-    try {
-      const res = await fetch("https://palms-backend-bwad.onrender.com/api/gallery");
-      const data = await res.json();
-      const found = data.find(f => f.slug === slug);
+  useEffect(() => {
+    const fetchFolder = async () => {
+      try {
+        const res = await fetch("https://palms-backend-bwad.onrender.com/api/gallery");
+        const data = await res.json();
+        const found = data.find(f => f.slug === slug);
 
-      setFolder(found || null);
-    } catch (error) {
-      console.error("Folder fetch failed");
-    } finally {
-      setLoading(false);
-    }
-  };
+        setFolder(found || null);
+      } catch (error) {
+        console.error("Folder fetch failed");
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  fetchFolder();
-}, [slug]);
+    fetchFolder();
+  }, [slug]);
 
   useEffect(() => {
     if (!folder) return;
@@ -81,17 +81,17 @@ useEffect(() => {
   }, [folder]);
 
 
-if (loading) {
-  return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="animate-spin h-10 w-10 border-4 border-[var(--palms-blue)] border-t-transparent rounded-full"></div>
-    </div>
-  );
-}
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin h-10 w-10 border-4 border-[var(--palms-blue)] border-t-transparent rounded-full"></div>
+      </div>
+    );
+  }
 
-if (!folder) {
-  return <div className="p-20 text-center">Folder not found</div>;
-}
+  if (!folder) {
+    return <div className="p-20 text-center">Folder not found</div>;
+  }
 
   return (
 
@@ -147,7 +147,7 @@ if (!folder) {
             {folder.images
               .filter((_, i) => i % 3 === 0)
               .map((img, i) => (
-                <Card key={i} img={img} height="h-[380px]" />
+                <Card key={i} img={img} height="h-[300px] object-cover" />
               ))}
           </div>
 
@@ -156,7 +156,7 @@ if (!folder) {
             {folder.images
               .filter((_, i) => i % 3 === 1)
               .map((img, i) => (
-                <Card key={i} img={img} height="h-[560px]" />
+                <Card key={i} img={img} height="h-full object-cover" />
               ))}
           </div>
 
@@ -165,7 +165,7 @@ if (!folder) {
             {folder.images
               .filter((_, i) => i % 3 === 2)
               .map((img, i) => (
-                <Card key={i} img={img} height="h-[380px]" />
+                <Card key={i} img={img} height="h-[300px] object-cover" />
               ))}
           </div>
 
@@ -192,16 +192,17 @@ const Card = ({ img, height }) => (
   >
     <div className="img-container w-full h-full relative overflow-hidden rounded-3xl">
       <img
-        src={img.url}
+        src={img.url.replace("/upload/", "/upload/q_auto,f_auto,c_fill,g_auto/")}
         alt=""
         loading="lazy"
         decoding="async"
         className="
           absolute
           top-0
-          w-auto
-          h-[120%]
+          w-full
+          h-full
           object-cover
+          
         "
       />
     </div>

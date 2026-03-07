@@ -14,6 +14,7 @@ const GalleryManager = () => {
     const [coverFile, setCoverFile] = useState(null);
     const [coverLoading, setCoverLoading] = useState(false);
     const [coverPreview, setCoverPreview] = useState(null);
+    const [description, setDescription] = useState("");
 
     const token = localStorage.getItem("adminToken");
 
@@ -36,6 +37,7 @@ const GalleryManager = () => {
 
             const payload = {
                 name,
+                description
             };
 
             // 🔥 CREATE OR UPDATE
@@ -118,6 +120,7 @@ const GalleryManager = () => {
 
     const resetForm = () => {
         setName("");
+        setDescription("");
         setCoverFile(null);
         setEditingFolder(null);
     };
@@ -125,6 +128,7 @@ const GalleryManager = () => {
     const editFolder = (folder) => {
         setEditingFolder(folder);
         setName(folder.name);
+        setDescription(folder.description || "");
     };
 
     const deleteFolder = async (id) => {
@@ -280,6 +284,25 @@ const GalleryManager = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="w-full border border-gray-200 focus:border-black focus:ring-1 focus:ring-black transition px-4 py-3 rounded-xl outline-none"
+                />
+
+                <textarea
+                    placeholder="Enter gallery description..."
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    className="
+    w-full
+    border
+    border-gray-200
+    focus:border-black
+    focus:ring-1
+    focus:ring-black
+    transition
+    px-4
+    py-3
+    rounded-xl
+    outline-none
+  "
                 />
 
                 <div className="space-y-3">

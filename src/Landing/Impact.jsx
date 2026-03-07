@@ -53,90 +53,87 @@ const ImpactSection = () => {
   }, []);
 
   return (
-  <section
-  ref={sectionRef}
-  className="relative w-full px-6 py-12 overflow-hidden bg-white"
->
-  <div className="absolute right-0 top-0 h-full w-[48%] bg-[var(--palms-blue)] rounded-4xl me-10" />
+    <section
+      ref={sectionRef}
+      className="relative w-full px-5 sm:px-6 md:px-8 py-16 sm:py-20 overflow-hidden bg-white">
+      <div className="absolute right-0 top-0 h-full w-full lg:w-[48%] bg-[var(--palms-blue)] rounded-none lg:rounded-4xl lg:me-10" />
 
-  <div className="relative max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24">
+      <div className="relative max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24">
 
-    {/* LEFT – NARRATIVE */}
-    <div className="impact-reveal">
-      <span className="text-lg  text-gray-500 tracking-widest uppercase  block mb-6">
-        Our impact
-      </span>
+        {/* LEFT – NARRATIVE */}
+        <div className="impact-reveal">
+          <span className="text-sm sm:text-base md:text-lg text-gray-500 tracking-widest uppercase  block mb-6">
+            Our impact
+          </span>
 
-      <h2 className="text-4xl md:text-6xl font-semibold leading-tight text-[var(--palms-blue)] max-w-[520px]">
-        Learning as a
-        <br />
-        lifelong practice,
-        <br />
-        shaped over
-        <br />
-        decades
-      </h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-white md:text-[var(--palms-blue)] max-w-[520px]">
+            Learning as a
+            <br />
+            lifelong practice,
+            <br />
+            shaped over
+            <br />
+            decades
+          </h2>
 
-      <p className="mt-10 text-lg text-[var(--palms-grey)] max-w-[520px] leading-relaxed">
-        Since 2000, PALMS has remained committed to enabling individuals and
-        organisations to think clearly, lead responsibly, and grow continuously
-        through structured, value-driven learning experiences.
-      </p>
-    </div>
+          <p className="mt-6 sm:mt-8 md:mt-10 text-base sm:text-lg text-[var(--palms-grey)] max-w-[520px] leading-relaxed">
+            Since 2000, PALMS has remained committed to enabling individuals and
+            organisations to think clearly, lead responsibly, and grow continuously
+            through structured, value-driven learning experiences.
+          </p>
+        </div>
 
-    {/* RIGHT – IMPACT SYSTEM */}
-    <div className="relative pl-14 impact-reveal ">
+        {/* RIGHT – IMPACT SYSTEM */}
+        <div className="relative pl-8 sm:pl-10 md:pl-14 impact-reveal">
 
-      {/* Gradient rail */}
-      <div className="absolute left-0 top-0  h-full w-[3px] bg-gradient-to-b from-[var(--palms-green)] via-[var(--palms-green)] to-transparent" />
+          {/* Gradient rail */}
+          <div className="absolute left-0 top-0  h-full w-[3px] bg-gradient-to-b from-[var(--palms-green)] via-[var(--palms-green)] to-transparent" />
 
-      <div className="flex flex-col gap-16 ">
+          <div className="flex flex-col gap-10 sm:gap-12 md:gap-16">
 
-        {/* CARD */}
-        {[
-          {
-            value: 25,
-            title: "Years of professional learning initiatives",
-            desc:
-              "A sustained commitment to leadership development, management thinking, and behavioural growth.",
-          },
-          {
-            value: 12,
-            title: "Structured programmes conducted annually",
-            desc:
-              "Regular monthly learning programmes designed exclusively for members.",
-          },
-          {
-            value: 1000,
-            title: "Professionals and learners impacted",
-            desc:
-              "Individuals across industries engaged through workshops, programmes, and experiential learning.",
-          },
-        ].map((item, i) => (
-          <div
-            key={i}
-            className="impact-reveal bg-white rounded-3xl p-10 shadow-[0_30px_80px_rgba(0,0,0,0.08)]"
-          >
-            <h3
-              className="text-7xl font-semibold text-[var(--palms-green)] impact-number"
-              data-value={item.value}
-            >
-              0
-            </h3>
+            {/* CARD */}
+            {[
+              {
+                value: 25,
+                title: "Years of professional learning initiatives",
+                desc:
+                  "A sustained commitment to leadership development, management thinking, and behavioural growth.",
+              },
+              {
+                value: 12,
+                title: "Structured programmes conducted annually",
+                desc:
+                  "Regular monthly learning programmes designed exclusively for members.",
+              },
+              {
+                value: 1000,
+                title: "Professionals and learners impacted",
+                desc:
+                  "Individuals across industries engaged through workshops, programmes, and experiential learning.",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+className="impact-reveal bg-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-[0_30px_80px_rgba(0,0,0,0.08)]"              >
+                <h3
+className="text-5xl sm:text-6xl md:text-7xl font-semibold text-[var(--palms-green)] impact-number"                  data-value={item.value}
+                >
+                  0
+                </h3>
 
-            <p className="mt-4 text-base font-semibold text-[var(--palms-blue)]">
-              {item.title}
-            </p>
+                <p className="mt-4 text-sm sm:text-base font-semibold text-[var(--palms-blue)]">
+                  {item.title}
+                </p>
 
-            <p className="mt-3 text-sm text-[var(--palms-grey)] leading-relaxed max-w-[420px]">
-              {item.desc}
-            </p>
+                <p className="mt-3 text-sm sm:text-base text-[var(--palms-grey)] leading-relaxed max-w-[420px]">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
   );
 };

@@ -81,14 +81,14 @@ const SubscriptionSection = () => {
   };
 
   return (
-    <section className="py-28 px-6 bg-white">
-      <div className="max-w-3xl mx-auto bg-[#f8f9fb] p-12 rounded-2xl shadow-md">
+<section id="subscribe-section" className="py-16 sm:py-20 md:py-24 lg:py-28 px-5 sm:px-6 md:px-8 bg-white">     
+<div className="max-w-3xl mx-auto bg-[#f8f9fb] p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl shadow-md">
 
-        <h2 className="text-3xl text-[var(--palms-blue)] text-center">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-[var(--palms-blue)] text-center">
           Subscribe to PALMS PLUS
         </h2>
 
-        <form onSubmit={handleSubmit} className="mt-10 space-y-6">
+        <form onSubmit={handleSubmit} className="mt-6 sm:mt-8 md:mt-10 space-y-5 sm:space-y-6">
 
           <input
             type="text"
@@ -97,8 +97,7 @@ const SubscriptionSection = () => {
             onChange={handleChange}
             placeholder="Full Name"
             required
-            className="w-full p-4 border border-[var(--palms-blue)]/30 rounded-lg"
-          />
+className="w-full p-3 sm:p-4 border border-[var(--palms-blue)]/30 rounded-lg text-sm sm:text-base"          />
 
           <input
             type="email"
@@ -107,8 +106,7 @@ const SubscriptionSection = () => {
             onChange={handleChange}
             placeholder="Email Address"
             required
-            className="w-full p-4 border border-[var(--palms-blue)]/30 rounded-lg"
-          />
+className="w-full p-3 sm:p-4 border border-[var(--palms-blue)]/30 rounded-lg text-sm sm:text-base"          />
 
           <input
             type="text"
@@ -116,11 +114,9 @@ const SubscriptionSection = () => {
             value={formData.organisation}
             onChange={handleChange}
             placeholder="Organisation (Optional)"
-            className="w-full p-4 border border-[var(--palms-blue)]/30 rounded-lg"
-          />
+className="w-full p-3 sm:p-4 border border-[var(--palms-blue)]/30 rounded-lg text-sm sm:text-base"          />
 
-          <div className="flex gap-6">
-            <label>
+<div className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-sm sm:text-base">            <label>
               <input
                 type="radio"
                 name="subscriptionType"
@@ -143,8 +139,8 @@ const SubscriptionSection = () => {
             </label>
           </div>
 
-          <div>
-            <label>
+<div className="text-sm sm:text-base">
+              <label>
               <input
                 type="checkbox"
                 name="agree"
@@ -157,13 +153,12 @@ const SubscriptionSection = () => {
 
           <button
             type="submit"
-            className="btn-primary w-full py-4"
-          >
+className="btn-primary w-full py-3 sm:py-4 text-sm sm:text-base"          >
             {loading ? "Subscribing..." : "Subscribe to PALMS PLUS"}
           </button>
 
           {message && (
-            <p className="text-center text-sm mt-4 text-green-600">
+            <p className="text-center text-xs sm:text-sm mt-4 text-green-600">
               {message}
             </p>
           )}

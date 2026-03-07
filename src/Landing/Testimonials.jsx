@@ -64,46 +64,44 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-   <section className="w-full bg-white px-6 py-32">
+   <section className="w-full bg-white px-5 sm:px-6 md:px-8 py-16 sm:py-24 md:py-32">
   <div className="max-w-[1280px] mx-auto">
 
     {/* Heading */}
-    <div className="mb-24 text-center">
-      <span className="text-lg tracking-widest uppercase text-[var(--palms-grey)]">
+    <div className="mb-16 sm:mb-20 md:mb-24 text-center">
+      <span className="text-sm sm:text-base md:text-lg tracking-widest uppercase text-[var(--palms-grey)]">
         Testimonials
       </span>
 
-      <h2 className="mt-6 text-3xl md:text-4xl font-semibold text-[var(--palms-blue)]">
+      <h2 className="mt-5 sm:mt-6 text-2xl sm:text-3xl md:text-4xl font-semibold text-[var(--palms-blue)]">
         What our participants say
       </h2>
     </div>
 
     {/* Testimonial block */}
-    <div className="relative max-w-[860px] mx-auto">
+    <div className="relative max-w-[860px] mx-auto px-2 sm:px-0">
 
       {/* Decorative quote */}
-      <span className="absolute -top-10 -left-8 text-[6rem] leading-none
-        text-[var(--palms-blue)]/10 select-none">
+      <span className="absolute -top-6 sm:-top-8 md:-top-10 -left-4 sm:-left-6 md:-left-8 text-[3rem] sm:text-[4rem] md:text-[6rem] leading-none text-[var(--palms-blue)]/10 select-none">
         “
       </span>
 
       {/* Accent line */}
-      <div className="absolute left-[-24px] top-4 bottom-4 w-[2px]
-        bg-[var(--palms-blue)]/20" />
+      <div className="absolute left-[-10px] sm:left-[-16px] md:left-[-24px] top-3 sm:top-4 bottom-3 sm:bottom-4 w-[2px] bg-[var(--palms-blue)]/20" />
 
-      <div ref={quoteRef} className="relative">
+      <div ref={quoteRef} className="relative transition-all duration-500 hover:-translate-y-1">
 
         {/* Quote */}
-        <p className="text-lg md:text-xl leading-relaxed text-[var(--palms-grey)]">
+        <p className="text-base sm:text-lg md:text-xl leading-relaxed text-[var(--palms-grey)]">
           {testimonials[activeIndex].quote}
         </p>
 
         {/* Author */}
-        <div className="mt-12">
-          <p className="font-medium text-[var(--palms-blue)]">
+        <div className="mt-8 sm:mt-10 md:mt-12">
+          <p className="font-medium text-sm sm:text-base text-[var(--palms-blue)]">
             {testimonials[activeIndex].name}
           </p>
-          <p className="mt-1 text-sm text-[var(--palms-grey)]">
+          <p className="mt-1 text-xs sm:text-sm text-[var(--palms-grey)]">
             {testimonials[activeIndex].role}
           </p>
         </div>
@@ -112,7 +110,7 @@ const TestimonialsSection = () => {
     </div>
 
     {/* Progress indicator */}
-    <div className="mt-20 flex justify-center gap-3">
+    <div className="mt-12 sm:mt-16 md:mt-20 flex justify-center gap-2 sm:gap-3">
       {testimonials.map((_, i) => (
         <span
           key={i}

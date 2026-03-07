@@ -34,27 +34,25 @@ const LatestIssue = () => {
   if (!latest) return null;
 
   return (
-    <section className="bg-[#f4f6f9] py-20 px-6">
-      <div className="max-w-5xl mx-auto">
-        <h1 className="text-xs text-center tracking-widest text-[var(--palms-blue)] uppercase mb-6">
+    <section className="bg-[#f4f6f9] py-14 sm:py-16 md:py-20 px-5 sm:px-6 md:px-8">
+      <div className="max-w-5xl mx-auto w-full">
+        <h1 className="text-[10px] sm:text-xs text-center tracking-widest text-[var(--palms-blue)] uppercase mb-4 sm:mb-6">
           Latest Edition
         </h1>
 
-        <div className="bg-white rounded-2xl px-12 py-14 shadow-sm">
-          <div className="grid md:grid-cols-[300px_1fr] gap-5 items-center">
-
+        <div className="bg-white rounded-2xl px-6 sm:px-8 md:px-12 py-8 sm:py-10 md:py-14 shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-8 md:gap-5 items-center">
             <div className="flex justify-center md:justify-start">
               <div className="overflow-hidden rounded-lg shadow-xl hover:-translate-y-2 transition">
                 <img
                   src={latest.coverImage?.url}
                   alt={latest.title}
-                  className="w-[260px] h-[380px] object-cover"
-                />
+                  className="w-[180px] sm:w-[220px] md:w-[260px] h-[260px] sm:h-[320px] md:h-[380px] object-cover" />
               </div>
             </div>
 
             <div>
-              <h2 className="font-serif text-3xl text-[var(--palms-blue)]">
+              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl text-[var(--palms-blue)]">
                 {latest.title}
               </h2>
 
@@ -65,7 +63,7 @@ const LatestIssue = () => {
               )}
 
               {latest.description && (
-                <p className="text-sm text-gray-600 mt-4  leading-relaxed line-clamp-3">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   {latest.description}
                 </p>
               )}
@@ -78,7 +76,7 @@ const LatestIssue = () => {
                 {latest.description}
               </p>
 
-              <div className="mt-8 flex gap-4">
+              <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
 
                 <a
                   href={
@@ -86,8 +84,7 @@ const LatestIssue = () => {
                       ? getDownloadUrl(latest.pdfFile.url, latest.title)
                       : "#"
                   } download
-                  className="px-6 py-3 bg-[var(--palms-blue)] text-white rounded-md"
-                >
+                  className="px-5 sm:px-6 py-3 bg-[var(--palms-blue)] text-white rounded-md text-sm sm:text-base"                >
                   Download PDF
                 </a>
 
@@ -95,8 +92,7 @@ const LatestIssue = () => {
                   href={latest.pdfFile?.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 border border-[var(--palms-blue)] text-[var(--palms-blue)] rounded-md hover:bg-[var(--palms-blue)] hover:text-white transition"
-                >
+                  className="px-5 sm:px-6 py-3 border border-[var(--palms-blue)] text-[var(--palms-blue)] rounded-md hover:bg-[var(--palms-blue)] hover:text-white transition text-sm sm:text-base"                >
                   View Online
                 </a>
 

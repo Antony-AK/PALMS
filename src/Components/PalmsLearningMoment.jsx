@@ -62,16 +62,23 @@ const PalmsLearningMoment = () => {
                 <div
                     ref={cardRef}
                     className="
-      fixed top-48 right-10 z-[9999]
-      w-[440px]
-      rounded-[32px]
-      bg-gradient-to-br from-[#0f2545] via-[#13294B] to-[#0b1d36]
-      shadow-[0_50px_140px_rgba(0,0,0,0.45)]
-      p-10
-      text-white
-      overflow-hidden
-      border-l-8 border-b-8 border-[var(--palms-green)]
-    "
+fixed
+top-32 md:top-48
+right-4 md:right-10
+z-[9999]
+
+w-[92vw] max-w-[380px] md:w-[440px]
+rounded-[28px] md:rounded-[32px]
+
+bg-gradient-to-br from-[#0f2545] via-[#13294B] to-[#0b1d36]
+shadow-[0_40px_100px_rgba(0,0,0,0.45)]
+p-6 md:p-10
+text-white
+overflow-hidden
+border-l-6 md:border-l-8
+border-b-6 md:border-b-8
+border-[var(--palms-green)]
+"
                 >
 
                     
@@ -140,7 +147,7 @@ const PalmsLearningMoment = () => {
                     {/* ACTION */}
                     <div className="mt-5">
                         <a
-                            href="/membership"
+                            href="/memberships/corporate"
                             className="
           inline-flex items-center gap-3
           text-md  font-medium ms-1

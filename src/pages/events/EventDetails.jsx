@@ -43,32 +43,45 @@ const EventDetails = () => {
     <section className="bg-[#f8fafc] min-h-screen pb-32">
 
       {/* HERO */}
-      <div className="relative h-[520px]">
+      <div className="relative h-[860px] overflow-hidden">
+
+        {/* Background Image */}
         <img
           src={event.bannerImage?.url}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-105"
           alt=""
         />
-        <div className="absolute inset-0 bg-transparent/65 " />
 
-        <div className="absolute bottom-20  left-1/2 -translate-x-1/2 w-full max-w-6xl px-6 text-white">
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl text-[var(--primary-color)] font-semibold leading-tight"
-          >
-            {event.title}
-          </motion.h1>
+        {/* Dark Gradient Overlay */}
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" /> */}
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="mt-6 text-white/80 text-lg "
-          >
-            {event.venue} · {new Date(event.date).toDateString()} · {event.time}
-          </motion.p>
+        {/* Soft Blur Layer */}
+        {/* <div className="absolute inset-0 backdrop-blur-[2px]" /> */}
+
+        {/* Content Container */}
+        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 w-full max-w-6xl px-6">
+
+          <div className="bg-[var(--palms-blue)]/40 backdrop-blur-md rounded-3xl p-10 border border-white/10">
+
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-4xl md:text-6xl font-semibold text-white leading-tight"
+            >
+              {event.title}
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="mt-6 text-white/80 text-lg"
+            >
+              {event.venue} · {new Date(event.date).toDateString()} · {event.time}
+            </motion.p>
+
+          </div>
         </div>
       </div>
 
