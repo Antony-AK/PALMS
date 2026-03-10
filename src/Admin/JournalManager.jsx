@@ -18,6 +18,10 @@ const JournalManager = () => {
     const [coverFile, setCoverFile] = useState(null);
     const [pdfFile, setPdfFile] = useState(null);
 
+    const [campaignType, setCampaignType] = useState("newsletter");
+    const [senderName, setSenderName] = useState("PALMS PLUS");
+    const [buttonText, setButtonText] = useState("Download Full Issue");
+
     const [loading, setLoading] = useState(false);
 
     const token = localStorage.getItem("adminToken");
@@ -39,6 +43,10 @@ const JournalManager = () => {
             setSubtitle(editing.subtitle || "");
             setDescription(editing.description || "");
             setIsFree(editing.isFree ?? true);
+
+            setCampaignType(editing.campaignType || "newsletter");
+            setSenderName(editing.senderName || "PALMS PLUS");
+            setButtonText(editing.buttonText || "Download Newsletter");
         }
     }, [editing]);
 
@@ -48,6 +56,9 @@ const JournalManager = () => {
         setSubtitle("");
         setDescription("");
         setIsFree(true);
+        setCampaignType("newsletter");
+        setSenderName("PALMS PLUS");
+        setButtonText("Download Full Issue");
         setCoverFile(null);
         setPdfFile(null);
         setEditing(null);
@@ -58,8 +69,15 @@ const JournalManager = () => {
         e.preventDefault();
         setLoading(true);
 
-        const payload = { title, subtitle, description, isFree };
-
+        const payload = {
+            title,
+            subtitle,
+            description,
+            isFree,
+            campaignType,
+            senderName,
+            buttonText
+        };
         let issue;
 
         if (editing) {
@@ -201,6 +219,35 @@ const JournalManager = () => {
                     className="w-full border px-4 py-3 rounded-xl h-32"
                 />
 
+                <div className="grid md:grid-cols-3 gap-6">
+
+                    <select
+                        value={campaignType}
+                        onChange={(e) => setCampaignType(e.target.value)}
+                        className="border px-4 py-3 rounded-xl"
+                    >
+                        <option value="newsletter">Newsletter</option>
+                        <option value="event">Event</option>
+                        <option value="promotion">Promotion</option>
+                        <option value="announcement">Announcement</option>
+                    </select>
+
+                    <input
+                        placeholder="Sender Name (ex: PALMS PLUS)"
+                        value={senderName}
+                        onChange={(e) => setSenderName(e.target.value)}
+                        className="border px-4 py-3 rounded-xl"
+                    />
+
+                    <input
+                        placeholder="Button Text (ex: Download Full Issue)"
+                        value={buttonText}
+                        onChange={(e) => setButtonText(e.target.value)}
+                        className="border px-4 py-3 rounded-xl"
+                    />
+
+                </div>
+
                 <label className="flex items-center gap-3">
                     <input
                         type="checkbox"
@@ -295,6 +342,9 @@ const JournalManager = () => {
                             {issue.title}
                         </h3>
                         <p className="text-sm text-gray-500">{issue.subtitle}</p>
+                        <p className="text-xs mt-2">
+                            Campaign Type: {issue.campaignType || "newsletter"}
+                        </p>
 
                         <div className="mt-4 space-y-2 text-xs">
                             <p>Status: {issue.isPublished ? "Published" : "Draft"}</p>
