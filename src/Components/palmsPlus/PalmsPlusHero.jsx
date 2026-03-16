@@ -7,14 +7,15 @@ const PalmsPlusHero = () => {
 
   useEffect(() => {
     const fetchLatest = async () => {
-      try {
-        const res = await fetch(API);
-        const data = await res.json();
-        if (data.length > 0) {
-          setLatest(data[0]); // newest first
-        }
-      } catch (error) {
-        console.error("Failed to fetch latest issue");
+      const res = await fetch(API);
+      const data = await res.json();
+
+      const newsletters = data.filter(
+        (item) => item.campaignType === "newsletter" && item.isFree
+      );
+
+      if (newsletters.length > 0) {
+        setLatest(newsletters[0]);
       }
     };
 

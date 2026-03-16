@@ -10,8 +10,12 @@ const LatestIssue = () => {
       const res = await fetch(API);
       const data = await res.json();
 
-      if (data.length > 0) {
-        setLatest(data[0]); // already sorted newest first
+      const newsletters = data.filter(
+        (item) => item.campaignType === "newsletter" && item.isFree
+      );
+
+      if (newsletters.length > 0) {
+        setLatest(newsletters[0]);
       }
     };
 

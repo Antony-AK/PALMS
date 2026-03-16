@@ -12,6 +12,7 @@ import Footer from '../Components/Footer';
 import FAQSection from '../Landing/FAQ';
 import PalmsLearningMoment from '../Components/PalmsLearningMoment';
 import LandingEventsSection from '../Landing/LandingEventsSection';
+import PalmsPassion from '../Landing/PalmsPassion';
 
 
 function Home() {
@@ -20,6 +21,7 @@ function Home() {
 
       <Hero />
       <PalmsLearningMoment />
+      <PalmsPassion />
       <AboutSection />
       <ServicesSection />
       <LandingEventsSection />

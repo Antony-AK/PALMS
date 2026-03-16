@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+// const API = "https://palms-backend-bwad.onrender.com/api/issues";
+
 const API = "http://localhost:5000/api/subscribers";
 
 const SubscriptionSection = () => {
@@ -81,8 +83,8 @@ const SubscriptionSection = () => {
   };
 
   return (
-<section id="subscribe-section" className="py-16 sm:py-20 md:py-24 lg:py-28 px-5 sm:px-6 md:px-8 bg-white">     
-<div className="max-w-3xl mx-auto bg-[#f8f9fb] p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl shadow-md">
+    <section id="subscribe-section" className="py-16 sm:py-20 md:py-24 lg:py-28 px-5 sm:px-6 md:px-8 bg-white">
+      <div className="max-w-3xl mx-auto bg-[#f8f9fb] p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl shadow-md">
 
         <h2 className="text-2xl sm:text-3xl font-semibold text-[var(--palms-blue)] text-center">
           Subscribe to PALMS PLUS
@@ -97,7 +99,7 @@ const SubscriptionSection = () => {
             onChange={handleChange}
             placeholder="Full Name"
             required
-className="w-full p-3 sm:p-4 border border-[var(--palms-blue)]/30 rounded-lg text-sm sm:text-base"          />
+            className="w-full p-3 sm:p-4 border border-[var(--palms-blue)]/30 rounded-lg text-sm sm:text-base" />
 
           <input
             type="email"
@@ -106,7 +108,7 @@ className="w-full p-3 sm:p-4 border border-[var(--palms-blue)]/30 rounded-lg tex
             onChange={handleChange}
             placeholder="Email Address"
             required
-className="w-full p-3 sm:p-4 border border-[var(--palms-blue)]/30 rounded-lg text-sm sm:text-base"          />
+            className="w-full p-3 sm:p-4 border border-[var(--palms-blue)]/30 rounded-lg text-sm sm:text-base" />
 
           <input
             type="text"
@@ -114,33 +116,23 @@ className="w-full p-3 sm:p-4 border border-[var(--palms-blue)]/30 rounded-lg tex
             value={formData.organisation}
             onChange={handleChange}
             placeholder="Organisation (Optional)"
-className="w-full p-3 sm:p-4 border border-[var(--palms-blue)]/30 rounded-lg text-sm sm:text-base"          />
+            className="w-full p-3 sm:p-4 border border-[var(--palms-blue)]/30 rounded-lg text-sm sm:text-base" />
 
-<div className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-sm sm:text-base">            <label>
-              <input
-                type="radio"
-                name="subscriptionType"
-                value="free"
-                checked={formData.subscriptionType === "free"}
-                onChange={handleChange}
-              />
-              Free Newsletter
-            </label>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-sm sm:text-base">            <label>
+            <input
+              type="radio"
+              name="subscriptionType"
+              value="free"
+              checked={formData.subscriptionType === "free"}
+              onChange={handleChange}
+            />
+            Free Newsletter
+          </label>
 
-            <label>
-              <input
-                type="radio"
-                name="subscriptionType"
-                value="paid"
-                checked={formData.subscriptionType === "paid"}
-                onChange={handleChange}
-              />
-              Paid E-Subscription
-            </label>
           </div>
 
-<div className="text-sm sm:text-base">
-              <label>
+          <div className="text-sm sm:text-base">
+            <label>
               <input
                 type="checkbox"
                 name="agree"
@@ -153,7 +145,7 @@ className="w-full p-3 sm:p-4 border border-[var(--palms-blue)]/30 rounded-lg tex
 
           <button
             type="submit"
-className="btn-primary w-full py-3 sm:py-4 text-sm sm:text-base"          >
+            className="btn-primary w-full py-3 sm:py-4 text-sm sm:text-base"          >
             {loading ? "Subscribing..." : "Subscribe to PALMS PLUS"}
           </button>
 

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import AdminLayout from "../Admin/components/AdminLayout";
 
-const API = "https://palms-backend-bwad.onrender.com/api/subscribers";
+// const API = "https://palms-backend-bwad.onrender.com/api/subscribers";
+const API = "http://localhost:5000/api/subscribers";
+
 
 const AdminSubscribers = () => {
 
@@ -63,6 +65,25 @@ const AdminSubscribers = () => {
     link.click();
   };
 
+  const handleCSVUpload = async (e) => {
+
+    const file = e.target.files[0];
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const res = await fetch(`${API}/import`, {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await res.json();
+
+    alert(data.message);
+    fetchSubscribers();
+
+  };
+
   return (
     <AdminLayout>
 
@@ -76,12 +97,30 @@ const AdminSubscribers = () => {
           </p>
         </div>
 
-        <button
+        <div className="flex gap-4">
+
+          <label className="bg-blue-600  text-white px-4 py-3 rounded-xl cursor-pointer">
+
+            Import Subscribers CSV
+
+            <input
+              type="file"
+              accept=".csv"
+              onChange={handleCSVUpload}
+              className="hidden"
+            />
+
+          </label>
+           <button
           onClick={exportCSV}
           className="bg-[var(--palms-blue)] text-white px-6 py-3 rounded-xl"
         >
           Export CSV
         </button>
+
+        </div>
+
+       
       </div>
 
       <div className="bg-white p-6 rounded-3xl shadow-sm border mb-8">
@@ -127,11 +166,10 @@ const AdminSubscribers = () => {
                 <td className="p-4">{sub.email}</td>
 
                 <td className="p-4">
-                  <span className={`px-3 py-1 rounded-full text-xs ${
-                    sub.subscriptionType === "paid"
+                  <span className={`px-3 py-1 rounded-full text-xs ${sub.subscriptionType === "paid"
                       ? "bg-green-100 text-green-700"
                       : "bg-blue-100 text-blue-700"
-                  }`}>
+                    }`}>
                     {sub.subscriptionType}
                   </span>
                 </td>
@@ -139,11 +177,10 @@ const AdminSubscribers = () => {
                 <td className="p-4">
                   <button
                     onClick={() => toggleSubscriber(sub._id)}
-                    className={`px-3 py-1 rounded-full text-xs ${
-                      sub.isActive
+                    className={`px-3 py-1 rounded-full text-xs ${sub.isActive
                         ? "bg-green-100 text-green-700"
                         : "bg-red-100 text-red-700"
-                    }`}
+                      }`}
                   >
                     {sub.isActive ? "Active" : "Inactive"}
                   </button>

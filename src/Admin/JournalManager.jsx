@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import AdminLayout from "../Admin/components/AdminLayout";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
-const API = "https://palms-backend-bwad.onrender.com/api/issues";
-// const API = "http://localhost:5000/api/issues";
+// const API = "https://palms-backend-bwad.onrender.com/api/issues";
+const API = "http://localhost:5000/api/issues";
 
 
 const JournalManager = () => {
@@ -21,6 +21,7 @@ const JournalManager = () => {
     const [campaignType, setCampaignType] = useState("newsletter");
     const [senderName, setSenderName] = useState("PALMS PLUS");
     const [buttonText, setButtonText] = useState("Download Full Issue");
+    const [brochureFile, setBrochureFile] = useState(null);
 
     const [loading, setLoading] = useState(false);
 
@@ -59,11 +60,13 @@ const JournalManager = () => {
         setCampaignType("newsletter");
         setSenderName("PALMS PLUS");
         setButtonText("Download Full Issue");
+
         setCoverFile(null);
         setPdfFile(null);
+        setBrochureFile(null);
+
         setEditing(null);
     };
-
     // CREATE OR UPDATE
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -114,12 +117,19 @@ const JournalManager = () => {
             });
         }
 
-        // UPLOAD PDF
-        if (pdfFile) {
-            const formData = new FormData();
-            formData.append("pdf", pdfFile);
+        if (pdfFile || brochureFile) {
 
-            await fetch(`${API}/${issue._id}/pdf`, {
+            const formData = new FormData();
+
+            if (pdfFile) {
+                formData.append("pdf", pdfFile);
+            }
+
+            if (brochureFile) {
+                formData.append("brochure", brochureFile);
+            }
+
+            await fetch(`${API}/${issue._id}/files`, {
                 method: "POST",
                 headers: { Authorization: `Bearer ${token}` },
                 body: formData
@@ -257,32 +267,37 @@ const JournalManager = () => {
                     Free Issue
                 </label>
 
-                <div className="grid md:grid-cols-2 gap-6">
+
+                <div className="grid md:grid-cols-3 gap-6">
+
+
 
                     {/* COVER UPLOAD */}
-                    <div
-                        onClick={() => document.getElementById("coverInput").click()}
-                        className="border border-dashed border-gray-300 rounded-2xl p-8 text-center cursor-pointer hover:border-black transition"
-                    >
-                        {coverFile ? (
-                            <p className="text-sm text-green-600">
-                                {coverFile.name}
-                            </p>
-                        ) : (
-                            <p className="text-sm text-gray-500">
-                                Click to upload Cover Image
-                            </p>
-                        )}
+                    {campaignType === "newsletter" && (
 
-                        <input
-                            id="coverInput"
-                            type="file"
-                            accept="image/*"
-                            className="hidden"
-                            onChange={(e) => setCoverFile(e.target.files[0])}
-                        />
-                    </div>
+                        <div
+                            onClick={() => document.getElementById("coverInput").click()}
+                            className="border border-dashed border-gray-300 rounded-2xl p-8 text-center cursor-pointer hover:border-black transition"
+                        >
+                            {coverFile ? (
+                                <p className="text-sm text-green-600">
+                                    {coverFile.name}
+                                </p>
+                            ) : (
+                                <p className="text-sm text-gray-500">
+                                    Click to upload Cover Image
+                                </p>
+                            )}
 
+                            <input
+                                id="coverInput"
+                                type="file"
+                                accept="image/*"
+                                className="hidden"
+                                onChange={(e) => setCoverFile(e.target.files[0])}
+                            />
+                        </div>
+                    )}
                     {/* PDF UPLOAD */}
                     <div
                         onClick={() => document.getElementById("pdfInput").click()}
@@ -304,6 +319,31 @@ const JournalManager = () => {
                             accept="application/pdf"
                             className="hidden"
                             onChange={(e) => setPdfFile(e.target.files[0])}
+                        />
+                    </div>
+
+                    {/* BROCHURE UPLOAD */}
+                    <div
+                        onClick={() => document.getElementById("brochureInput").click()}
+                        className="border border-dashed border-gray-300 rounded-2xl p-8 text-center cursor-pointer hover:border-black transition"
+                    >
+
+                        {brochureFile ? (
+                            <p className="text-sm text-green-600">
+                                {brochureFile.name}
+                            </p>
+                        ) : (
+                            <p className="text-sm text-gray-500">
+                                Click to upload Brochure (Optional)
+                            </p>
+                        )}
+
+                        <input
+                            id="brochureInput"
+                            type="file"
+                            accept="image/png,image/jpeg,image/jpg,image/webp"
+                            className="hidden"
+                            onChange={(e) => setBrochureFile(e.target.files[0])}
                         />
                     </div>
 
@@ -346,6 +386,18 @@ const JournalManager = () => {
                             Campaign Type: {issue.campaignType || "newsletter"}
                         </p>
 
+                        {issue.pdfFile?.url && (
+                            <p className="text-xs text-green-600">
+                                Newsletter PDF attached
+                            </p>
+                        )}
+
+                        {issue.brochureFile?.url && (
+                            <p className="text-xs text-blue-600">
+                                Brochure attached
+                            </p>
+                        )}
+
                         <div className="mt-4 space-y-2 text-xs">
                             <p>Status: {issue.isPublished ? "Published" : "Draft"}</p>
                             <p>
@@ -355,7 +407,7 @@ const JournalManager = () => {
                         </div>
                         <div className="flex flex-wrap gap-2 mt-6">
 
-                            {!issue.isPublished && (
+                            {issue.campaignType === "newsletter" && !issue.isPublished &&  (
                                 <button
                                     onClick={() => publishIssue(issue._id)}
                                     className="bg-green-600 text-white px-3 py-2 rounded-lg text-sm"
@@ -364,7 +416,7 @@ const JournalManager = () => {
                                 </button>
                             )}
 
-                            {issue.isPublished && !issue.brevoCampaignId && (
+                            {!issue.brevoCampaignId && (
                                 <button
                                     onClick={() => sendIssue(issue._id)}
                                     className="bg-blue-600 text-white px-3 py-2 rounded-lg text-sm"
@@ -382,8 +434,7 @@ const JournalManager = () => {
                                 </button>
                             )}
 
-                            {!issue.isPublished && (
-                                <button
+{!(issue.campaignType === "newsletter" && issue.isPublished) && (                                <button
                                     onClick={() => {
                                         setEditing(issue);
                                         window.scrollTo({ top: 0, behavior: "smooth" });

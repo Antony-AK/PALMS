@@ -23,6 +23,7 @@ import ProtectedRoute from './Admin/components/ProtectedRoute';
 import JoinFranchise from './pages/contact/JoinFranchise';
 import JoinTrainer from './pages/contact/JoinTrainer';
 import JoinAssociate from './pages/contact/JoinAssociate';
+import SupportBot from './Components/SupportBot';
 const AdminLogin = lazy(() => import("./Admin/Login"));
 const Dashboard = lazy(() => import("./Admin/Dashboard"));
 const GalleryManager = lazy(() => import("./Admin/GalleryManager"));
@@ -64,6 +65,8 @@ function App() {
               <Route path="/events" element={<Events />} />
               <Route path="/events/:slug" element={<EventDetails />} />
             </Routes>
+
+            <SupportBot />
 
             <Footer />
           </div>
