@@ -7,34 +7,58 @@ import t4 from "../assets/t13.jpg";
 
 const testimonials = [
   {
-    name: "Mr. A. V. Ramanathan",
-    role: "Manager (Human Relations), Heavy Water Board, Mumbai",
+    name: "Mr. Krishna Shankar",
+    role: "CEO, Subramany & Co",
     quote:
-      "As a member, participant, friend, and trainer, my journey with PALMS has been joyful and deeply enriching. In a region with limited exposure and infrastructure, PALMS has created a rare platform for learning and growth. I am confident PALMS will continue empowering people with knowledge, skills, and the right attitude, reaching greater heights through its unwavering commitment.",
+      "PALMS reflects a journey of dedication, growth, and meaningful milestones. Senthil’s innovative mindset and strong commitment have shaped the organisation into a vibrant platform for learning and development. Through thoughtful programmes and consistent effort, PALMS continues to help individuals grow year after year and remains a valuable force in professional development.",
   },
   {
-    name: "Mr. C. Naren Dharmaraj",
-    role: "Partner, Brilliant Salt Refinery",
+    name: "J. Solomon Rajakumar",
+    role: "CEO, EXCEL Group",
     quote:
-      "PALMS training has guided me significantly in both business and personal life. It brought a positive shift in my mindset, encouraged creative thinking, and strengthened my ability to plan and take calculated risks. The trainers are practical, grounded, and approachable, and the learning environment fosters meaningful growth.",
+      "PALMS has emerged as a pioneer in values-based leadership training and transformation. Their programmes inspire individuals and organisations to grow, evolve, and lead with purpose. What stands out is their commitment to building people, strengthening character, and nurturing a culture of excellence.",
   },
   {
-    name: "Dr. G. Sugumar",
-    role: "Associate Professor, Fisheries College & Research Institute",
+    name: "Ms. Oliver Drishila",
+    role: "School Teacher, Vietnam",
     quote:
-      "PALMS’ commitment to training is commendable. Every programme is well-planned, thoughtfully designed, and efficiently executed. The learning experience consistently delivers real value.",
+      "My journey with PALMS Summer Camp helped me overcome stage fear and develop confidence in public speaking. What once felt challenging became a strength, and addressing large audiences today reflects the impact of those early learning experiences.",
   },
   {
-    name: "Mr. Edwin Samuel",
-    role: "Business Owner, Pearl Shipping Agencies",
+    name: "Management",
+    role: "SPIC",
     quote:
-      "PALMS is doing praiseworthy service to society. Soft skills training is essential for workplace success, and PALMS delivers such valuable learning at highly affordable costs, making development accessible to many.",
+      "We value our long association with PALMS. Nearly 300 of our employees have participated in over 60 programmes covering communication, leadership, productivity, and personal development. The engaging content and practical delivery have strengthened our workforce significantly.",
   },
   {
-    name: "Mr. Vikranth Machado",
-    role: "Managing Director, Machadosons (P) Ltd",
+    name: "Mr. Suresh Thangarayappan",
+    role: "CEO, JSF Foods",
     quote:
-      "The in-house programmes conducted by PALMS brought remarkable improvements in our team’s efficiency and collaboration. Employees became highly motivated and began working together more effectively as a cohesive unit.",
+      "Attending a PALMS programme feels like pressing the refresh button on both career and life. The sessions are interactive, thought-provoking, and filled with insights that transform the way you think, work, and grow.",
+  },
+  {
+    name: "Mr. Sahayaraj",
+    role: "CEO, Sahay Racks (P) Ltd",
+    quote:
+      "The energy at PALMS is truly infectious. You walk in curious and walk out inspired, equipped with practical strategies that can be applied immediately. The trainers combine professionalism with a personal touch that drives real growth.",
+  },
+  {
+    name: "Dr. Nirmala Vijaykumar",
+    role: "Consultant, Queens Fertility Center",
+    quote:
+      "Our association with PALMS has been deeply rewarding. Their programmes connect global ideas with local needs, and PALMS PLUS serves as an inspiring platform for continuous learning and thoughtful reflection.",
+  },
+  {
+    name: "Mr. Cecil Machado",
+    role: "CEO, Southern Trading Company",
+    quote:
+      "PALMS stands out for its remarkable consistency in delivering meaningful and practical learning experiences. Their commitment to quality has made them a dependable name in the learning and development space.",
+  },
+  {
+    name: "Mr. Senthil Kumar S",
+    role: "CEO, Dakshin Bharat Gateway Terminal Pvt Ltd",
+    quote:
+      "PALMS behavioural training programmes have helped our teams gain valuable insights and practical tools. The sessions have strengthened individual mindsets and positively influenced our organisational culture.",
   },
 ];
 

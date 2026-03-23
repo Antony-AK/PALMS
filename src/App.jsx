@@ -34,6 +34,7 @@ import MbaBox from './pages/services/MbaBox';
 import Profit from './pages/services/Profit';
 import Consultancy from './pages/services/Consultancy';
 import OurTeam from './pages/OurTeam';
+import Unsubscribe from './Components/Unsubscribe';
 const AdminLogin = lazy(() => import("./Admin/Login"));
 const Dashboard = lazy(() => import("./Admin/Dashboard"));
 const GalleryManager = lazy(() => import("./Admin/GalleryManager"));
@@ -77,7 +78,8 @@ function App() {
               <Route path='/palmsplus' element={<PalmsPlus />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/gallery/:slug" element={<FolderView />} />
-                            <Route path="/ourteam" element={<OurTeam />} />
+              <Route path="/ourteam" element={<OurTeam />} />
+              <Route path="/unsubscribe" element={<Unsubscribe />} />
 
               <Route path="/contact" element={<Contact />} />
               <Route path="/join/franchise" element={<JoinFranchise />} />
