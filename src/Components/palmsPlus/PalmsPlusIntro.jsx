@@ -3,35 +3,72 @@ import mockup from "../../assets/journel.png";
 
 const PalmsPlusIntro = () => {
   return (
-    <section className="py-16 sm:py-20 md:py-24 lg:py-28 px-5 sm:px-6 md:px-8 bg-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14 md:gap-20 items-center">
-        <div>
+    <section className="py-20 md:py-28 px-5 sm:px-6 md:px-8 bg-white">
+      <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-14 md:gap-20 items-center">
+
+        {/* IMAGE SIDE */}
+        <div className="relative flex justify-center md:justify-start">
+          <div className="absolute -inset-6 bg-[var(--palms-blue)] rounded-[30px]" />
+          
           <img
             src={mockup}
             alt="PALMS PLUS Journal"
-            className="rounded-xl w-full max-w-[420px] h-[240px] sm:h-[300px] md:h-[400px] object-cover shadow-xl mx-auto md:mx-0" />
+            className="relative w-full  h-[260px] sm:h-[320px] md:h-[420px] object-cover rounded-[24px] shadow-2xl"
+          />
         </div>
 
-        <div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[var(--palms-blue)]">
-            What is PALMS PLUS?
+        {/* CONTENT SIDE */}
+        <div className="space-y-8">
+
+          {/* LABEL */}
+          <span className="uppercase tracking-[0.3em] text-sm text-[var(--palms-green)] font-bold">
+            Newsletter
+          </span>
+
+          {/* TITLE */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--palms-blue)] leading-tight">
+            PALMS PLUS
           </h2>
 
-          <p className="mt-4 sm:mt-6 text-sm sm:text-base text-gray-600 leading-relaxed">
-            PALMS PLUS is a curated leadership publication designed to
-            support reflective practice, strategic thinking, and
-            continuous professional development.
+          {/* TAGLINE */}
+          <p className="text-lg text-[var(--palms-blue)] font-medium">
+            Ideas that help you grow.
           </p>
 
-          <ul className="mt-6 sm:mt-8 space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-700">
-            <li>• Quarterly digital issues</li>
-            <li>• Exclusive leadership insights</li>
-            <li>• Real organisational case reflections</li>
-            <li>• Interviews with experienced leaders</li>
-            <li>• Practical tools & structured frameworks</li>
-          </ul>
-        </div>
+          {/* DESCRIPTION */}
+          <div className="space-y-4 text-[var(--palms-grey)] leading-relaxed max-w-[550px]">
 
+            <p>
+              PALMS PLUS is the in-house monthly newsletter of PALMS Training & Consulting Pvt Ltd, created as a platform to share ideas, insights, and perspectives that encourage continuous learning and personal growth.
+            </p>
+
+            <p>
+              Each issue features thoughtfully curated articles on management, personal development, business insights, health, finance, relationships, and contemporary issues.
+            </p>
+
+ 
+
+          </div>
+
+          {/* HIGHLIGHTS */}
+          <div className="pt-4 space-y-4">
+
+            {[
+              "Monthly digital newsletter",
+              "Articles on management, business, and personal growth",
+              "Insights from experienced professionals and contributors",
+              "Accessible across mobile, tablet, and desktop",
+              "A platform for reflection, learning, and inspiration"
+            ].map((item, i) => (
+              <div key={i} className="flex gap-3 items-start">
+                <span className="w-2 h-2 mt-2 bg-[var(--palms-green)] rounded-full" />
+                <p className="text-[var(--palms-grey)]">{item}</p>
+              </div>
+            ))}
+
+          </div>
+
+        </div>
       </div>
     </section>
   );

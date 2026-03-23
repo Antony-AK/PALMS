@@ -5,16 +5,52 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 // src/data/servicesNav.js
 export const servicesNav = [
-    { id: "01", title: "Personality Development", slug: "personality" },
-    { id: "02", title: "Management Development", slug: "management" },
-    { id: "03", title: "Leadership & Skill Workshops", slug: "leadership" },
-    { id: "04", title: "Corporate Training Programmes", slug: "corporate" },
-    { id: "05", title: "Outbound Training Programmes", slug: "outbound" },
-    { id: "06", title: "Summer Leadership Camp", slug: "summer-camp" },
-    { id: "07", title: "Business Consultancy", slug: "consultancy" },
-    { id: "08", title: "Business Yatra", slug: "business-yatra" },
-    { id: "09", title: "Business Retreat", slug: "business-retreat" },
+    {
+        id: "01",
+        title: "Inhouse Training Programmes",
+        slug: "inhouse-training-programmes",
+    },
+    {
+        id: "04",
+        title: "Career Guidance for Students",
+        slug: "career-guidance-students",
+    },
+    {
+        id: "02",
+        title: "Outbound Training Programmes",
+        slug: "outbound-training-programmes",
+    },
 
+    {
+        id: "09",
+        title: "Business Consultancy",
+        slug: "business-consultancy",
+    },
+    {
+        id: "03",
+        title: "Special Programmes for Individuals",
+        slug: "special-programmes-individuals",
+    },
+    {
+        id: "07",
+        title: "MBA In a Box – Business Essentials for Entrepreneurs",
+        slug: "mba-in-a-box-business-essentials",
+    },
+    {
+        id: "05",
+        title: "PEP UP - Personality Development",
+        slug: "pep-up-personality-development",
+    },
+    {
+        id: "08",
+        title: "PROFIT - Business Retreat for CEO’s & Business Owners",
+        slug: "profit-business-retreat",
+    },
+    {
+        id: "06",
+        title: "Pro EX – Managerial & Professional Skills Development",
+        slug: "pro-ex-managerial-professional-skills",
+    },
 ];
 
 export const membershipsNav = [

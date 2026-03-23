@@ -24,6 +24,16 @@ import JoinFranchise from './pages/contact/JoinFranchise';
 import JoinTrainer from './pages/contact/JoinTrainer';
 import JoinAssociate from './pages/contact/JoinAssociate';
 import SupportBot from './Components/SupportBot';
+import InhouseTraining from './pages/services/InhouseTraining';
+import OutboundTraining from './pages/services/OutboundTraining';
+import SpecialProgrammes from './pages/services/SpecialProgrammes';
+import CareerGuidance from './pages/services/CareerGuidance';
+import PepUp from './pages/services/PepUp';
+import ProEx from './pages/services/ProEx';
+import MbaBox from './pages/services/MbaBox';
+import Profit from './pages/services/Profit';
+import Consultancy from './pages/services/Consultancy';
+import OurTeam from './pages/OurTeam';
 const AdminLogin = lazy(() => import("./Admin/Login"));
 const Dashboard = lazy(() => import("./Admin/Dashboard"));
 const GalleryManager = lazy(() => import("./Admin/GalleryManager"));
@@ -54,10 +64,21 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path='/whoweare' element={<WhoAreWe />} />
               <Route path="/memberships/:slug" element={<MembershipDetail />} />
-              <Route path="/services/:slug" element={<ServiceDetail />} />
+              <Route path="/services/inhouse-training-programmes" element={<InhouseTraining />} />
+              <Route path="/services/outbound-training-programmes" element={<OutboundTraining />} />
+              <Route path="/services/special-programmes-individuals" element={<SpecialProgrammes />} />
+              <Route path="/services/career-guidance-students" element={<CareerGuidance />} />
+               <Route path="/services/pep-up-personality-development" element={<PepUp />} />
+               <Route path="/services/pro-ex-managerial-professional-skills" element={<ProEx />} />
+               <Route path="/services/mba-in-a-box-business-essentials" element={<MbaBox />} />
+               <Route path="/services/profit-business-retreat" element={<Profit />} />
+               <Route path="/services/business-consultancy" element={<Consultancy />} />
+
               <Route path='/palmsplus' element={<PalmsPlus />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/gallery/:slug" element={<FolderView />} />
+                            <Route path="/ourteam" element={<OurTeam />} />
+
               <Route path="/contact" element={<Contact />} />
               <Route path="/join/franchise" element={<JoinFranchise />} />
               <Route path="/join/trainer" element={<JoinTrainer />} />

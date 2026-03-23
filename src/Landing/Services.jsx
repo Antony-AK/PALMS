@@ -10,23 +10,74 @@ import retreat from "../assets/retreat.webp"
 import yatra from "../assets/yatra.webp"
 import consulting from "../assets/consulting.webp"
 import summercamp from "../assets/summercamp.webp"
+import career from "../assets/career.webp"
+import entrepreneur from "../assets/entrepreneurs.webp"
+import individuals from "../assets/individuals.webp"
+import personality from "../assets/personality.webp"
+
 import { useNavigate } from "react-router-dom";
 
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
-  { id: "01", title: "Personality Development", slug: "personality", image: pd },
-  { id: "02", title: "Management Development", slug: "management", image: md },
-  { id: "03", title: "Leadership & Skill Workshops", slug: "leadership", image: soft },
-  { id: "04", title: "Corporate Training Programmes", slug: "corporate", image: training },
-  { id: "05", title: "Outbound Training Programmes", slug: "outbound", image: outbaond },
-
-  { id: "06", title: "Summer Leadership Camp", slug: "summer-camp", image: summercamp },
-  { id: "07", title: "Business Consultancy", slug: "consultancy", image: consulting },
-  { id: "08", title: "Business Yatra", slug: "business-yatra", image: yatra },
-  { id: "09", title: "Business Retreat", slug: "business-retreat", image: retreat },
+  {
+    id: "01",
+    title: "Inhouse Training Programmes",
+    slug: "inhouse-training-programmes",
+    image: training, // reuse corporate training image
+  },
+  {
+    id: "02",
+    title: "Outbound Training Programmes",
+    slug: "outbound-training-programmes",
+    image: outbaond,
+  },
+  {
+    id: "03",
+    title: "Special Programmes for Individuals",
+    slug: "special-programmes-individuals",
+    image: individuals, // leadership/soft skills fits well
+  },
+  {
+    id: "04",
+    title: "Career Guidance for Students",
+    slug: "career-guidance-students",
+    image: career, // closest match (student-focused)
+  },
+  {
+    id: "05",
+    title: "PEP UP - Personality Development",
+    slug: "pep-up-personality-development",
+    image: personality,
+  },
+  {
+    id: "06",
+    title: "Pro EX – Managerial & Professional Skills Development",
+    slug: "pro-ex-managerial-professional-skills",
+    image: md,
+  },
+  {
+    id: "07",
+    title: "MBA In a Box – Business Essentials for Entrepreneurs",
+    slug: "mba-in-a-box-business-essentials",
+    image: entrepreneur, // entrepreneurial/business vibe
+  },
+  {
+    id: "08",
+    title: "PROFIT - Business Retreat for CEO’s & Business Owners",
+    slug: "profit-business-retreat",
+    image: retreat,
+  },
+  {
+    id: "09",
+    title: "Business Consultancy",
+    slug: "business-consultancy",
+    image: consulting,
+  },
 ];
+
+
 
 
 const ServicesSection = () => {

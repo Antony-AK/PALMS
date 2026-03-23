@@ -155,11 +155,11 @@ const Contact = () => {
                       {item.desc}
                     </p>
 
-                    <button
+                    {/* <button
                       onClick={() => navigate(item.route)}
                       className="text-sm font-medium text-[var(--palms-blue)] group-hover:text-[var(--palms-green)] transition">
                       Apply Now →
-                    </button>
+                    </button> */}
 
                   </div>
                 ))}

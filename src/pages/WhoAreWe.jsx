@@ -85,9 +85,7 @@ const WhoAreWe = () => {
                     </h1>
 
                     <p className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-white/80 max-w-[620px]">
-                        PALMS partners with individuals and organisations to develop
-                        leadership capability, professional clarity, and sustainable growth
-                        through value-driven learning.
+                        PALMS works with individuals and organisations to develop leadership capability, professional clarity, and sustainable growth through value-driven learning.
                     </p>
                 </div>
             </section>
@@ -149,9 +147,7 @@ const WhoAreWe = () => {
                             <Target size={44} className="text-[var(--palms-green)]" />
                             <h3 className="mt-6 text-3xl font-semibold">Our purpose</h3>
                             <p className="mt-4 text-white/80 leading-relaxed">
-                                To enable individuals and organisations to lead meaningful,
-                                value-driven professional lives while contributing positively
-                                to society.
+                                To empower people and organisations to enhance their productivity and thereby contribute positively to society.
                             </p>
                         </div>
 
@@ -159,8 +155,7 @@ const WhoAreWe = () => {
                             <Lightbulb size={44} className="text-[var(--palms-green)]" />
                             <h3 className="mt-6 text-3xl font-semibold">Our belief</h3>
                             <p className="mt-4 text-white/80 leading-relaxed">
-                                Sustainable success comes from mindset, values, and capability -
-                                not short-term performance alone.
+                                Sustainable success comes from mindset, values, and capability - not short-term performance alone.
                             </p>
                         </div>
 
@@ -184,7 +179,7 @@ const WhoAreWe = () => {
 
                         <p className="text-[var(--palms-grey)] text-lg leading-relaxed max-w-[440px]">
                             We enable deep, lasting transformation by shaping how people think,
-                            decide, and lead - not just what they do.
+                            decide, and lead.
                         </p>
 
                         {/* APPROACH PANEL */}

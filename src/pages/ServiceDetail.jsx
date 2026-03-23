@@ -93,9 +93,13 @@ const ServiceDetail = () => {
               Programme
             </span>
 
-            <h1 className="text-5xl md:text-6xl  font-semibold text-[var(--palms-blue)] leading-[1.05]">
+            <h1 className="text-5xl md:text-6xl  font-semibold text-[var(--palms-blue)] mb-5 leading-[1.05]">
               {service.title}
             </h1>
+
+             <p className="text-lg sm:text-lg font-medium text-[var(--palms-blue)] mb-3 max-w-[560px]  ">
+              {service.shortDesc}
+            </p>
 
             <p className="text-base sm:text-lg text-[var(--palms-grey)] max-w-[560px] leading-relaxed">
               {service.heroDesc}
@@ -314,9 +318,6 @@ className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 md:gap-20 justify-ce
         </section>
 
 
-
-
-        {/* ================= FINAL CTA ================= */}
         <section className="py-20 bg-[var(--palms-blue)]/5 ">
 
           <div className="max-w-[1200px] mx-auto px-10">
@@ -346,6 +347,49 @@ className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 md:gap-20 justify-ce
           </div>
 
         </section>
+
+        {/* ================= ORGANISATIONS (ONLY INHOUSE) ================= */}
+{service.slug === "inhouse-training-programmes" && service.organisations && (
+  <section className="py-10">
+
+    <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-10">
+
+      {/* HEADER */}
+      <div className="mb-16">
+        <h2 className="text-3xl sm:text-4xl font-semibold text-[var(--palms-blue)]">
+          Organisations we have served
+        </h2>
+
+        <p className="mt-4 text-[var(--palms-grey)] max-w-[700px]">
+          PALMS has conducted training programmes for a number of leading organisations including:
+        </p>
+
+        <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
+      </div>
+
+      {/* GRID */}
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+
+        {service.organisations.map((item, i) => (
+          <div
+            key={i}
+            className="group relative p-5 rounded-2xl border border-black/5 bg-white 
+            hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+          >
+            <p className="text-[var(--palms-grey)] group-hover:text-[var(--palms-blue)] transition text-sm sm:text-base leading-relaxed">
+              {item}
+            </p>
+
+            {/* subtle accent line */}
+            <div className="absolute bottom-0 left-5 h-[3px] bg-[var(--palms-green)] w-[20%] transition-all duration-500" />
+          </div>
+        ))}
+
+      </div>
+
+    </div>
+  </section>
+)}
 
 <section className="bg-palms-gradient text-white py-16 sm:py-20 md:py-26 text-center px-5 sm:px-6">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold max-w-[900px] mx-auto leading-tight">
