@@ -6,7 +6,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css'
 import Contact from './pages/Contact';
 import Footer from './Components/Footer';
-
+import { Toaster } from "react-hot-toast"
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import WhoAreWe from './pages/WhoAreWe';
@@ -55,6 +55,7 @@ function App() {
 
   return (
     <>
+    <Toaster position="top-right" />
       {/* 🔥 If NOT admin route → show normal layout */}
       {!isAdminRoute && (
         <div id="smooth-wrapper">

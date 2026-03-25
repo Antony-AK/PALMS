@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { lazy, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const HologramGlobe = lazy(() => import("../Components/HologramGlobe"));
 
@@ -13,6 +14,7 @@ const Contact = () => {
   const [showGlobe, setShowGlobe] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState("");
   const navigate = useNavigate();
+  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     const isDesktop = window.innerWidth >= 1024; // lg breakpoint
@@ -55,6 +57,39 @@ const Contact = () => {
     { name: "Student Membership", price: "₹4,000 / year" },
     { name: "Associate Membership", price: "₹1,200 / year" }
   ];
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    formData.append("access_key", "0d66b0d7-a46d-406a-a172-3a0f0d47124e");
+    formData.append("subject", "New PALMS Contact Enquiry");
+    formData.append("from_name", "PALMS Website");
+
+    // Add custom field (your selected plan)
+    formData.append("membership_plan", selectedPlan);
+
+    try {
+      const res = await fetch("https://api.w3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        toast.success("Message sent successfully 🚀");
+        e.target.reset();
+        setSelectedPlan("");
+      } else {
+        toast.error("Something went wrong ❌");
+      }
+    } catch (err) {
+      toast.error("Error submitting form ⚠️");
+    }
+  };
 
   return (
     <section
@@ -175,18 +210,14 @@ const Contact = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14 md:gap-20">
 
             {/* FORM */}
-            <form onSubmit={(e) => {
-              e.preventDefault();
-              console.log({
-                selectedPlan
-              });
-            }} className="space-y-10">
+            <form onSubmit={handleSubmit} className="space-y-10">
 
               <div>
                 <label className="text-sm font-medium text-[var(--palms-blue)] block mb-3">
                   Your name
                 </label>
                 <input
+                  name="name"
                   type="text"
                   required
                   className="w-full border border-gray-200 rounded-xl px-4 sm:px-5 py-2.5 sm:py-3 text-sm
@@ -199,6 +230,7 @@ const Contact = () => {
                   Email address
                 </label>
                 <input
+                  name="email"
                   type="email"
                   required
                   className="w-full border border-gray-200 rounded-xl px-4 sm:px-5 py-2.5 sm:py-3 text-sm
@@ -233,6 +265,7 @@ const Contact = () => {
                   Message
                 </label>
                 <textarea
+                  name="message"
                   rows="4"
                   required
                   className="w-full border border-gray-200 rounded-xl px-5 py-3 text-sm resize-none
