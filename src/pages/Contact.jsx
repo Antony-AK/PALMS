@@ -64,7 +64,7 @@ const Contact = () => {
 
     const formData = new FormData(e.target);
 
-    formData.append("access_key", "0d66b0d7-a46d-406a-a172-3a0f0d47124e");
+    formData.append("access_key", "w3f_46eccc22043b50bbd04437e7c0e174565333db10261f85e9");
     formData.append("subject", "New PALMS Contact Enquiry");
     formData.append("from_name", "PALMS Website");
 
@@ -78,6 +78,7 @@ const Contact = () => {
       });
 
       const data = await res.json();
+      console.log(data);
 
       if (data.success) {
         toast.success("Message sent successfully 🚀");
@@ -244,6 +245,7 @@ const Contact = () => {
                 </label>
 
                 <select
+                name="membership_plan"
                   value={selectedPlan}
                   onChange={(e) => setSelectedPlan(e.target.value)}
                   className="w-full border border-gray-200 rounded-xl px-5 py-3 text-sm 
