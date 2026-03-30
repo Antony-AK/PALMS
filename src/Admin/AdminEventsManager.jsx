@@ -12,6 +12,7 @@ const AdminEventsManager = () => {
         title: "",
         description: "",
         bannerImage: "",
+        bannerFile: null,
         date: "",
         time: "",
         venue: "",
@@ -114,6 +115,7 @@ const AdminEventsManager = () => {
         });
     };
 
+
     const deleteEvent = async (id) => {
         if (!window.confirm("Delete this event permanently?")) return;
         await API.delete(`/events/${id}`);
@@ -182,22 +184,28 @@ const AdminEventsManager = () => {
 
                     <div className="flex flex-col gap-2">
                         <label className="text-sm font-medium text-gray-600">
-                            Publish Date
+                            Event Date
                         </label>
 
                         <input
                             type="date"
+                            name="date"
+                            value={formData.date}
+                            onChange={handleChange}
                             className="input-style px-4 py-3 rounded-xl "
                         />
                     </div>
 
                     <div className="flex flex-col gap-2">
                         <label className="text-sm font-medium text-gray-600">
-                            Publish Time
+                            Event Time
                         </label>
 
                         <input
                             type="time"
+                            name="time"
+                            value={formData.time}
+                            onChange={handleChange}
                             className="border px-4 py-3 input-style rounded-xl"
                         />
                     </div>
@@ -217,6 +225,9 @@ const AdminEventsManager = () => {
 
                         <input
                             type="date"
+                            name="deadline"
+                            value={formData.deadline}
+                            onChange={handleChange}
                             className="border px-4 input-style py-3 rounded-xl"
                         />
                     </div>                </div>
@@ -257,10 +268,10 @@ const AdminEventsManager = () => {
                         key={event._id}
                         className="group bg-white border border-gray-200 hover:border-gray-300 transition rounded-3xl shadow-sm hover:shadow-lg overflow-hidden"
                     >
-                        <div className="relative h-48 overflow-hidden">
+                        <div className="relative  overflow-hidden">
                             <img
                                 src={event.bannerImage?.url}
-                                className="h-full w-full object-cover group-hover:scale-105 transition"
+                                className="h-[500px] w-full object-cover group-hover:scale-105 transition"
                                 alt=""
                             />
                             <div className={`absolute top-4 left-4 text-white text-xs px-3 py-1 rounded-full 

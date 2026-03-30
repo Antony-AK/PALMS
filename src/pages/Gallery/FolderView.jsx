@@ -135,7 +135,7 @@ const FolderView = () => {
             {folder.name}
           </h1>
           <p className="text-[var(--palms-grey)]">
-            A visual journey through this experience.
+           {folder.description || "A collection of moments captured from leadership journeys, workshops, and meaningful learning engagements."}
           </p>
         </div>
 

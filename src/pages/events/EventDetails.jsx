@@ -10,8 +10,6 @@ const EventDetails = () => {
   const [event, setEvent] = useState(null);
   const [timeLeft, setTimeLeft] = useState({});
 
-
-
   useEffect(() => {
     API.get(`/events/${slug}`).then((res) => setEvent(res.data));
   }, [slug]);
@@ -42,7 +40,6 @@ const EventDetails = () => {
 
   const formatDate = (date) => {
     if (!date) return "";
-
     return new Intl.DateTimeFormat("en-GB", {
       day: "numeric",
       month: "long",
@@ -53,91 +50,119 @@ const EventDetails = () => {
   return (
     <section className="bg-[#f8fafc] min-h-screen pb-32">
 
-      {/* ================= HERO ================= */}
-      <div className="relative h-[100vh] overflow-hidden">
+      {/* ================= HERO (FIXED 🔥) ================= */}
+   <div className="relative overflow-hidden bg-[#0f172a] py-28 px-6">
 
-        <img
-          src={event.bannerImage?.url}
-          className="w-full h-full object-cover scale-110"
-          alt=""
-        />
+  {/* 🔥 BACKGROUND GRADIENT BLOBS */}
+  <div className="absolute -top-32 -left-32 w-[400px] h-[400px] bg-[var(--palms-green)]/20 blur-[120px] rounded-full" />
+  <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/20 blur-[120px] rounded-full" />
 
-        {/* overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+  <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
-        {/* content */}
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-full max-w-6xl px-6">
+    {/* 🔥 LEFT → CONTENT */}
+    <div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 80 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-10 shadow-2xl"
-          >
-            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-              {event.title}
-            </h1>
+      <h1 className="text-4xl md:text-5xl font-semibold text-white leading-tight">
+        {event.title}
+      </h1>
 
-            <p className="mt-6 text-white/80 text-lg">
-              {event.venue} · {new Date(event.date).toDateString()} · {event.time}
-            </p>
-          </motion.div>
+      <p className="mt-6 text-white/70 text-lg">
+        {event.venue} · {formatDate(event.date)} · {event.time}
+      </p>
 
+      {/* CTA */}
+      <div className="mt-8 flex gap-4 flex-wrap">
+
+        <button
+          onClick={() => navigate(`/events/${slug}/register`)}
+          className="px-8 py-4 bg-[var(--palms-green)] text-white rounded-xl font-medium hover:scale-105 transition"
+        >
+          Register Now
+        </button>
+
+        <div className="px-6 py-4 bg-white/10 text-white rounded-xl backdrop-blur">
+          ₹{event.price}
         </div>
+
       </div>
 
-      {/* ================= FLOATING INFO ================= */}
-      <div className="max-w-6xl mx-auto px-6 mt-20 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+    </div>
 
-          <InfoCard label="Speaker" value={event.speaker} />
-          <InfoCard label="Seats Left" value={seatsLeft} />
-          <InfoCard label="Deadline" value={formatDate(event.deadline)} />
-          <InfoCard label="Price" value={`₹${event.price}`} />
+    {/* 🔥 RIGHT → FLOATING POSTER */}
+    <div className="relative flex justify-center md:justify-end">
 
-        </div>
+      {/* Glow */}
+      <div className="absolute inset-0 blur-[100px] bg-[var(--palms-green)]/30 rounded-full" />
+
+      {/* Poster */}
+      <img
+        src={event.bannerImage?.url}
+        alt="Event Poster"
+        className="
+          relative
+          w-[460px] sm:w-[350px] md:w-[340px]
+          object-contain
+          rounded-2xl
+          shadow-[0_40px_100px_rgba(0,0,0,0.6)]
+          rotate-[-2deg]
+          hover:rotate-0 hover:scale-105
+          transition duration-500
+        "
+      />
+
+      {/* Floating tag */}
+      <div className="absolute -top-4 -right-4 bg-[var(--palms-green)] text-white px-4 py-2 text-xs rounded-full shadow-lg">
+        Live Event
       </div>
 
-      {/* ================= MAIN CONTENT ================= */}
+    </div>
+
+  </div>
+
+</div>
+      {/* ================= INFO ================= */}
+      <div className="max-w-6xl mx-auto px-6 mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+
+        <InfoCard label="Speaker" value={event.speaker} />
+        <InfoCard label="Seats Left" value={seatsLeft} />
+        <InfoCard label="Deadline" value={formatDate(event.deadline)} />
+        <InfoCard label="Price" value={`₹${event.price}`} />
+
+      </div>
+
+      {/* ================= CONTENT ================= */}
       <div className="max-w-6xl mx-auto px-6 mt-20 grid md:grid-cols-2 gap-16">
 
-        {/* LEFT */}
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
-          <h2 className="text-4xl font-semibold text-slate-900">
+        <div>
+          <h2 className="text-3xl font-semibold text-slate-900">
             About the Programme
           </h2>
 
           <p className="mt-6 text-lg text-slate-600 leading-relaxed">
             {event.description}
           </p>
-        </motion.div>
+        </div>
 
-        {/* RIGHT */}
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="space-y-6"
-        >
+        <div className="space-y-5">
           {[
             "Interactive learning sessions",
             "Real-world case discussions",
             "Networking opportunities",
             "Practical frameworks & tools",
           ].map((item, i) => (
-            <div key={i} className="flex gap-4 items-start">
-              <div className="w-3 h-3 bg-emerald-500 rounded-full mt-2" />
+            <div key={i} className="flex gap-4">
+              <div className="w-3 h-3 bg-[var(--palms-green)] rounded-full mt-2" />
               <p className="text-slate-700">{item}</p>
             </div>
           ))}
-        </motion.div>
+        </div>
 
       </div>
 
       {/* ================= COUNTDOWN ================= */}
       <div className="max-w-6xl mx-auto px-6 mt-20">
-        <h3 className="text-xl text-slate-500 mb-6 uppercase tracking-wide">
+
+        <h3 className="text-xl text-slate-500 mb-6 uppercase">
           Event Starts In
         </h3>
 
@@ -147,14 +172,15 @@ const EventDetails = () => {
           <TimeBox value={timeLeft.minutes} label="Min" />
           <TimeBox value={timeLeft.seconds} label="Sec" />
         </div>
+
       </div>
 
-      {/* ================= STICKY BOOKING ================= */}
-      <div className="fixed bottom-6 right-6 md:top-28 md:bottom-auto md:right-10 w-[320px] z-50">
+      {/* ================= STICKY CARD ================= */}
+      <div className="fixed bottom-6 right-6 md:top-28 md:right-10 w-[300px] z-50">
 
-        <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30">
+        <div className="bg-white rounded-2xl p-6 shadow-2xl">
 
-          <h3 className="text-3xl font-bold text-slate-900">
+          <h3 className="text-2xl font-bold text-slate-900">
             ₹{event.price}
           </h3>
 
@@ -164,30 +190,14 @@ const EventDetails = () => {
 
           <button
             onClick={() => navigate(`/events/${slug}/register`)}
-            disabled={seatsLeft <= 0}
-            className="mt-6 w-full bg-[var(--palms-blue)] text-white py-4 rounded-xl font-semibold hover:scale-105 transition"
+            className="mt-4 w-full bg-[var(--palms-blue)] text-white py-3 rounded-xl"
           >
-            {seatsLeft > 0 ? "Register Now" : "Closed"}
+            Register Now
           </button>
 
         </div>
+
       </div>
-
-      {/* ================= CTA ================= */}
-      {/* <section className="mt-32 py-24 bg-gradient-to-r from-slate-900 to-slate-800 text-white text-center">
-
-        <h2 className="text-5xl font-semibold max-w-3xl mx-auto leading-tight">
-          Let’s create meaningful impact together.
-        </h2>
-
-        <button
-          onClick={() => navigate("/contact")}
-          className="mt-10 bg-white text-black px-10 py-4 rounded-full text-lg hover:scale-105 transition"
-        >
-          Talk to PALMS
-        </button>
-
-      </section> */}
 
     </section>
   );
@@ -195,18 +205,19 @@ const EventDetails = () => {
 
 export default EventDetails;
 
-/* ================= COMPONENTS ================= */
+
+/* COMPONENTS */
 
 const InfoCard = ({ label, value }) => (
-  <div className="bg-white rounded-2xl p-6 shadow-xl border border-gray-100">
+  <div className="bg-white rounded-xl p-5 shadow border">
     <p className="text-xs text-gray-400 uppercase">{label}</p>
-    <p className="text-lg font-semibold mt-2 text-gray-900">{value}</p>
+    <p className="text-lg font-semibold mt-2">{value}</p>
   </div>
 );
 
 const TimeBox = ({ value = 0, label }) => (
-  <div className="bg-white rounded-xl py-6 shadow-md">
-    <p className="text-2xl font-bold text-slate-900">{value ?? 0}</p>
-    <p className="text-xs text-slate-500 uppercase">{label}</p>
+  <div className="bg-white rounded-xl py-5 shadow">
+    <p className="text-xl font-bold">{value ?? 0}</p>
+    <p className="text-xs text-gray-500 uppercase">{label}</p>
   </div>
 );
