@@ -65,7 +65,7 @@ const InhouseTraining = () => {
         <div className="relative grid lg:grid-cols-2 gap-14 items-center min-h-[450px]">
 
           <span className="absolute -top-24 -left-10 text-[160px] font-bold text-black/5">
-            {service.id}
+            IN
           </span>
 
           <div className="space-y-8">
@@ -109,55 +109,6 @@ const InhouseTraining = () => {
           </div>
         </div>
 
-        {/* ================= WHAT IT DELIVERS ================= */}
-        <div
-          ref={deliverSectionRef}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 md:gap-20 justify-center items-start"        >
-
-          {/* LEFT – PINNED */}
-          <div ref={deliverLeftRef} className="pt-10">
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--palms-blue)]">
-              What this programme delivers
-            </h3>
-            <p className="mt-6 text-[var(--palms-grey)] max-w-[460px]">
-              Designed outcomes that directly translate into confidence, clarity,
-              and measurable workplace effectiveness.
-            </p>
-          </div>
-
-          <div className="relative">
-
-            {/* SCROLL RAIL */}
-            <div className="absolute left-0 top-0 h-full w-[2px] bg-black/10">
-              <span
-                ref={progressRef}
-                className="absolute top-0 left-0 w-full h-full bg-[var(--palms-green)]"
-                style={{ transform: "scaleY(0)" }}
-              />
-            </div>
-
-            {/* POINTS */}
-            <div ref={deliverRightRef} className="space-y-4 pl-10 pb-20">
-              {service.benefits?.map((item, i) => (
-                <div
-                  key={i}
-                  className="relative py-6"
-                >
-                  <span className="absolute -left-[11px] top-9 w-3 h-3 rounded-full bg-[var(--palms-green)]" />
-                  <p className=" ms-5 text-[var(--palms-blue)] text-lg leading-relaxed">
-                    {item}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-          </div>
-
-
-        </div>
-
-
-
         {/* ================= APPROACH ================= */}
         <section className="bg-gray-100 p-10 rounded-3xl">
           <h2 className="text-3xl font-semibold text-[var(--palms-blue)]  mb-8">
@@ -180,7 +131,7 @@ const InhouseTraining = () => {
 
             {/* HEADER */}
             <h2 className="text-4xl md:text-5xl font-semibold mb-20">
-              Key training programmes offered
+              Key Training Programmes Offered
               <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
             </h2>
 
@@ -241,7 +192,7 @@ const InhouseTraining = () => {
             {/* HEADER */}
             <div className="mb-16">
               <h2 className="text-3xl sm:text-4xl font-semibold text-[var(--palms-blue)]">
-                Organisations we have served
+                 Our Inhouse Cleints
               </h2>
 
               <p className="mt-4 text-[var(--palms-grey)] max-w-[700px]">
@@ -283,7 +234,7 @@ const InhouseTraining = () => {
             measurable impact together.
           </h2>
 
-          <button onClick={() => navigate("/contact")} className="mt-10 sm:mt-14 md:mt-16 bg-white text-[var(--palms-blue)]
+          <button onClick={() => navigate("/contact")} className="mt-10 sm:mt-14 md:mt-16  bg-[var(--palms-green)] text-white
 px-10 sm:px-14 md:px-20 py-4 sm:py-5 md:py-6 rounded-full text-base sm:text-lg md:text-xl
 transition-all duration-300 hover:scale-105">
             Talk to PALMS

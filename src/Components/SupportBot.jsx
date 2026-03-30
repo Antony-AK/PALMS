@@ -16,16 +16,16 @@ const replies = {
     "PALMS Training & Consulting is located in Thoothukudi, Tamil Nadu, India.",
 
   "How can I contact PALMS?":
-    "You can contact PALMS at info@palmsindia.org or call 0461-2330856.",
+    "You can contact PALMS at info@palmsindia.org or call 8220344477, 0461-2330856.",
 
   "Do you conduct events?":
     "Yes. PALMS regularly hosts leadership forums, conferences and networking events.",
 
   "Is there a PALMS membership?":
-    "Yes. PALMS membership provides access to leadership networks and events.",
+    "Yes. Palms works on memebership model and u can become a member by paying a membership fee as per choice of membership ",
 
-  "Do you provide consulting services?":
-    "Yes. PALMS offers consulting services for leadership development and organisational strategy."
+  "Do u provide career guidance?":
+    "yes, we offer career guidance programs for student and colleges and for executive's who looking for career transitions "
 };
 
 const questions = Object.keys(replies);
@@ -34,6 +34,11 @@ export default function SupportBot() {
 
   const [open, setOpen] = useState(false);
   const [typing, setTyping] = useState(false);
+  const [input, setInput] = useState("");
+  const [awaitingEmail, setAwaitingEmail] = useState(false);
+  const [pendingQuestion, setPendingQuestion] = useState("");
+  const [step, setStep] = useState("question");
+  const [userName, setUserName] = useState("");
 
   const [messages, setMessages] = useState([
     {
@@ -67,6 +72,141 @@ export default function SupportBot() {
 
     }, 800);
   };
+
+  const handleSend = () => {
+    if (!input.trim()) return;
+
+    const userMsg = { sender: "user", text: input };
+    setMessages(prev => [...prev, userMsg]);
+
+    // STEP 1 → question
+    if (step === "question") {
+      if (replies[input]) {
+        setTyping(true);
+
+        setTimeout(() => {
+          setMessages(prev => [
+            ...prev,
+            { sender: "bot", text: replies[input] }
+          ]);
+          setTyping(false);
+        }, 800);
+      } else {
+        setPendingQuestion(input);
+
+        setTimeout(() => {
+          setMessages(prev => [
+            ...prev,
+            { sender: "bot", text: "I’d be happy to help you with that. If you’d like, our team can get in touch and assist you further. May I have your name?" }
+          ]);
+          setStep("name");
+        }, 500);
+      }
+    }
+
+    // STEP 2 → name
+    else if (step === "name") {
+      setUserName(input);
+
+      setMessages(prev => [
+        ...prev,
+        { sender: "bot", text: "Thank you. Could you also share your email address so our team can reach out to you?" }
+      ]);
+
+      setStep("email");
+    }
+
+
+
+    // STEP 3 → email
+    else if (step === "email") {
+      const emailValue = input.trim();
+      handleEmailSubmit(emailValue);
+    }
+
+    setInput("");
+  };
+
+
+  const isValidEmail = (email) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const handleEmailSubmit = async (email) => {
+    setTyping(true);
+
+    if (!isValidEmail(email)) {
+      setMessages(prev => [
+        ...prev,
+        {
+          sender: "bot",
+          text: "Please enter a valid email address (example: name@gmail.com)."
+        }
+      ]);
+      setTyping(false);
+      return;
+    }
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "0d66b0d7-a46d-406a-a172-3a0f0d47124e",
+          subject: "New Query from Support Bot",
+          from_name: "PALMS Assistant",
+          from_email: email,
+          replyto: email,
+          name: userName,
+          email: email,
+          message: pendingQuestion,
+          source: "Chatbot",
+
+        }),
+      });
+
+      const data = await res.json();
+
+      console.log(data);
+      console.log("Sending:", {
+        name: userName,
+        email,
+        question: pendingQuestion
+      });
+
+      if (data.success) {
+        setMessages(prev => [
+          ...prev,
+          {
+            sender: "bot",
+            text: `Thanks ${userName}! Our team will contact you shortly 🙌`
+          }
+
+
+        ]);
+        // ✅ RESET FLOW
+        setStep("question");
+        setPendingQuestion("");
+        setUserName("");
+      } else {
+        throw new Error("Failed");
+      }
+
+    } catch (err) {
+      setMessages(prev => [
+        ...prev,
+        {
+          sender: "bot",
+          text: "Something went wrong. Please try again later."
+        }
+      ]);
+      setStep("email");
+    }
+
+    setTyping(false);
+  };
+
 
   return (
     <>
@@ -132,11 +272,10 @@ export default function SupportBot() {
                 >
 
                   <div
-                    className={`px-4 py-2 text-sm rounded-2xl max-w-[70%] shadow-sm ${
-                      m.sender === "bot"
-                        ? "bg-white"
-                        : "bg-[#0A2C56] text-white"
-                    }`}
+                    className={`px-4 py-2 text-sm rounded-2xl max-w-[70%] shadow-sm ${m.sender === "bot"
+                      ? "bg-white"
+                      : "bg-[#0A2C56] text-white"
+                      }`}
                   >
                     {m.text}
                   </div>
@@ -166,10 +305,10 @@ export default function SupportBot() {
 
               <div className="grid grid-cols-2 gap-2">
 
-                {questions.map((q,i)=>(
+                {questions.map((q, i) => (
                   <button
                     key={i}
-                    onClick={()=>ask(q)}
+                    onClick={() => ask(q)}
                     className="text-left text-xs px-3 py-2 rounded-lg
                     bg-gray-100 hover:bg-gray-200 transition"
                   >
@@ -178,6 +317,25 @@ export default function SupportBot() {
                 ))}
 
               </div>
+
+            </div>
+
+            <div className="p-4 border-t bg-white flex gap-2">
+
+              <input
+                type="text"
+                placeholder="Ask your question..."
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                className="flex-1 px-3 py-2 text-sm border rounded-lg outline-none"
+              />
+
+              <button
+                onClick={handleSend}
+                className="px-4 py-2 bg-[var(--palms-blue)] text-white rounded-lg text-sm"
+              >
+                Send
+              </button>
 
             </div>
 

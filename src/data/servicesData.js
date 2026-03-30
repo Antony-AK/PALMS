@@ -11,6 +11,18 @@ import career from "../assets/career.webp"
 import entrepreneur from "../assets/entrepreneurs.webp"
 import individuals from "../assets/individuals.webp"
 import personality from "../assets/personality.webp"
+import profit1 from "../assets/profit1.jpeg"
+import profit2 from "../assets/profit2.jpeg"
+import profit3 from "../assets/profit3.jpeg"
+import profit4 from "../assets/profit4.jpeg"
+import profit5 from "../assets/profit5.jpeg"
+import profit6 from "../assets/profit6.jpeg"
+import profit7 from "../assets/profit7.jpeg"
+import profit8 from "../assets/profit8.jpeg"
+import profit9 from "../assets/profit9.jpeg"
+import profit10 from "../assets/profit10.jpeg"
+
+
 
 export const inhouseData = {
   id: "01",
@@ -34,7 +46,7 @@ export const inhouseData = {
   ],
 
   benefits: [
-    "Improve employee behaviour and workplace attitudes",
+    "Improve Employee Behaviour and Workplace Attitudes",
     "Strengthen communication and interpersonal skills",
     "Build stronger teams and collaborative work culture",
     "Enhance customer service and professional conduct",
@@ -218,7 +230,9 @@ export const specialProgrammesData = {
   intro: [
     "PALMS Training & Consulting Pvt Ltd periodically organises special workshops and learning programmes for individuals and professionals from different fields.",
     "These programmes are usually conducted over one to three days and are designed to introduce new ideas, emerging concepts, and practical skills that are relevant in today’s rapidly changing world. The aim is to make latest knowledge, management practices, and personal development concepts accessible to the people of Thoothukudi.",
-    "Over the years, PALMS has organised a wide range of programmes for business owners, managers, professionals, teachers, trainers, parents, couples and students, creating valuable opportunities for learning, reflection, and personal growth."
+    "Over the years, PALMS has organised a wide range of programmes for business owners, managers, professionals, teachers, trainers, parents, couples and students, creating valuable opportunities for learning, reflection, and personal growth.",
+    "The objective of these workshops is to bring latest concepts, practical knowledge, and inspiring learning experiences to the people of Thoothukudi.",
+    "Through these programmes, PALMS continues to create meaningful opportunities for learning, growth, and professional development in the community."
   ],
 
   duration: "Usually 1 to 3 days",
@@ -272,7 +286,7 @@ export const specialProgrammesData = {
     },
     {
       title: "For College students",
-      desc: "Programmes that prepare students for career and life transitions.",
+      desc: "Programmes that prepare students for career to campus",
       points: [
         "Career awareness",
         "Personal development",
@@ -326,6 +340,10 @@ export const careerGuidanceData = {
     {
       title: "Career planning guidance",
       desc: "Support in selecting courses, skills, and future preparation strategies."
+    },
+    {
+      title: "By Experienced Counsellors",
+      desc: "Guidance Powered by a trusted Edumilestones platform"
     }
   ],
 
@@ -402,12 +420,12 @@ export const pepUpData = {
       desc: "Reflect on experiences, actions, and habits to learn, grow, and improve continuously."
     },
     {
-      title: "Power of Health",
-      desc: "Understand the importance of physical well-being, energy, and healthy lifestyle practices."
-    },
-    {
       title: "Power of Mind",
       desc: "Strengthen positive thinking, focus, and mental resilience."
+    },
+    {
+      title: "Power of Health",
+      desc: "Understand the importance of physical well-being, energy, and healthy lifestyle practices."
     },
     {
       title: "Power of Money",
@@ -700,6 +718,21 @@ export const profitData = {
   intro: [
     "Where Business Leaders Pause, Reflect, and Reimagine Growth",
     "PROFIT is a residential business retreat designed exclusively for CEOs and business owners. Conducted in an offsite environment over 2–3 days, the retreat provides a focused space for business leaders to step away from day-to-day operations, reflect on strategic priorities, and explore new perspectives for growth.",
+  ],
+
+  gallery: [
+    profit1,
+    profit2,
+    profit3,
+    profit4,
+    profit5,
+    profit6,
+    profit7,
+    profit8,
+    profit9,
+    profit10,
+
+
   ],
 
   duration: "2–3 Days Residential Retreat",

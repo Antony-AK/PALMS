@@ -156,38 +156,7 @@ const SpecialProgrammes = () => {
 
                 </section>
 
-                {/* ================= CLOSING ================= */}
-                <section className="py-16">
-
-                    <div className="max-w-[1000px] mx-auto px-5 md:px-8">
-
-                        <div className="relative bg-white border border-black/5 rounded-3xl p-10 md:p-14 
-    shadow-[0_20px_60px_rgba(0,0,0,0.05)]">
-
-                            {/* TOP ACCENT */}
-                            <div className="absolute top-0 left-0 h-[4px] w-full bg-[var(--palms-green)] rounded-t-3xl" />
-
-                            {/* HEADER */}
-                            <h2 className="text-3xl md:text-4xl font-semibold text-[var(--palms-blue)] mb-8">
-                                Our objective
-                            </h2>
-
-                            {/* CONTENT */}
-                            <div className="space-y-6 text-[var(--palms-grey)] text-base md:text-lg leading-relaxed">
-
-                                {service.closing.map((p, i) => (
-                                    <p key={i}>
-                                        {p}
-                                    </p>
-                                ))}
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </section>
+            
 
                 {/* ================= CTA ================= */}
                 <section className="bg-palms-gradient text-white py-16 sm:py-20 md:py-26 text-center px-5 sm:px-6">
@@ -196,7 +165,7 @@ const SpecialProgrammes = () => {
                         measurable impact together.
                     </h2>
 
-                    <button onClick={() => navigate("/contact")} className="mt-10 sm:mt-14 md:mt-16 bg-white text-[var(--palms-blue)]
+                    <button onClick={() => navigate("/contact")} className="mt-10 sm:mt-14 md:mt-16  bg-[var(--palms-green)] text-white
 px-10 sm:px-14 md:px-20 py-4 sm:py-5 md:py-6 rounded-full text-base sm:text-lg md:text-xl
 transition-all duration-300 hover:scale-105">
                         Talk to PALMS

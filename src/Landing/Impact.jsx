@@ -39,10 +39,8 @@ const ImpactSection = () => {
               start: "top 80%",
             },
             onUpdate: function () {
-              el.innerText =
-                target >= 1000
-                  ? `${Math.floor(el.innerText)}+`
-                  : Math.floor(el.innerText);
+              const suffix = el.dataset.suffix || "";
+              el.innerText = `${Math.floor(el.innerText)}${suffix}`;
             },
           }
         );
@@ -95,6 +93,7 @@ const ImpactSection = () => {
             {[
               {
                 value: 25,
+                suffix: "+",
                 title: "Years of professional learning initiatives",
                 desc:
                   "A sustained commitment to leadership development, management thinking, and behavioural growth.",
@@ -106,7 +105,8 @@ const ImpactSection = () => {
                   "Regular monthly learning programmes designed exclusively for members.",
               },
               {
-                value: 1000,
+                value: 5000,
+                suffix: "+",
                 title: "Professionals and learners impacted",
                 desc:
                   "Individuals across industries engaged through workshops, programmes, and experiential learning.",
@@ -114,9 +114,11 @@ const ImpactSection = () => {
             ].map((item, i) => (
               <div
                 key={i}
-className="impact-reveal bg-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-[0_30px_80px_rgba(0,0,0,0.08)]"              >
+                className="impact-reveal bg-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-[0_30px_80px_rgba(0,0,0,0.08)]"              >
                 <h3
-className="text-5xl sm:text-6xl md:text-7xl font-semibold text-[var(--palms-green)] impact-number"                  data-value={item.value}
+                  className="text-5xl sm:text-6xl md:text-7xl font-semibold text-[var(--palms-green)] impact-number"
+                  data-value={item.value}
+                  data-suffix={item.suffix}
                 >
                   0
                 </h3>

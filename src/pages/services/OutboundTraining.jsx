@@ -64,7 +64,7 @@ const OutboundTraining = () => {
         <div className="relative grid lg:grid-cols-2 gap-14 items-center min-h-[450px]">
 
           <span className="absolute -top-24 -left-10 text-[160px] font-bold text-black/5">
-            {service.id}
+            OB
           </span>
 
           <div className="space-y-8">
@@ -110,49 +110,6 @@ const OutboundTraining = () => {
           </div>
         </div>
 
-
-        {/* ================= WHAT IT DELIVERS ================= */}
-        <div
-          ref={deliverSectionRef}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 md:gap-20 justify-center items-start"        >
-
-          {/* LEFT – PINNED */}
-          <div ref={deliverLeftRef} className="pt-10">
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--palms-blue)]">
-              What this programme delivers
-            </h3>
-          </div>
-
-          <div className="relative">
-
-            {/* SCROLL RAIL */}
-            <div className="absolute left-0 top-0 h-full w-[2px] bg-black/10">
-              <span
-                ref={progressRef}
-                className="absolute top-0 left-0 w-full h-full bg-[var(--palms-green)]"
-                style={{ transform: "scaleY(0)" }}
-              />
-            </div>
-
-            {/* POINTS */}
-            <div ref={deliverRightRef} className="space-y-4 pl-10 pb-20">
-              {service.deliverables?.map((item, i) => (
-                <div
-                  key={i}
-                  className="relative py-6"
-                >
-                  <span className="absolute -left-[11px] top-9 w-3 h-3 rounded-full bg-[var(--palms-green)]" />
-                  <p className=" ms-5 text-[var(--palms-blue)] text-lg leading-relaxed">
-                    {item}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-          </div>
-
-
-        </div>
 
         {/* ================= PROGRAMME ELEMENTS (UPGRADED 🔥) ================= */}
         <section className="bg-palms-gradient text-white py-16 md:py-20">
@@ -200,7 +157,7 @@ const OutboundTraining = () => {
             {/* HEADER */}
             <div className="mb-10">
               <h2 className="text-4xl md:text-5xl font-semibold text-[var(--palms-blue)]">
-                Who & Outcomes
+               Ideal for Key Takeaway
               </h2>
               <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
             </div>
@@ -218,7 +175,7 @@ const OutboundTraining = () => {
         group-hover:w-full transition-all duration-500 rounded-t-3xl" />
 
                 <h3 className="text-2xl font-semibold text-[var(--palms-blue)] mb-8">
-                  Who this programme is for
+                   For whom
                 </h3>
 
                 <div className="space-y-5">
@@ -292,7 +249,7 @@ const OutboundTraining = () => {
         {/* ================= WHY ================= */}
         <section className="p-10 bg-gray-100">
           <h2 className="text-3xl font-semibold text-center text-[var(--palms-blue)] mb-16">
-            Why organisations choose PALMS
+            Why organisations choose PALMS?
           </h2>
 
           <div className="space-y-12">
@@ -313,7 +270,7 @@ const OutboundTraining = () => {
             measurable impact together.
           </h2>
 
-          <button onClick={() => navigate("/contact")} className="mt-10 sm:mt-14 md:mt-16 bg-white text-[var(--palms-blue)]
+          <button onClick={() => navigate("/contact")} className="mt-10 sm:mt-14 md:mt-16  bg-[var(--palms-green)] text-white
 px-10 sm:px-14 md:px-20 py-4 sm:py-5 md:py-6 rounded-full text-base sm:text-lg md:text-xl
 transition-all duration-300 hover:scale-105">
             Talk to PALMS

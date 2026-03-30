@@ -5,6 +5,7 @@ import PalmsTimeline from "../Components/PalmsTimeline";
 import hero from "../assets/whowearehero.webp"
 import { Lightbulb, Target } from "lucide-react"
 import img from "../assets/hero4.png"
+import OurTeam from "./OurTeam";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,7 +95,7 @@ const WhoAreWe = () => {
 
 
 
-            <div className="max-w-[1300px] mx-auto space-y-16 sm:space-y-20 md:space-y-28">
+            <div className="max-w-[1300px] mx-auto space-y-16 sm:space-y-20 md:space-y-18">
 
                 {/* ================= WHO WE ARE ================= */}
                 <section className="py-16 sm:py-24 md:py-32 bg-white">
@@ -145,7 +146,7 @@ const WhoAreWe = () => {
 
                         <div>
                             <Target size={44} className="text-[var(--palms-green)]" />
-                            <h3 className="mt-6 text-3xl font-semibold">Our purpose</h3>
+                            <h3 className="mt-6 text-3xl font-semibold">Our Purpose</h3>
                             <p className="mt-4 text-white/80 leading-relaxed">
                                 To empower people and organisations to enhance their productivity and thereby contribute positively to society.
                             </p>
@@ -153,7 +154,7 @@ const WhoAreWe = () => {
 
                         <div>
                             <Lightbulb size={44} className="text-[var(--palms-green)]" />
-                            <h3 className="mt-6 text-3xl font-semibold">Our belief</h3>
+                            <h3 className="mt-6 text-3xl font-semibold">Our Belief</h3>
                             <p className="mt-4 text-white/80 leading-relaxed">
                                 Sustainable success comes from mindset, values, and capability - not short-term performance alone.
                             </p>
@@ -202,7 +203,7 @@ const WhoAreWe = () => {
                     </div>
 
                     {/* RIGHT — EXPERIENCE RAIL */}
-                    <div className="relative space-y-14 sm:space-y-18 md:space-y-24 pl-6 sm:pl-8 md:pl-10">
+                    <div className="relative space-y-10 sm:space-y-12 md:space-y-10 pl-6 sm:pl-8 md:pl-10">
 
                         {/* Vertical line */}
                         <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[var(--palms-blue)]/15" />
@@ -261,75 +262,10 @@ const WhoAreWe = () => {
                     <PalmsTimeline />
                 </section>
 
-                {/* ================= PROGRAMME SPECTRUM ================= */}
-                <div className="space-y-10 mx-5">
-                    <h3 className="who-reveal text-2xl font-semibold text-[var(--palms-blue)]">
-                        Programme Spectrum
-                    </h3>
-                    <div className="mt-6 h-[3px] w-12 bg-[var(--palms-green)] rounded-full opacity-80" />
+                <div className="bg-white">
+  <OurTeam />
+</div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
-
-                        {/* CARD 1 */}
-                        <div className="who-reveal group relative ">
-                            {/* Outer Layer */}
-                            <div className="absolute inset-0 -left-2  bg-[var(--palms-blue)] rounded-2xl translate-y-2" />
-
-                            {/* Inner Card */}
-                            <div className="relative bg-white rounded-2xl h-[220px] sm:h-[240px] md:h-[250px] p-8 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
-                                <span className="block h-[3px] w-10 bg-[var(--palms-green)] rounded-full mb-4 transition-all group-hover:w-16" />
-
-                                <strong className="block text-[var(--palms-blue)] group-hover:text-[var(--palms-green)] transition">
-                                    Management & Leadership Development
-                                </strong>
-
-                                <p className="mt-3 text-sm text-[var(--palms-grey)] leading-relaxed">
-                                    Leadership development, decision making, team leadership, emotional
-                                    intelligence, communication effectiveness, and professional excellence.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* CARD 2 */}
-                        <div className="who-reveal group relative">
-                            <div className="absolute inset-0 -left-2  bg-[var(--palms-blue)] rounded-2xl translate-y-2" />
-
-                            <div className="relative bg-white rounded-2xl h-[220px] sm:h-[240px] md:h-[250px] p-8 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
-                                <span className="block h-[3px] w-10 bg-[var(--palms-green)] rounded-full mb-4 transition-all group-hover:w-16" />
-
-                                <strong className="block text-[var(--palms-blue)] group-hover:text-[var(--palms-green)] transition">
-                                    Corporate Engagements
-                                </strong>
-
-                                <p className="mt-3 text-sm text-[var(--palms-grey)] leading-relaxed">
-                                    In-house training programmes, outbound learning experiences, and
-                                    customized consulting engagements aligned with organizational goals
-                                    and challenges.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* CARD 3 */}
-                        <div className="who-reveal group relative">
-                            <div className="absolute inset-0 -left-2  bg-[var(--palms-blue)] rounded-2xl translate-y-2" />
-
-                            <div className="relative bg-white rounded-2xl h-[220px] sm:h-[240px] md:h-[250px] p-8 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
-                                <span className="block h-[3px] w-10 bg-[var(--palms-green)] rounded-full mb-4 transition-all group-hover:w-16" />
-
-                                <strong className="block text-[var(--palms-blue)] group-hover:text-[var(--palms-green)] transition">
-                                    Membership & Learning Forums
-                                </strong>
-
-                                <p className="mt-3 text-sm text-[var(--palms-grey)] leading-relaxed">
-                                    Continuous learning through structured memberships, monthly programmes,
-                                    networking opportunities, and curated knowledge resources such as
-                                    PALMS PLUS.
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
 
 
                 <div className="mt-16 sm:mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-14 md:gap-20 items-center
@@ -340,7 +276,7 @@ bg-[var(--palms-blue)]/5 rounded-3xl p-8 sm:p-12 md:p-16">
 
                         <div>
                             <h3 className="text-2xl font-semibold text-[var(--palms-blue)]">
-                                Our mission & objectives
+                                Our Mission & Objectives
                             </h3>
                             <div className="mt-4 h-[3px] w-12 bg-[var(--palms-green)] rounded-full" />
                         </div>

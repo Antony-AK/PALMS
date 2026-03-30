@@ -11,19 +11,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   const sectionRef = useRef(null);
-  const [showGlobe, setShowGlobe] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState("");
   const navigate = useNavigate();
   const [success, setSuccess] = useState(false);
 
-  useEffect(() => {
-    const isDesktop = window.innerWidth >= 1024; // lg breakpoint
-
-    if (isDesktop) {
-      const t = setTimeout(() => setShowGlobe(true), 400);
-      return () => clearTimeout(t);
-    }
-  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -48,15 +38,6 @@ const Contact = () => {
     return () => ctx.revert();
   }, []);
 
-  const membershipPlans = [
-    { name: "Mega Corporate", price: "₹30,000 / year" },
-    { name: "Corporate", price: "₹18,000 / year" },
-    { name: "Mini Corporate", price: "₹12,000 / year" },
-    { name: "Standard Membership", price: "₹6,000 / year" },
-    { name: "Family Membership", price: "₹9,000 / year" },
-    { name: "Student Membership", price: "₹4,000 / year" },
-    { name: "Associate Membership", price: "₹1,200 / year" }
-  ];
 
 
   const handleSubmit = async (e) => {
@@ -69,8 +50,7 @@ const Contact = () => {
     formData.append("from_name", "PALMS Website");
 
     // Add custom field (your selected plan)
-    formData.append("membership_plan", selectedPlan);
-
+    formData.append("from_email", formData.get("email"));
     try {
       const res = await fetch("https://api.w3forms.com/submit", {
         method: "POST",
@@ -83,7 +63,6 @@ const Contact = () => {
       if (data.success) {
         toast.success("Message sent successfully 🚀");
         e.target.reset();
-        setSelectedPlan("");
       } else {
         toast.error("Something went wrong ❌");
       }
@@ -97,13 +76,6 @@ const Contact = () => {
       ref={sectionRef}
       className="relative w-full min-h-screen bg-[#f5f7fb] px-5 sm:px-6 md:px-8 pt-14 sm:pt-16 md:pt-18 pb-16 sm:pb-18 md:pb-20 overflow-hidden"    >
 
-      {showGlobe && (
-        <div className="hidden lg:block">
-          <Suspense fallback={null}>
-            <HologramGlobe />
-          </Suspense>
-        </div>
-      )}
 
       <div className="relative z-10 max-w-full mx-auto">
 
@@ -211,57 +183,60 @@ const Contact = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14 md:gap-20">
 
             {/* FORM */}
-            <form onSubmit={handleSubmit} className="space-y-10">
+            <form onSubmit={handleSubmit} className="space-y-8">
 
+              {/* NAME */}
               <div>
                 <label className="text-sm font-medium text-[var(--palms-blue)] block mb-3">
-                  Your name
+                  Your Name
                 </label>
                 <input
                   name="name"
                   type="text"
                   required
-                  className="w-full border border-gray-200 rounded-xl px-4 sm:px-5 py-2.5 sm:py-3 text-sm
-                           focus:outline-none focus:border-[var(--palms-blue)] focus:ring-2 focus:ring-[var(--palms-blue)]/10 transition"
+                  className="input-style"
                 />
               </div>
 
+              {/* COMPANY NAME */}
               <div>
                 <label className="text-sm font-medium text-[var(--palms-blue)] block mb-3">
-                  Email address
+                  Company Name
+                </label>
+                <input
+                  name="company"
+                  type="text"
+                  className="input-style"
+                />
+              </div>
+
+              {/* PHONE */}
+              <div>
+                <label className="text-sm font-medium text-[var(--palms-blue)] block mb-3">
+                  Phone Number
+                </label>
+                <input
+                  name="phone"
+                  type="tel"
+                  required
+                  className="input-style"
+                />
+              </div>
+
+              {/* EMAIL */}
+              <div>
+                <label className="text-sm font-medium text-[var(--palms-blue)] block mb-3">
+                  Email Address
                 </label>
                 <input
                   name="email"
                   type="email"
                   required
-                  className="w-full border border-gray-200 rounded-xl px-4 sm:px-5 py-2.5 sm:py-3 text-sm
-                           focus:outline-none focus:border-[var(--palms-blue)] focus:ring-2 focus:ring-[var(--palms-blue)]/10 transition"
+                  className="input-style"
                 />
               </div>
 
-              <div>
-                <label className="text-sm font-medium text-[var(--palms-blue)] block mb-3">
-                  Select Membership Plan
-                </label>
-
-                <select
-                name="membership_plan"
-                  value={selectedPlan}
-                  onChange={(e) => setSelectedPlan(e.target.value)}
-                  className="w-full border border-gray-200 rounded-xl px-5 py-3 text-sm 
-    focus:outline-none focus:border-[var(--palms-blue)] 
-    focus:ring-2 focus:ring-[var(--palms-blue)]/10 transition"
-                >
-                  <option value="">Choose a membership plan</option>
-
-                  {membershipPlans.map((plan, index) => (
-                    <option key={index} value={plan.name}>
-                      {plan.name} — {plan.price}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
+              {/* MESSAGE */}
               <div>
                 <label className="text-sm font-medium text-[var(--palms-blue)] block mb-3">
                   Message
@@ -270,13 +245,13 @@ const Contact = () => {
                   name="message"
                   rows="4"
                   required
-                  className="w-full border border-gray-200 rounded-xl px-5 py-3 text-sm resize-none
-                           focus:outline-none focus:border-[var(--palms-blue)] focus:ring-2 focus:ring-[var(--palms-blue)]/10 transition"
+                  className="input-style resize-none"
                 />
               </div>
 
-              <button className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 text-sm sm:text-base bg-[var(--palms-blue)] text-white rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
-                Send message
+              {/* BUTTON */}
+              <button className="px-10 py-4 bg-[var(--palms-blue)] text-white rounded-full hover:scale-105 transition-all shadow-lg">
+                Send Message
               </button>
 
             </form>

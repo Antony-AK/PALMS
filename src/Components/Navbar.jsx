@@ -11,9 +11,9 @@ export const servicesNav = [
         slug: "inhouse-training-programmes",
     },
     {
-        id: "04",
-        title: "Career Guidance for Students",
-        slug: "career-guidance-students",
+        id: "03",
+        title: "Special Programmes for Individuals",
+        slug: "special-programmes-individuals",
     },
     {
         id: "02",
@@ -21,21 +21,6 @@ export const servicesNav = [
         slug: "outbound-training-programmes",
     },
 
-    {
-        id: "09",
-        title: "Business Consultancy",
-        slug: "business-consultancy",
-    },
-    {
-        id: "03",
-        title: "Special Programmes for Individuals",
-        slug: "special-programmes-individuals",
-    },
-    {
-        id: "07",
-        title: "MBA In a Box – Business Essentials for Entrepreneurs",
-        slug: "mba-in-a-box-business-essentials",
-    },
     {
         id: "05",
         title: "PEP UP - Personality Development",
@@ -51,6 +36,24 @@ export const servicesNav = [
         title: "Pro EX – Managerial & Professional Skills Development",
         slug: "pro-ex-managerial-professional-skills",
     },
+
+    {
+        id: "09",
+        title: "Business Consultancy",
+        slug: "business-consultancy",
+    },
+
+    {
+        id: "04",
+        title: "Career Compass - Career Guidance for Students",
+        slug: "career-guidance-students",
+    },
+    {
+        id: "07",
+        title: "MBA In a Box – Business Essentials for Entrepreneurs",
+        slug: "mba-in-a-box-business-essentials",
+    },
+
 ];
 
 export const membershipsNav = [
@@ -290,9 +293,7 @@ const Navbar = () => {
                                                         {service.title}
                                                     </p>
 
-                                                    <span className="text-xs text-white/50">
-                                                        Programme {service.id}
-                                                    </span>
+
                                                 </div>
                                             ))}
 
@@ -315,10 +316,6 @@ const Navbar = () => {
 
                             <NavLink to="/gallery" className={linkClass}>
                                 Gallery
-                            </NavLink>
-
-                            <NavLink to="/ourteam" className={linkClass}>
-                                Our Team
                             </NavLink>
 
                             <NavLink to="/contact" className={linkClass}>
@@ -447,7 +444,6 @@ const Navbar = () => {
                         <MobileLink to="/events" label="Events" close={() => setMobileOpen(false)} />
                         <MobileLink to="/palmsplus" label="Palms Plus" close={() => setMobileOpen(false)} />
                         <MobileLink to="/gallery" label="Gallery" close={() => setMobileOpen(false)} />
-                        <MobileLink to="/ourteam" label="Our Team" close={() => setMobileOpen(false)} />
                         <MobileLink to="/contact" label="Contact" close={() => setMobileOpen(false)} />
 
                         <button

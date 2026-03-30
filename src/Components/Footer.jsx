@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import logo from "../assets/logo-white.jpg"
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { MdLocationOn, MdPhone, MdEmail } from "react-icons/md"; // ✅ ADD THIS
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -60,23 +61,36 @@ const Footer = () => {
           {/* RIGHT — COORDINATES */}
           <div className="flex flex-col justify-between">
 
-            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base text-white/80">
-              <p>
-                20/1, W.D. Road<br />
-                Thoothukudi – 628 003<br />
-                Tamil Nadu, India
-              </p>
+            <div className="space-y-5 text-sm sm:text-base text-white/80">
 
-              <p>
-                0461-2330856<br />
-                82203 44477
-              </p>
+              {/* 📍 Address */}
+              <div className="flex gap-3 items-start">
+                <MdLocationOn className="text-[var(--palms-green)] mt-1 text-lg" />
+                <p>
+                  20/1, W.D. Road<br />
+                  Thoothukudi – 628 003<br />
+                  Tamil Nadu, India
+                </p>
+              </div>
 
-              <p>
-                info@palmsindia.org
-              </p>
+              {/* 📞 Phone */}
+              <div className="flex gap-3 items-start">
+                <MdPhone className="text-[var(--palms-green)] mt-1 text-lg" />
+                <p>
+                  0461-2330856<br />
+                  82203 44477
+                </p>
+              </div>
+
+              {/* 📧 Email */}
+              <div className="flex gap-3 items-start">
+                <MdEmail className="text-[var(--palms-green)] mt-1 text-lg" />
+                <p>
+                  info@palmsindia.org
+                </p>
+              </div>
+
             </div>
-
             <div className="my-4 sm:my-5 flex gap-4 sm:gap-6">
               <a
                 href="https://www.facebook.com/palmstraining/"

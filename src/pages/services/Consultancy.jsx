@@ -64,7 +64,7 @@ const Consultancy = () => {
                 <div className="relative grid lg:grid-cols-2 gap-14 items-center min-h-[450px]">
 
                     <span className="absolute -top-24 -left-10 text-[160px] font-bold text-black/5">
-                        {service.id}
+                        BC
                     </span>
 
                     <div className="space-y-8">
@@ -113,56 +113,13 @@ const Consultancy = () => {
                 </div>
 
 
-                {/* ================= WHAT IT DELIVERS ================= */}
-                <div
-                    ref={deliverSectionRef}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 md:gap-20 justify-center items-start"        >
-
-                    {/* LEFT – PINNED */}
-                    <div ref={deliverLeftRef} className="pt-10">
-                        <h3 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--palms-blue)]">
-                            What this programme delivers
-                        </h3>
-                    </div>
-
-                    <div className="relative">
-
-                        {/* SCROLL RAIL */}
-                        <div className="absolute left-0 top-0 h-full w-[2px] bg-black/10">
-                            <span
-                                ref={progressRef}
-                                className="absolute top-0 left-0 w-full h-full bg-[var(--palms-green)]"
-                                style={{ transform: "scaleY(0)" }}
-                            />
-                        </div>
-
-                        {/* POINTS */}
-                        <div ref={deliverRightRef} className="space-y-4 pl-10 pb-20">
-                            {service.deliverables?.map((item, i) => (
-                                <div
-                                    key={i}
-                                    className="relative py-6"
-                                >
-                                    <span className="absolute -left-[11px] top-9 w-3 h-3 rounded-full bg-[var(--palms-green)]" />
-                                    <p className=" ms-5 text-[var(--palms-blue)] text-lg leading-relaxed">
-                                        {item}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-
-                    </div>
-
-
-                </div>
-
                 {/* ================= PROGRAMME ELEMENTS (UPGRADED 🔥) ================= */}
                 <section className="bg-palms-gradient text-white py-16 md:py-20">
 
                     <div className="max-w-[1200px] mx-auto px-5 md:px-10">
 
                         <h2 className="text-4xl md:text-5xl font-semibold mb-20">
-                            Learning Modules
+                            Scope of Works
                             <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
                         </h2>
 
@@ -209,7 +166,7 @@ const Consultancy = () => {
                         {/* HEADER */}
                         <div className="mb-10">
                             <h2 className="text-4xl md:text-5xl font-semibold text-[var(--palms-blue)]">
-                                Who & Outcomes
+                               Ideal for Key Takeaway
                             </h2>
                             <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
                         </div>
@@ -227,7 +184,7 @@ const Consultancy = () => {
         group-hover:w-full transition-all duration-500 rounded-t-3xl" />
 
                                 <h3 className="text-2xl font-semibold text-[var(--palms-blue)] mb-8">
-                                    Who this programme is for
+                                    For whom
                                 </h3>
 
                                 <div className="space-y-5">
@@ -306,46 +263,13 @@ const Consultancy = () => {
                     </section>
                 )}
 
-                {/* ================= LEARNING ================= */}
-                <section className="">
-
-                    <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-
-                        <div className="mb-10">
-                            <h2 className="text-4xl md:text-5xl font-semibold text-[var(--palms-blue)]">
-                                How learning happens
-                            </h2>
-                            <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
-                        </div>
-
-                        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-
-                            {service.learning.map((item, i) => (
-                                <div key={i} className="flex gap-4 items-start bg-white border border-black/5 p-5 rounded-2xl">
-
-                                    <span className="text-[var(--palms-green)] font-bold">
-                                        {String(i + 1).padStart(2, "0")}
-                                    </span>
-
-                                    <p className="text-[var(--palms-grey)]">
-                                        {item}
-                                    </p>
-
-                                </div>
-                            ))}
-
-                        </div>
-
-                    </div>
-
-                </section>
-
+  
 
 
                 {/* ================= WHY ================= */}
                 <section className="p-10 bg-gray-100">
                     <h2 className="text-3xl font-semibold text-center text-[var(--palms-blue)] mb-16">
-                        Why organisations choose PALMS
+                        Why organisations choose PALMS?
                     </h2>
 
                     <div className="space-y-12">
@@ -368,7 +292,7 @@ const Consultancy = () => {
                         measurable impact together.
                     </h2>
 
-                    <button onClick={() => navigate("/contact")} className="mt-10 sm:mt-14 md:mt-16 bg-white text-[var(--palms-blue)]
+                    <button onClick={() => navigate("/contact")} className="mt-10 sm:mt-14 md:mt-16  bg-[var(--palms-green)] text-white
 px-10 sm:px-14 md:px-20 py-4 sm:py-5 md:py-6 rounded-full text-base sm:text-lg md:text-xl
 transition-all duration-300 hover:scale-105">
                         Talk to PALMS

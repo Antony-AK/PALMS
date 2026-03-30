@@ -308,127 +308,127 @@ const PalmsTimeline = () => {
                 The PALMS Journey
             </h3>
 
-           <div className="w-full overflow-x-auto pb-6">
-  <div className="min-w-[1200px] snap-center">
-    <svg
-      ref={svgRef}
-      viewBox="0 0 1600 520"
-      className="w-full h-auto overflow-visible"
-    >
-                {/* TRACK */}
-                <path
-                    d="M 80 80 H 1520 Q 1560 80 1560 120 V 200 Q 1560 240 1520 240 H 80 Q 40 240 40 280 V 360 Q 40 400 80 400 H 1520"
-                    fill="none"
-                    stroke="#E5E7EB"
-                    strokeWidth="48"
-                    strokeLinecap="round"
-                />
-
-                {/* ANIMATED PATH */}
-                <path
-                    ref={pathRef}
-                    d="M 80 80 H 1520 Q 1560 80 1560 120 V 200 Q 1560 240 1520 240 H 80 Q 40 240 40 280 V 360 Q 40 400 80 400 H 1520"
-                    fill="none"
-                    stroke="url(#palmsGradient)"
-                    strokeWidth="64"
-                    strokeLinecap="round"
-                />
-
-                {/* GRADIENT */}
-                <defs>
-                    <linearGradient id="palmsGradient" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stopColor="#F59E0B" />
-                        <stop offset="25%" stopColor="#10B981" />
-                        <stop offset="50%" stopColor="#3B82F6" />
-                        <stop offset="75%" stopColor="#8B5CF6" />
-                        <stop offset="100%" stopColor="#22C55E" />
-                    </linearGradient>
-                </defs>
-
-                {/* ================= EVENTS ================= */}
-
-                {buildNodes().map((e, i) => (
-                    <g key={i}>
-                        {/* Dot */}
-                        <circle cx={e.x} cy={e.y} r="10" fill="#22C55E" />
-
-                        {/* Year */}
-                        <circle
-                            cx={e.x}
-                            cy={e.y}
-                            r="22"
-                            fill="white"
-                            stroke="#22C55E"
-                            strokeWidth="2"
-                        />
-                        <circle
-                            cx={e.x}
-                            cy={e.y}
-                            r="16"
-                            fill="#22C55E"
+            <div className="w-full overflow-x-auto pb-6">
+                <div className="min-w-[1200px] snap-center">
+                    <svg
+                        ref={svgRef}
+                        viewBox="0 0 1600 520"
+                        className="w-full h-auto overflow-visible"
+                    >
+                        {/* TRACK */}
+                        <path
+                            d="M 80 80 H 1520 Q 1560 80 1560 120 V 200 Q 1560 240 1520 240 H 80 Q 40 240 40 280 V 360 Q 40 400 80 400 H 1520"
+                            fill="none"
+                            stroke="#E5E7EB"
+                            strokeWidth="48"
+                            strokeLinecap="round"
                         />
 
-                        {e.items.length > 0 && (
-                            <line
-                                x1={e.x}
-                                y1={e.y + (e.labelY < e.y ? -26 : 26)}   // start outside year circle
-                                x2={e.x}
-                                y2={e.labelY + (e.labelY < e.y ? 5 : -5)} // stop before text
-                                stroke="#CBD5E1"
-                                strokeWidth="1.5"
-                                strokeDasharray="3 4"
-                                strokeLinecap="round"
-                            />
-                        )}
+                        {/* ANIMATED PATH */}
+                        <path
+                            ref={pathRef}
+                            d="M 80 80 H 1520 Q 1560 80 1560 120 V 200 Q 1560 240 1520 240 H 80 Q 40 240 40 280 V 360 Q 40 400 80 400 H 1520"
+                            fill="none"
+                            stroke="url(#palmsGradient)"
+                            strokeWidth="64"
+                            strokeLinecap="round"
+                        />
+
+                        {/* GRADIENT */}
+                        <defs>
+                            <linearGradient id="palmsGradient" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stopColor="#F59E0B" />
+                                <stop offset="25%" stopColor="#10B981" />
+                                <stop offset="50%" stopColor="#3B82F6" />
+                                <stop offset="75%" stopColor="#8B5CF6" />
+                                <stop offset="100%" stopColor="#22C55E" />
+                            </linearGradient>
+                        </defs>
+
+                        {/* ================= EVENTS ================= */}
+
+                        {buildNodes().map((e, i) => (
+                            <g key={i}>
+                                {/* Dot */}
+                                <circle cx={e.x} cy={e.y} r="10" fill="#22C55E" />
+
+                                {/* Year */}
+                                <circle
+                                    cx={e.x}
+                                    cy={e.y}
+                                    r="22"
+                                    fill="white"
+                                    stroke="#22C55E"
+                                    strokeWidth="2"
+                                />
+                                <circle
+                                    cx={e.x}
+                                    cy={e.y}
+                                    r="16"
+                                    fill="#22C55E"
+                                />
+
+                                {e.items.length > 0 && (
+                                    <line
+                                        x1={e.x}
+                                        y1={e.y + (e.labelY < e.y ? -26 : 26)}   // start outside year circle
+                                        x2={e.x}
+                                        y2={e.labelY + (e.labelY < e.y ? 5 : -5)} // stop before text
+                                        stroke="#CBD5E1"
+                                        strokeWidth="1.5"
+                                        strokeDasharray="3 4"
+                                        strokeLinecap="round"
+                                    />
+                                )}
 
 
-                        <text
-                            x={e.x}
-                            y={e.y + 4}
-                            textAnchor="middle"
-                            fontSize="13"
-                            fontWeight="600"
-                            fill="var(--palms-blue)"
-                        >
-                            {e.year}
-                        </text>
+                                <text
+                                    x={e.x}
+                                    y={e.y + 4}
+                                    textAnchor="middle"
+                                    fontSize="13"
+                                    fontWeight="600"
+                                    fill="var(--palms-blue)"
+                                >
+                                    {e.year}
+                                </text>
 
-                        {/* Content */}
-                        {e.items.length > 0 && (
-                            <text
-                                x={e.x}
-                                y={e.labelY}
-                                textAnchor="middle"
-                                fontSize="14"
-                                fill="#374151"
-                            >
-                                {e.items.flatMap((item, itemIdx) => {
-                                    const lines = splitIntoTwoLines(item);
+                                {/* Content */}
+                                {e.items.length > 0 && (
+                                    <text
+                                        x={e.x}
+                                        y={e.labelY}
+                                        textAnchor="middle"
+                                        fontSize="14"
+                                        fill="#374151"
+                                    >
+                                        {e.items.flatMap((item, itemIdx) => {
+                                            const lines = splitIntoTwoLines(item);
 
-                                    return lines.map((line, lineIdx) => (
-                                        <tspan
-                                            key={`${itemIdx}-${lineIdx}`}
-                                            x={e.x}
-                                            dy={
-                                                itemIdx === 0 && lineIdx === 0
-                                                    ? 0
-                                                    : 18
-                                            }
-                                            fontWeight={itemIdx === 0 && lineIdx === 0 ? "600" : "400"}
-                                            fill={itemIdx === 0 && lineIdx === 0 ? "var(--palms-blue)" : "#374151"}
-                                        >
-                                            {line}
-                                        </tspan>
-                                    ));
-                                })}
-                            </text>
-                        )}
+                                            return lines.map((line, lineIdx) => (
+                                                <tspan
+                                                    key={`${itemIdx}-${lineIdx}`}
+                                                    x={e.x}
+                                                    dy={
+                                                        itemIdx === 0 && lineIdx === 0
+                                                            ? 0
+                                                            : 18
+                                                    }
+                                                    fontWeight={itemIdx === 0 && lineIdx === 0 ? "600" : "400"}
+                                                    fill={itemIdx === 0 && lineIdx === 0 ? "var(--palms-blue)" : "#374151"}
+                                                >
+                                                    {line}
+                                                </tspan>
+                                            ));
+                                        })}
+                                    </text>
+                                )}
 
-                    </g>
-                ))}
+                            </g>
+                        ))}
 
-            </svg>
-            </div>
+                    </svg>
+                </div>
             </div>
         </section>
     );

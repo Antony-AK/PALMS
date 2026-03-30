@@ -7,6 +7,18 @@ import t4 from "../assets/t13.jpg";
 
 const testimonials = [
   {
+    name: "Management",
+    role: "SPIC",
+    quote:
+      "We value our long association with PALMS. Nearly 300 of our employees have participated in over 60 programmes covering communication, leadership, productivity, and personal development. The engaging content and practical delivery have strengthened our workforce significantly.",
+  },
+  {
+    name: "Mr. Senthil Kumar S",
+    role: "CEO, Dakshin Bharat Gateway Terminal Pvt Ltd",
+    quote:
+      "PALMS behavioural training programmes have helped our teams gain valuable insights and practical tools. The sessions have strengthened individual mindsets and positively influenced our organisational culture.",
+  },
+  {
     name: "Mr. Krishna Shankar",
     role: "CEO, Subramany & Co",
     quote:
@@ -23,12 +35,6 @@ const testimonials = [
     role: "School Teacher, Vietnam",
     quote:
       "My journey with PALMS Summer Camp helped me overcome stage fear and develop confidence in public speaking. What once felt challenging became a strength, and addressing large audiences today reflects the impact of those early learning experiences.",
-  },
-  {
-    name: "Management",
-    role: "SPIC",
-    quote:
-      "We value our long association with PALMS. Nearly 300 of our employees have participated in over 60 programmes covering communication, leadership, productivity, and personal development. The engaging content and practical delivery have strengthened our workforce significantly.",
   },
   {
     name: "Mr. Suresh Thangarayappan",
@@ -54,12 +60,7 @@ const testimonials = [
     quote:
       "PALMS stands out for its remarkable consistency in delivering meaningful and practical learning experiences. Their commitment to quality has made them a dependable name in the learning and development space.",
   },
-  {
-    name: "Mr. Senthil Kumar S",
-    role: "CEO, Dakshin Bharat Gateway Terminal Pvt Ltd",
-    quote:
-      "PALMS behavioural training programmes have helped our teams gain valuable insights and practical tools. The sessions have strengthened individual mindsets and positively influenced our organisational culture.",
-  },
+
 ];
 
 
@@ -88,68 +89,67 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-   <section className="w-full bg-white px-5 sm:px-6 md:px-8 py-16 sm:py-24 md:py-32">
-  <div className="max-w-[1280px] mx-auto">
+    <section className="w-full bg-white px-5 sm:px-6 md:px-8 py-16 sm:py-24 md:py-32">
+      <div className="max-w-[1280px] mx-auto">
 
-    {/* Heading */}
-    <div className="mb-16 sm:mb-20 md:mb-24 text-center">
-      <span className="text-sm sm:text-base md:text-lg tracking-widest uppercase text-[var(--palms-grey)]">
-        Testimonials
-      </span>
+        {/* Heading */}
+        <div className="mb-16 sm:mb-20 md:mb-24 text-center">
+          <span className="text-sm sm:text-base md:text-lg tracking-widest uppercase text-[var(--palms-grey)]">
+            Testimonials
+          </span>
 
-      <h2 className="mt-5 sm:mt-6 text-2xl sm:text-3xl md:text-4xl font-semibold text-[var(--palms-blue)]">
-        What our participants say
-      </h2>
-    </div>
+          <h2 className="mt-5 sm:mt-6 text-2xl sm:text-3xl md:text-4xl font-semibold text-[var(--palms-blue)]">
+            What our participants say
+          </h2>
+        </div>
 
-    {/* Testimonial block */}
-    <div className="relative max-w-[860px] mx-auto px-2 sm:px-0">
+        {/* Testimonial block */}
+        <div className="relative max-w-[860px] mx-auto px-2 sm:px-0">
 
-      {/* Decorative quote */}
-      <span className="absolute -top-6 sm:-top-8 md:-top-10 -left-4 sm:-left-6 md:-left-8 text-[3rem] sm:text-[4rem] md:text-[6rem] leading-none text-[var(--palms-blue)]/10 select-none">
-        “
-      </span>
+          {/* Decorative quote */}
+          <span className="absolute -top-6 sm:-top-8 md:-top-10 -left-4 sm:-left-6 md:-left-8 text-[3rem] sm:text-[4rem] md:text-[6rem] leading-none text-[var(--palms-blue)]/10 select-none">
+            “
+          </span>
 
-      {/* Accent line */}
-      <div className="absolute left-[-10px] sm:left-[-16px] md:left-[-24px] top-3 sm:top-4 bottom-3 sm:bottom-4 w-[2px] bg-[var(--palms-blue)]/20" />
+          {/* Accent line */}
+          <div className="absolute left-[-10px] sm:left-[-16px] md:left-[-24px] top-3 sm:top-4 bottom-3 sm:bottom-4 w-[2px] bg-[var(--palms-blue)]/20" />
 
-      <div ref={quoteRef} className="relative transition-all duration-500 hover:-translate-y-1">
+          <div ref={quoteRef} className="relative transition-all duration-500 hover:-translate-y-1">
 
-        {/* Quote */}
-        <p className="text-base sm:text-lg md:text-xl leading-relaxed text-[var(--palms-grey)]">
-          {testimonials[activeIndex].quote}
-        </p>
+            {/* Quote */}
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-[var(--palms-grey)]">
+              {testimonials[activeIndex].quote}
+            </p>
 
-        {/* Author */}
-        <div className="mt-8 sm:mt-10 md:mt-12">
-          <p className="font-medium text-sm sm:text-base text-[var(--palms-blue)]">
-            {testimonials[activeIndex].name}
-          </p>
-          <p className="mt-1 text-xs sm:text-sm text-[var(--palms-grey)]">
-            {testimonials[activeIndex].role}
-          </p>
+            {/* Author */}
+            <div className="mt-8 sm:mt-10 md:mt-12">
+              <p className="font-medium text-sm sm:text-base text-[var(--palms-blue)]">
+                {testimonials[activeIndex].name}
+              </p>
+              <p className="mt-1 text-xs sm:text-sm text-[var(--palms-grey)]">
+                {testimonials[activeIndex].role}
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Progress indicator */}
+        <div className="mt-12 sm:mt-16 md:mt-20 flex justify-center gap-2 sm:gap-3">
+          {testimonials.map((_, i) => (
+            <span
+              key={i}
+              className={`h-[3px] rounded-full transition-all duration-500
+            ${activeIndex === i
+                  ? "w-10 bg-[var(--palms-green)]"
+                  : "w-6 bg-gray-200"
+                }`}
+            />
+          ))}
         </div>
 
       </div>
-    </div>
-
-    {/* Progress indicator */}
-    <div className="mt-12 sm:mt-16 md:mt-20 flex justify-center gap-2 sm:gap-3">
-      {testimonials.map((_, i) => (
-        <span
-          key={i}
-          className={`h-[3px] rounded-full transition-all duration-500
-            ${
-              activeIndex === i
-                ? "w-10 bg-[var(--palms-green)]"
-                : "w-6 bg-gray-200"
-            }`}
-        />
-      ))}
-    </div>
-
-  </div>
-</section>
+    </section>
 
   );
 };

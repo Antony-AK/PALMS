@@ -13,11 +13,19 @@ const LandingEventsSection = () => {
       try {
         const res = await API.get("/events");
 
-        const upcoming = res.data
-          .filter(event => new Date(event.date) >= new Date())
-          .sort((a, b) => new Date(a.date) - new Date(b.date))
-          .slice(0, 3);
+       const upcoming = res.data
+  .filter(event => {
+    if (!event.date) return true; // ✅ allow events without date
+    return new Date(event.date) >= new Date();
+  })
+  .sort((a, b) => {
+    const dateA = a.date ? new Date(a.date) : new Date(0);
+    const dateB = b.date ? new Date(b.date) : new Date(0);
+    return dateA - dateB;
+  })
+  .slice(0, 3);
 
+        console.log(res.data);
         setEvents(upcoming);
       } catch (error) {
         console.error("Failed to fetch events", error);
@@ -87,8 +95,9 @@ const LandingEventsSection = () => {
                 {/* Content */}
                 <div className="absolute bottom-5 sm:bottom-6 left-5 sm:left-6 text-white">
                   <span className="text-[10px] tracking-widest bg-white/20 px-2 py-1 rounded-full">
-                    {new Date(event.date).toLocaleDateString()}
-                  </span>
+ {event.date
+    ? new Date(event.date).toLocaleDateString()
+    : "Upcoming"}                  </span>
 
                   <h3 className="mt-3 text-base sm:text-lg font-semibold max-w-[220px] transition-all duration-300 group-hover:-translate-y-1">
                     {event.title}
@@ -107,7 +116,7 @@ const LandingEventsSection = () => {
         <div className="mt-16 text-center">
           <button
             onClick={() => navigate("/events")}
-className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl border border-[var(--palms-blue)] text-[var(--palms-blue)] hover:bg-[var(--palms-blue)] hover:text-white transition duration-300"          >
+            className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl border border-[var(--palms-blue)] text-[var(--palms-blue)] hover:bg-[var(--palms-blue)] hover:text-white transition duration-300"          >
             Explore All Programmes
           </button>
         </div>

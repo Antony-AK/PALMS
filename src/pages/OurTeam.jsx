@@ -96,13 +96,13 @@ const TeamCard = ({ person }) => {
 
 const OurTeam = () => {
   return (
-    <section className="py-28 px-5 bg-white">
+    <section className="py-10 md:py-0 px-5">
       <div className="max-w-[1200px] mx-auto space-y-20">
 
         {/* ================= PARTNERS ================= */}
         <div>
           <h2 className="text-4xl md:text-5xl font-semibold text-center text-[var(--palms-blue)]">
-            Our Partners
+            Our Directors
           </h2>
 
           <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] mx-auto rounded-full" />

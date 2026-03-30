@@ -21,12 +21,12 @@ function Home() {
 
       <Hero />
       <PalmsLearningMoment />
-      <PalmsPassion />
       <AboutSection />
       <ServicesSection />
       <LandingEventsSection />
       <ImpactSection />
       <TestimonialsSection />
+      <PalmsPassion />
       <MembershipCTASection />
       <FAQSection />
 

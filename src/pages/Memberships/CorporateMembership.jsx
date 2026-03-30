@@ -78,19 +78,10 @@ export const membershipsData = [
                 benefits: [
                     "Entitles the member to attend our regular monthly programmes.",
                     "Membership Fee: Rs.4,000/- Per Annum + GST as applicable.",
-                    "* To become a member category the student under this should submit proof of age and educational institutional identity card."
-                ]
+                ],
+                  note: "To become a member under this category, the student should submit proof of age and institutional identity card."
+
             },
-            {
-                title: "Associate Membership",
-                price: "1,200",
-                description:
-                    "Ideal for individuals who are interested in attending selected programmes.",
-                benefits: [
-                    "Entitles the member to attend any one of the 12 monthly programmes and additional monthly programmes at concessional cost.",
-                    "Membership Fee: Rs.1,200/- per annum + GST as applicable."
-                ]
-            }
         ]
     },
 
@@ -127,6 +118,11 @@ export const membershipsData = [
 
 ];
 
+const CORPORATE_FORM =
+    "https://docs.google.com/forms/d/e/1FAIpQLSc3C_5R5pjjis53kTNAh_FiiOz_DQrdTJQZnz1dv9bZHo7X9Q/viewform?usp=header";
+
+const INDIVIDUAL_FORM =
+    "https://docs.google.com/forms/d/e/1FAIpQLSefMALeVO87HhkCtQb6KvuoT7_rUbW4_bmphFldb_ZC4_G33g/viewform?usp=header";
 
 const CorporateMembership = () => {
 
@@ -154,6 +150,11 @@ const CorporateMembership = () => {
     const membership = membershipsData.find(
         m => m.slug === slug
     );
+
+    const formLink =
+        membership.slug === "corporate"
+            ? CORPORATE_FORM
+            : INDIVIDUAL_FORM;
 
     if (!membership) return <div>Not found</div>;
 
@@ -196,7 +197,7 @@ const CorporateMembership = () => {
   rounded-3xl
   bg-[#112a4a]
   border border-white/15
-  ${corporatePlans.length === 4 ? "p-8" : "p-10"}
+  ${plans.length === 4 ? "p-8" : "p-10"}
 
                             `}
 
@@ -231,9 +232,16 @@ const CorporateMembership = () => {
                                 ))}
                             </ul>
 
-                            <button className="w-full py-4 rounded-full bg-[var(--palms-green)] text-white font-medium transition-all hover:scale-105">
+                            <a
+                                href={formLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="block text-center w-full py-4 rounded-full bg-[var(--palms-green)] text-white font-medium transition-all hover:scale-105"
+                            >
                                 Register Now
-                            </button>
+                            </a>
+
                         </div>
                     ))}
 
