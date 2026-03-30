@@ -51,68 +51,53 @@ const EventDetails = () => {
     <section className="bg-[#f8fafc] min-h-screen pb-32">
 
       {/* ================= HERO (FIXED 🔥) ================= */}
-   <div className="relative overflow-hidden bg-[#0f172a] py-28 px-6">
+   <div className="bg-[#0f172a] py-20 px-6">
 
-  {/* 🔥 BACKGROUND GRADIENT BLOBS */}
-  <div className="absolute -top-32 -left-32 w-[400px] h-[400px] bg-[var(--palms-green)]/20 blur-[120px] rounded-full" />
-  <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/20 blur-[120px] rounded-full" />
+  <div className="max-w-5xl mx-auto text-center">
 
-  <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    {/* 🔥 BIG POSTER */}
+    <div className="flex justify-center">
 
-    {/* 🔥 LEFT → CONTENT */}
-    <div>
-
-      <h1 className="text-4xl md:text-5xl font-semibold text-white leading-tight">
-        {event.title}
-      </h1>
-
-      <p className="mt-6 text-white/70 text-lg">
-        {event.venue} · {formatDate(event.date)} · {event.time}
-      </p>
-
-      {/* CTA */}
-      <div className="mt-8 flex gap-4 flex-wrap">
-
-        <button
-          onClick={() => navigate(`/events/${slug}/register`)}
-          className="px-8 py-4 bg-[var(--palms-green)] text-white rounded-xl font-medium hover:scale-105 transition"
-        >
-          Register Now
-        </button>
-
-        <div className="px-6 py-4 bg-white/10 text-white rounded-xl backdrop-blur">
-          ₹{event.price}
-        </div>
-
-      </div>
-
-    </div>
-
-    {/* 🔥 RIGHT → FLOATING POSTER */}
-    <div className="relative flex justify-center md:justify-end">
-
-      {/* Glow */}
-      <div className="absolute inset-0 blur-[100px] bg-[var(--palms-green)]/30 rounded-full" />
-
-      {/* Poster */}
       <img
         src={event.bannerImage?.url}
         alt="Event Poster"
         className="
-          relative
-          w-[460px] sm:w-[350px] md:w-[340px]
+          w-full
+          max-w-[420px] md:max-w-[500px]
+          h-auto
           object-contain
           rounded-2xl
-          shadow-[0_40px_100px_rgba(0,0,0,0.6)]
-          rotate-[-2deg]
-          hover:rotate-0 hover:scale-105
-          transition duration-500
+          shadow-[0_40px_120px_rgba(0,0,0,0.6)]
         "
       />
 
-      {/* Floating tag */}
-      <div className="absolute -top-4 -right-4 bg-[var(--palms-green)] text-white px-4 py-2 text-xs rounded-full shadow-lg">
-        Live Event
+    </div>
+
+    {/* 🔥 CONTENT BELOW */}
+    <div className="mt-12 space-y-4">
+
+      <h1 className="text-3xl md:text-5xl font-semibold text-white leading-tight">
+        {event.title}
+      </h1>
+
+      <p className="text-white/70 text-sm md:text-base">
+        {event.venue} · {formatDate(event.date)} · {event.time}
+      </p>
+
+      {/* CTA */}
+      <div className="mt-6 flex justify-center gap-4 flex-wrap">
+
+        <button
+          onClick={() => navigate(`/events/${slug}/register`)}
+          className="px-8 py-3 bg-[var(--palms-green)] text-white rounded-xl font-medium hover:scale-105 transition"
+        >
+          Register Now
+        </button>
+
+        <div className="px-6 py-3 bg-white/10 text-white rounded-xl backdrop-blur">
+          ₹{event.price}
+        </div>
+
       </div>
 
     </div>
