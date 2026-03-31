@@ -7,10 +7,10 @@ import retreat from "../assets/retreat.jpg"
 import yatra from "../assets/yatra.jpg"
 import consulting from "../assets/consulting.png"
 import summercamp from "../assets/summercamp.jpg"
-import career from "../assets/career.webp"
-import entrepreneur from "../assets/entrepreneurs.webp"
+import career from "../assets/careercouns.jpeg"
+import entrepreneur from "../assets/mbaa.jpg"
 import individuals from "../assets/individuals.webp"
-import personality from "../assets/personality.webp"
+import personality from "../assets/pepupp.jpg"
 import profit1 from "../assets/profit1.jpeg"
 import profit2 from "../assets/profit2.jpeg"
 import profit3 from "../assets/profit3.jpeg"
@@ -314,7 +314,7 @@ export const careerGuidanceData = {
     "The assessment platform used by PALMS is powered by an advanced career guidance technology developed by Edumilestones, one of the leading career counselling platforms in India, used by thousands of counsellors and helping students make informed career decisions."
   ],
 
-  duration: "Typically 1–2 sessions (Assessment + Counselling)",
+  duration: "Typically 3 sessions – ( Pre Counselling + Assessment + Career Counselling)",
 
   deliverables: [
     "Clear understanding of personality traits and career interests",
@@ -348,9 +348,9 @@ export const careerGuidanceData = {
   ],
 
   whoItsFor: [
-    "Students from Class 8 to Class 12 choosing academic streams",
-    "Students selecting college courses and career pathways",
-    "Graduates exploring suitable career directions",
+    "Students from Class 8 to Class 10 for choosing academic streams",
+    "Students of Class 11 and 12, for selecting the suitable graduate courses ",
+    "Graduating Students and Graduates exploring suitable career directions",
     "Individuals seeking clarity about career transitions"
   ],
 
@@ -363,6 +363,7 @@ export const careerGuidanceData = {
   ],
 
   learning: [
+    "Pre Counselling",
     "Online psychometric career assessment",
     "Data-driven analysis and insights",
     "Personalised counselling interaction",

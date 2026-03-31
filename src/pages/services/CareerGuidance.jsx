@@ -249,7 +249,7 @@ const CareerGuidance = () => {
                 {/* ================= LEARNING ================= */}
                 <section className="bg-[var(--palms-grey-light)] rounded-3xl p-10">
                     <h3 className="text-3xl font-semibold text-[var(--palms-blue)] mb-6">
-                        How learning happens
+                        How Career Guidance happens
                     </h3>
 
                     <ul className="space-y-4">

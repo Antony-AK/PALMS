@@ -11,10 +11,9 @@ import yatra from "../assets/yatra.webp"
 import consulting from "../assets/consulting.webp"
 import summercamp from "../assets/summercamp.webp"
 import career from "../assets/career.webp"
-import entrepreneur from "../assets/entrepreneurs.webp"
+import entrepreneur from "../assets/mbaa.jpg"
 import individuals from "../assets/individuals.webp"
-import personality from "../assets/personality.webp"
-
+import personality from "../assets/pepupp.jpg"
 import { useNavigate } from "react-router-dom";
 
 

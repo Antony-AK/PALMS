@@ -1,68 +1,101 @@
 import React from "react";
+import director1 from "../assets/director1.png"
+import director2 from "../assets/director2.png"
+import director3 from "../assets/director3.png"
+import director4 from "../assets/director4.png"
+import director5 from "../assets/director5.png"
+import director6 from "../assets/director6.png"
+import director7 from "../assets/director7.png"
+import director8 from "../assets/director8.png"
+import director9 from "../assets/director9.png"
+
+import mem1 from "../assets/mem1.png"
+import mem2 from "../assets/mem2.png"
+import mem3 from "../assets/mem3.png"
+import mem4 from "../assets/mem4.png"
+import mem5 from "../assets/mem5.png"
+
+
+
 
 const partners = [
   {
-    name: "Arun Kumar",
-    role: "Managing Partner",
-    img: "https://randomuser.me/api/portraits/men/32.jpg",
+    name: "D. Senthil Kannan",
+    role: "",
+    img: director5,
   },
   {
-    name: "Meera Nair",
-    role: "Strategy Partner",
-    img: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "K. Pon Venkatesh",
+    role: "",
+    img: director6,
   },
   {
-    name: "David Raj",
-    role: "Consulting Partner",
-    img: "https://randomuser.me/api/portraits/men/55.jpg",
+    name: "C. Karthikeya Prabu",
+    role: "",
+    img: director7,
   },
   {
-    name: "Sneha Iyer",
-    role: "Growth Partner",
-    img: "https://randomuser.me/api/portraits/women/68.jpg",
+    name: "S. Balasubramaniasamy",
+    role: "",
+    img: director9,
+  },
+  {
+    name: "G. Sugumar",
+    role: "",
+    img: director1,
+  },
+  {
+    name: "B. Palani Kumar",
+    role: "",
+    img: director2,
+  },
+  {
+    name: "S. Gurubala",
+    role: "",
+    img: director3,
+  },
+  {
+    name: "D. S. Sidhaarth",
+    role: "",
+    img: director4,
+  },
+   {
+    name: "D. S. Sanjeev",
+    role: "",
+    img: director8,
   },
 ];
 
 const team = [
-  {
-    name: "Rahul Sharma",
-    role: "Programme Manager",
-    img: "https://randomuser.me/api/portraits/men/21.jpg",
+   {
+    name: "D. Senthil Kannan",
+    role: "CEO",
+    img: director5,
   },
   {
-    name: "Divya Menon",
-    role: "HR Specialist",
-    img: "https://randomuser.me/api/portraits/women/22.jpg",
+    name: "N. Arumugam",
+    role: "General Manager",
+    img: mem1,
   },
   {
-    name: "Karthik S",
-    role: "Trainer",
-    img: "https://randomuser.me/api/portraits/men/45.jpg",
+    name: "L. Dilip",
+    role: "Business Development Manager           ",
+    img: mem2,
   },
   {
-    name: "Anjali Verma",
-    role: "Coordinator",
-    img: "https://randomuser.me/api/portraits/women/33.jpg",
+    name: "M. Antony Rajathi",
+    role: "Accounts Manager",
+    img: mem3,
   },
   {
-    name: "Vikram Patel",
-    role: "Operations",
-    img: "https://randomuser.me/api/portraits/men/29.jpg",
+    name: "A.	Kalyanasundari",
+    role: "Customer Relationship Manager",
+    img: mem4,
   },
   {
-    name: "Neha Gupta",
-    role: "Content Lead",
-    img: "https://randomuser.me/api/portraits/women/52.jpg",
-  },
-  {
-    name: "Arjun Reddy",
-    role: "Marketing",
-    img: "https://randomuser.me/api/portraits/men/61.jpg",
-  },
-  {
-    name: "Priya Das",
-    role: "Support",
-    img: "https://randomuser.me/api/portraits/women/75.jpg",
+    name: "S. Manikandan ",
+    role: "PALMS Training Centre Manager",
+    img: mem5
   },
 ];
 
@@ -74,11 +107,11 @@ const TeamCard = ({ person }) => {
         <img
           src={person.img}
           alt={person.name}
-          className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+          className="w-full h-full object-cover transition duration-500 scale-110"
         />
 
         {/* HOVER RING */}
-        <div className="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-[var(--palms-green)] transition duration-500" />
+        <div className="absolute inset-0 rounded-full border-2  border-[var(--palms-green)] transition duration-500" />
       </div>
 
       {/* NAME */}
