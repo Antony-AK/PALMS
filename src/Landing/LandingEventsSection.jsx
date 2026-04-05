@@ -13,17 +13,23 @@ const LandingEventsSection = () => {
       try {
         const res = await API.get("/events");
 
-       const upcoming = res.data
-  .filter(event => {
-    if (!event.date) return true; // ✅ allow events without date
-    return new Date(event.date) >= new Date();
-  })
-  .sort((a, b) => {
-    const dateA = a.date ? new Date(a.date) : new Date(0);
-    const dateB = b.date ? new Date(b.date) : new Date(0);
-    return dateA - dateB;
-  })
-  .slice(0, 3);
+        const now = new Date();
+        const pastLimit = new Date();
+        pastLimit.setDate(now.getDate() - 30); // last 30 days
+
+        const upcoming = res.data
+          .filter(event => {
+            if (!event.date) return true;
+
+            const eventDate = new Date(event.date);
+            return eventDate >= pastLimit; // allow recent + future
+          })
+          .sort((a, b) => {
+            const dateA = a.date ? new Date(a.date) : new Date(0);
+            const dateB = b.date ? new Date(b.date) : new Date(0);
+            return dateA - dateB;
+          })
+          .slice(0, 3);
 
         console.log(res.data);
         setEvents(upcoming);
@@ -82,22 +88,29 @@ const LandingEventsSection = () => {
               >
 
                 {/* Image */}
-                <div className="relative h-[200px] sm:h-[230px] md:h-[260px] overflow-hidden">
+                <div className="relative bg-[var(--palms-blue)] flex justify-center items-center p-4">
+
                   <img
                     src={event.bannerImage?.url}
                     alt={event.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="
+      max-h-[240px] md:max-h-[260px]
+      w-auto
+      object-contain
+      rounded-xl
+      transition duration-500 group-hover:scale-105
+    "
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                </div>
+                  {/* Overlay removed → not needed */}
 
+                </div>
                 {/* Content */}
                 <div className="absolute bottom-5 sm:bottom-6 left-5 sm:left-6 text-white">
                   <span className="text-[10px] tracking-widest bg-white/20 px-2 py-1 rounded-full">
- {event.date
-    ? new Date(event.date).toLocaleDateString()
-    : "Upcoming"}                  </span>
+                    {event.date
+                      ? new Date(event.date).toLocaleDateString()
+                      : "Upcoming"}                  </span>
 
                   <h3 className="mt-3 text-base sm:text-lg font-semibold max-w-[220px] transition-all duration-300 group-hover:-translate-y-1">
                     {event.title}

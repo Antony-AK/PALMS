@@ -66,11 +66,7 @@ const LatestIssue = () => {
                 </p>
               )}
 
-              {latest.description && (
-                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                  {latest.description}
-                </p>
-              )}
+             
 
               <p className="text-sm text-gray-500 mt-2 mb-6">
                 {new Date(latest.publishedAt).toLocaleDateString()}

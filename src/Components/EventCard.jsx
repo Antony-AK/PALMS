@@ -20,22 +20,28 @@ const EventCard = ({ event, index }) => {
                  transition-all duration-500"
     >
       {/* IMAGE */}
-      <div className="relative h-[300px] overflow-hidden">
-        <img
-          src={event.bannerImage?.url}
-          alt={event.title}
-          className="w-full h-full object-cover transition duration-700 group-hover:scale-110"
-        />
+      <div className="relative bg-slate-100 flex justify-center items-center p-4">
 
-        {/* Soft overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+  <img
+    src={event.bannerImage?.url}
+    alt={event.title}
+    className="
+      w-full
+      max-w-[260px]
+      h-auto
+      object-contain
+      rounded-xl
+      transition duration-500 group-hover:scale-105
+    "
+  />
 
-        {/* DATE TAG */}
-        <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md
-                        px-4 py-2 rounded-xl text-sm font-medium shadow-md">
-          {new Date(event.date).toDateString()}
-        </div>
-      </div>
+  {/* DATE TAG */}
+  <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md
+                  px-3 py-1.5 rounded-lg text-xs font-medium shadow">
+    {new Date(event.date).toDateString()}
+  </div>
+
+</div>
 
       {/* CONTENT */}
       <div className="p-8 space-y-5">
