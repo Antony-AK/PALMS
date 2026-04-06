@@ -19,7 +19,7 @@ const WhatsAppButton = () => {
       whileHover={{ scale: 1.1 }}
       onClick={handleClick}
       className="
-        fixed bottom-6 right-22 z-[9999]
+        fixed bottom-6 right-22 z-[8999]
         w-14 h-14
         flex items-center justify-center
         rounded-full
