@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "../assets/logo1.png"
 import { NavLink, useNavigate } from "react-router-dom";
-
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 // src/data/servicesNav.js
 export const servicesNav = [
@@ -117,10 +117,10 @@ const Navbar = () => {
                     ? "bg-white/90 backdrop-blur-md shadow-sm"
                     : "bg-white "}
       `}>
-                <div className="max-w-[1280px] mx-auto flex items-center justify-between px-6 py-5">
+                <div className="max-w-[1310px] mx-auto flex items-center  justify-between px-6 py-5">
 
                     {/* Navigation */}
-                    <nav className=" flex items-center gap-18 font-medium">
+                    <nav className=" flex items-center gap-18 font-medium ">
                         <NavLink to="/" ><div className="w-44 h-10 -mt-5 text-lg font-semibold tracking-tight text-[var(--palms-blue)]">
                             <img src={logo} className="object-cover" alt="" />
                         </div>
@@ -326,9 +326,59 @@ const Navbar = () => {
                     </nav>
 
                     {/* Actions */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-4 ">
 
-                        {/* Desktop Button */}
+                        {/* 🔥 SOCIAL ICONS (DESKTOP ONLY) */}
+                        <div className="hidden md:flex items-center gap-3 me-2">
+
+                            <a
+                                href="https://www.facebook.com/palmstraining/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-9 h-9 flex items-center justify-center rounded-full
+                 border border-gray-200
+                 text-[var(--palms-grey)]
+                 hover:bg-[var(--palms-blue)]
+                 hover:text-white
+                 hover:scale-110
+                 transition-all duration-300"
+                            >
+                                <FaFacebookF size={12} />
+                            </a>
+
+                            <a
+                                href="https://www.linkedin.com/in/palmsindia/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-9 h-9 flex items-center justify-center rounded-full
+                 border border-gray-200
+                 text-[var(--palms-grey)]
+                 hover:bg-[var(--palms-blue)]
+                 hover:text-white
+                 hover:scale-110
+                 transition-all duration-300"
+                            >
+                                <FaLinkedinIn size={12} />
+                            </a>
+
+                            <a
+                                href="https://www.instagram.com/palmsindia"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-9 h-9 flex items-center justify-center rounded-full
+                 border border-gray-200
+                 text-[var(--palms-grey)]
+                 hover:bg-[var(--palms-blue)]
+                 hover:text-white
+                 hover:scale-110
+                 transition-all duration-300"
+                            >
+                                <FaInstagram size={12} />
+                            </a>
+
+                        </div>
+
+                        {/* EXISTING BUTTON */}
                         <button
                             onClick={() => navigate("/memberships/individual")}
                             className="hidden md:block btn-primary"
@@ -336,7 +386,7 @@ const Navbar = () => {
                             Become a member
                         </button>
 
-                        {/* Mobile Hamburger */}
+                        {/* MOBILE MENU */}
                         <button
                             onClick={() => setMobileOpen(true)}
                             className="md:hidden text-3xl me-5 text-[var(--palms-blue)]"

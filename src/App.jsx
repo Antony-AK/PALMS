@@ -35,6 +35,7 @@ import Profit from './pages/services/Profit';
 import Consultancy from './pages/services/Consultancy';
 import OurTeam from './pages/OurTeam';
 import Unsubscribe from './Components/Unsubscribe';
+import WhatsAppButton from './Components/WhatsAppButton';
 const AdminLogin = lazy(() => import("./Admin/Login"));
 const Dashboard = lazy(() => import("./Admin/Dashboard"));
 const GalleryManager = lazy(() => import("./Admin/GalleryManager"));
@@ -91,6 +92,7 @@ function App() {
             </Routes>
 
             <SupportBot />
+            <WhatsAppButton />
 
             <Footer />
           </div>
