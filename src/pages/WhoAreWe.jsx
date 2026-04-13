@@ -7,6 +7,7 @@ import { Lightbulb, Target } from "lucide-react"
 import img from "../assets/hero4.png"
 import OurTeam from "./OurTeam";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 const WhoAreWe = () => {
