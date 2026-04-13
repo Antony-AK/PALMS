@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useLayoutEffect } from "react";
-import hero from "../assets/Banner.jpg";
+import hero from "../assets/Banner.JPG";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import logo from "../assets/Silverlogo.png"
