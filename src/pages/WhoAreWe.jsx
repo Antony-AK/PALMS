@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PalmsTimeline from "../Components/PalmsTimeline";
-import hero from "../assets/whowearehero.webp"
+import hero from "../assets/Who we are.jpg"
 import { Lightbulb, Target } from "lucide-react"
 import img from "../assets/hero4.png"
 import OurTeam from "./OurTeam";

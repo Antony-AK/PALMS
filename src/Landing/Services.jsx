@@ -2,18 +2,18 @@ import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import pd from "../assets/pdtamil.webp"
-import md from "../assets/manaetamil.webp"
+import md from "../assets/PROEX Managerial and professional Skill Development.jpeg"
 import soft from "../assets/skillstamil.webp"
-import training from "../assets/corporatetamil.webp"
-import outbaond from "../assets/outbondtamil.webp"
-import retreat from "../assets/retreat.webp"
+import training from "../assets/Inhouse Training.jpeg"
+import outbaond from "../assets/Outbound.jpg"
+import retreat from "../assets/Residential Business Retreat.jpg"
 import yatra from "../assets/yatra.webp"
-import consulting from "../assets/consulting.webp"
+import consulting from "../assets/Business Consulting.jpg"
 import summercamp from "../assets/summercamp.webp"
-import career from "../assets/career.webp"
-import entrepreneur from "../assets/mbaa.jpg"
-import individuals from "../assets/individuals.webp"
-import personality from "../assets/pepupp.jpg"
+import career from "../assets/careercouns.jpeg"
+import entrepreneur from "../assets/MBA in a Box.jpg"
+import individuals from "../assets/Special Programme for Individuals.jpg"
+import personality from "../assets/Pep up.jpg"
 import { useNavigate } from "react-router-dom";
 
 

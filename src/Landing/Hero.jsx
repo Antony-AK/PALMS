@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useLayoutEffect } from "react";
-import hero from "../assets/herotamil.webp";
+import hero from "../assets/Banner.jpg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import logo from "../assets/Silverlogo.png"
@@ -193,7 +193,7 @@ const Hero = () => {
 w-[200px] sm:w-[260px] md:w-[320px] lg:w-[350px] 
 h-[200px] sm:h-[260px] md:h-[320px] lg:h-[350px] 
 opacity-20 slow-spin pointer-events-none">
-        <img src={logo} alt="hero" />
+        <img src={logo}  alt="hero" />
       </div>
 
 
@@ -210,7 +210,7 @@ relative overflow-hidden rounded-3xl sm:rounded-4xl"      >
         <img
           src={hero}
           alt="PALMS Training"
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-center"
         />
       </div>
 
