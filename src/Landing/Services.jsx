@@ -13,7 +13,7 @@ import summercamp from "../assets/summercamp.webp"
 import career from "../assets/careercouns.jpeg"
 import entrepreneur from "../assets/MBA in a Box.jpg"
 import individuals from "../assets/Special Programme for Individuals.JPG"
-import personality from "../assets/Pep up.jpg"
+import personality from "../assets/Pep up.JPG"
 import { useNavigate } from "react-router-dom";
 
 
