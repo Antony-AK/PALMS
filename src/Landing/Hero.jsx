@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useLayoutEffect } from "react";
-import hero from "../assets/Banner.JPG";
+import hero from "../assets/heroo.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import logo from "../assets/Silverlogo.png"
@@ -206,7 +206,7 @@ w-[87%] sm:w-[88%] md:w-[85%] lg:w-[80%]
 mx-auto 
 h-[260px] sm:h-[320px] md:h-[400px] lg:h-[480px] 
 relative overflow-hidden rounded-3xl sm:rounded-4xl"      >
-        <div className="hero-overlay absolute inset-0 bg-[var(--palms-blue)] opacity-40 z-10" />
+        <div className="hero-overlay absolute inset-0 bg-[var(--palms-blue)] opacity-10 z-10" />
         <img
           src={hero}
           alt="PALMS Training"

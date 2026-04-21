@@ -24,6 +24,7 @@ import profit10 from "../assets/profit10.jpeg"
 
 
 
+
 export const inhouseData = {
   id: "01",
   title: "In-house Training Programmes",
