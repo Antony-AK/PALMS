@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-// const API = "https://palms-backend-bwad.onrender.com/api/issues";
+const API = "https://palms-backend-bwad.onrender.com/api/subscribers";
 
-const API = "http://localhost:5000/api/subscribers";
+// const API = "http://localhost:5000/api/subscribers";
 
 const SubscriptionSection = () => {
 

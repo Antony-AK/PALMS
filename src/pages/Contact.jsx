@@ -5,7 +5,6 @@ import { lazy, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
-const HologramGlobe = lazy(() => import("../Components/HologramGlobe"));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,7 +44,7 @@ const Contact = () => {
 
     const formData = new FormData(e.target);
 
-    formData.append("access_key", "w3f_46eccc22043b50bbd04437e7c0e174565333db10261f85e9");
+    formData.append("access_key", "06a5404f-769b-493c-91b4-3afdac2b1d90");
     formData.append("subject", "New PALMS Contact Enquiry");
     formData.append("from_name", "PALMS Website");
 

@@ -318,7 +318,21 @@ const JournalManager = () => {
                             type="file"
                             accept="application/pdf"
                             className="hidden"
-                            onChange={(e) => setPdfFile(e.target.files[0])}
+                            onChange={(e) => {
+                                const file = e.target.files[0];
+
+                                if (!file) return;
+
+                                const maxSize = 10 * 1024 * 1024; // 10MB
+
+                                if (file.size > maxSize) {
+                                    alert("Please upload a PDF smaller than 10 MB.");
+                                    e.target.value = "";
+                                    return;
+                                }
+
+                                setPdfFile(file);
+                            }}
                         />
                     </div>
 
@@ -407,7 +421,7 @@ const JournalManager = () => {
                         </div>
                         <div className="flex flex-wrap gap-2 mt-6">
 
-                            {issue.campaignType === "newsletter" && !issue.isPublished &&  (
+                            {issue.campaignType === "newsletter" && !issue.isPublished && (
                                 <button
                                     onClick={() => publishIssue(issue._id)}
                                     className="bg-green-600 text-white px-3 py-2 rounded-lg text-sm"
@@ -434,14 +448,14 @@ const JournalManager = () => {
                                 </button>
                             )}
 
-{!(issue.campaignType === "newsletter" && issue.isPublished) && (                                <button
-                                    onClick={() => {
-                                        setEditing(issue);
-                                        window.scrollTo({ top: 0, behavior: "smooth" });
-                                    }} className="bg-yellow-500 text-white px-3 py-2 rounded-lg text-sm"
-                                >
-                                    Edit
-                                </button>
+                            {!(issue.campaignType === "newsletter" && issue.isPublished) && (<button
+                                onClick={() => {
+                                    setEditing(issue);
+                                    window.scrollTo({ top: 0, behavior: "smooth" });
+                                }} className="bg-yellow-500 text-white px-3 py-2 rounded-lg text-sm"
+                            >
+                                Edit
+                            </button>
                             )}
 
                             <button
