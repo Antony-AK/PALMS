@@ -7,23 +7,23 @@ gsap.registerPlugin(ScrollTrigger);
 const PalmsPassion = () => {
   const sectionRef = useRef(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(".passion-reveal", {
-        opacity: 0,
-        y: 60,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-        },
-      });
-    }, sectionRef);
+//   useEffect(() => {
+//     const ctx = gsap.context(() => {
+//      gsap.from(".passion-reveal", {
+//   opacity: 0,
+//   y: 50,
+//   duration: 1,
+//   stagger: 0.15,
+//   ease: "power4.out",
+//   scrollTrigger: {
+//     trigger: sectionRef.current,
+//     start: "top 75%",
+//   },
+// });
+//     }, sectionRef);
 
-    return () => ctx.revert();
-  }, []);
+//     return () => ctx.revert();
+//   }, []);
 
   const points = [
     "We at PALMS are learners forever, catalysing learning as a core human activity.",
@@ -37,79 +37,84 @@ const PalmsPassion = () => {
   return (
    <section
   ref={sectionRef}
-  className="w-full bg-white px-6 md:px-10 py-16 md:py-20"
+  className="
+    min-h-screen
+    bg-white
+    text-[var(--palms-blue)]
+    flex items-center
+    py-24
+    px-6
+    overflow-hidden
+  "
 >
-  <div className="max-w-3xl mx-auto">
+  <div className="absolute inset-0 overflow-hidden">
+  <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-white/5 blur-[120px] rounded-full" />
+  <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[var(--palms-green)]/10 blur-[120px] rounded-full" />
+</div>
+  <div className="max-w-7xl mx-auto w-full">
 
-    {/* Header */}
-    <div className="text-center mb-12">
-      <span className="passion-reveal text-[10px] tracking-[0.3em] uppercase text-gray-400">
+    <div className="text-center mb-20">
+
+      <p className="text-sm uppercase tracking-[0.4em] text-[var(--palms-blue)]">
         PALMS Philosophy
-      </span>
+      </p>
 
-      <h2 className="passion-reveal mt-3 text-3xl md:text-4xl font-semibold text-[var(--palms-blue)]">
+      <h2 className="mt-4 text-4xl md:text-7xl font-semibold">
         PALMS Passion
       </h2>
+
     </div>
 
-    {/* Timeline */}
-    <div className="relative">
+    <div className="grid md:grid-cols-2 gap-8">
 
-      {/* Line */}
-      <div className="absolute left-1/2 -translate-x-1/2 w-[1.5px] h-full bg-[var(--palms-blue)] "></div>
+      {points.map((point, index) => (
+        <div
+          key={index}
+          className="
+            passion-reveal
+            relative
+            bg-[var(--palms-blue)]
+            border border-white/10
+            backdrop-blur-md
+            rounded-3xl
+            p-8
+            hover:scale-[1.02]
+            transition
+          "
+        >
+          <span className="
+            absolute
+            top-0
+            right-1
+            text-5xl
+            text-white
+            font-serif
+          ">
+            "
+          </span>
 
-      <div className="space-y-10">
+          <p className="
+            text-lg
+            leading-relaxed
+            text-white
+          ">
+            {point}
+          </p>
+        </div>
+      ))}
 
-        {points.map((point, index) => {
-          const isLeft = index % 2 === 0;
-
-          return (
-            <div
-              key={index}
-              className={`passion-reveal flex ${
-                isLeft ? "justify-start" : "justify-end"
-              }`}
-            >
-              <div className="w-full md:w-[48%] relative">
-
-          {/* Dot (only one side) */}
-<div
-  className={`absolute top-2 ${
-    isLeft ? "-right-5" : "-left-5"
-  } w-2.5 h-2.5 rounded-full bg-[var(--palms-green)]`}
-></div>
-                {/* Compact Card */}
-                <div className="bg-gray-50/70 backdrop-blur-sm rounded-xl px-4 py-3 border border-gray-100">
-
-                  <p className="italic text-[var(--palms-grey)] text-sm md:text-base leading-relaxed">
-
-                    <span className="text-[var(--palms-blue)] mr-1">“</span>
-
-                    {point}
-
-                    <span className="text-[var(--palms-green)] ml-1">”</span>
-
-                  </p>
-
-                </div>
-
-              </div>
-            </div>
-          );
-        })}
-
-      </div>
     </div>
 
-    {/* Author */}
-    <div className="passion-reveal mt-14 text-center">
-      <p className="text-xs uppercase tracking-widest text-gray-400">
+    <div className="mt-4 text-center">
+
+      <p className="uppercase tracking-[0.4em] text-white/50 text-sm">
         Philosophy By
       </p>
 
-      <p className="mt-2 text-lg font-medium text-[var(--palms-blue)]">
+      <h3 className="mt-3 text-2xl font-medium">
         S. Balasubramaniasamy
-      </p>
+      </h3>
+
     </div>
 
   </div>

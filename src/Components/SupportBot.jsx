@@ -4,31 +4,42 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const replies = {
   "What is PALMS?":
-    "PALMS Training & Consulting is a leadership development organization providing professional learning, consulting and leadership programmes.",
+    "PALMS Training & Consulting (P) Ltd. is a soft skills training organisation offering programmes in managerial skills, leadership development, business excellence, personal effectiveness, and professional growth. Our mission is to support personal, professional, and organisational development through meaningful learning experiences.",
 
   "How can I join PALMS?":
-    "You can join PALMS through our membership programs available on the website.",
+    "You can become a PALMS member by choosing a membership plan that best suits your needs. Please visit the Membership section of our website to explore available membership plans, benefits, and learning opportunities.",
 
   "Do you offer leadership training?":
-    "Yes. PALMS offers leadership development and executive training programs.",
+    "Yes. PALMS offers a wide range of programmes on leadership development, communication skills, managerial effectiveness, emotional intelligence, team building, business excellence, and personal effectiveness.",
 
   "Where is PALMS located?":
-    "PALMS Training & Consulting is located in Thoothukudi, Tamil Nadu, India.",
+    "PALMS Training & Consulting (P) Ltd. is based in Thoothukudi, Tamil Nadu, India. We also conduct programmes across Tamil Nadu and offer selected online learning programmes.",
 
   "How can I contact PALMS?":
-    "You can contact PALMS at info@palmsindia.org or call 8220344477, 0461-2330856.",
+    "You can contact PALMS through Email: info@palmsindia.org, Mobile/WhatsApp: +91 82203 44477, or Phone: 0461-2330856.",
 
   "Do you conduct events?":
-    "Yes. PALMS regularly hosts leadership forums, conferences and networking events.",
+    "Yes. PALMS regularly organises monthly learning programmes for members, in-house corporate training programmes, outbound experiential learning programmes, special public workshops, leadership forums, and networking events.",
 
   "Is there a PALMS membership?":
-    "Yes. Palms works on memebership model and u can become a member by paying a membership fee as per choice of membership ",
+    "Yes. PALMS operates on a membership model. Members enjoy continuous learning opportunities, networking, programme discounts, exclusive resources, and participation in various professional development activities.",
 
   "Do u provide career guidance?":
-    "yes, we offer career guidance programs for student and colleges and for executive's who looking for career transitions "
+    "Yes. PALMS provides Career Guidance services for school students (Std IX and above), college students, working professionals, and executives. Our guidance process helps individuals discover their strengths and make informed education and career decisions."
 };
 
-const questions = Object.keys(replies);
+// const questions = Object.keys(replies);
+
+const questions = [
+  "What is PALMS?",
+  "How can I join PALMS?",
+  "Do you offer leadership training?",
+  "Where is PALMS located?",
+  "How can I contact PALMS?",
+  "Do you conduct events?",
+  "Is there a PALMS membership?",
+  "Do u provide career guidance?"
+];
 
 export default function SupportBot() {
 
@@ -42,9 +53,9 @@ export default function SupportBot() {
 
   const [messages, setMessages] = useState([
     {
-      sender: "bot",
-      text: "Hi 👋 I'm the PALMS Assistant. Ask me anything about our programs or membership."
-    }
+  sender: "bot",
+  text: "👋 Hi! I'm the PALMS Assistant. I can help you with information about our programmes, membership plans, events, leadership development initiatives, and career guidance services. How may I assist you today?"
+}
   ]);
 
   const bottomRef = useRef();
@@ -153,7 +164,7 @@ export default function SupportBot() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          access_key: "0d66b0d7-a46d-406a-a172-3a0f0d47124e",
+          access_key: "06a5404f-769b-493c-91b4-3afdac2b1d90",
           subject: "New Query from Support Bot",
           from_name: "PALMS Assistant",
           from_email: email,

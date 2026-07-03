@@ -54,7 +54,7 @@ const Footer = () => {
             </p>
 
             <p className="mt-6 sm:mt-8 md:mt-10 text-xs uppercase tracking-widest text-white/50">
-              Established 2000 · India
+              Est 2000 · India
             </p>
           </div>
 
@@ -67,7 +67,7 @@ const Footer = () => {
               <div className="flex gap-3 items-start">
                 <MdLocationOn className="text-[var(--palms-green)] mt-1 text-lg" />
                 <p>
-                  20/1, W.D. Road<br />
+                  20/1, V.V.D. Road<br />
                   Thoothukudi – 628 003<br />
                   Tamil Nadu, India
                 </p>

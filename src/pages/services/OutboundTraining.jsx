@@ -68,9 +68,9 @@ const OutboundTraining = () => {
           </span>
 
           <div className="space-y-8">
-            <span className="uppercase tracking-[0.3em] text-sm text-[var(--palms-green)] font-bold">
+            {/* <span className="uppercase tracking-[0.3em] text-sm text-[var(--palms-green)] font-bold">
               Programme
-            </span>
+            </span> */}
 
             <h1 className="text-5xl md:text-6xl font-semibold text-[var(--palms-blue)] leading-tight">
               {service.title}
@@ -157,7 +157,7 @@ const OutboundTraining = () => {
             {/* HEADER */}
             <div className="mb-10">
               <h2 className="text-4xl md:text-5xl font-semibold text-[var(--palms-blue)]">
-               Ideal for Key Takeaway
+               Target Audience ~ Takeaways
               </h2>
               <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
             </div>
@@ -175,7 +175,7 @@ const OutboundTraining = () => {
         group-hover:w-full transition-all duration-500 rounded-t-3xl" />
 
                 <h3 className="text-2xl font-semibold text-[var(--palms-blue)] mb-8">
-                   For whom
+                   For Whom?
                 </h3>
 
                 <div className="space-y-5">
@@ -206,7 +206,7 @@ const OutboundTraining = () => {
         group-hover:w-full transition-all duration-500 rounded-t-3xl" />
 
                 <h3 className="text-2xl font-semibold text-[var(--palms-blue)] mb-8">
-                  Outcomes you can expect
+                  Key Takeaways
                 </h3>
 
                 <div className="space-y-5">
@@ -236,7 +236,7 @@ const OutboundTraining = () => {
         {/* ================= LEARNING ================= */}
         <section className="bg-[var(--palms-grey-light)] rounded-3xl p-10">
           <h3 className="text-3xl font-semibold text-[var(--palms-blue)] mb-6">
-            How learning happens
+            Methodology
           </h3>
 
           <ul className="space-y-4">
@@ -247,7 +247,7 @@ const OutboundTraining = () => {
         </section>
 
         {/* ================= WHY ================= */}
-        <section className="p-10 bg-gray-100">
+        {/* <section className="p-10 bg-gray-100">
           <h2 className="text-3xl font-semibold text-center text-[var(--palms-blue)] mb-16">
             Why organisations choose PALMS?
           </h2>
@@ -261,7 +261,7 @@ const OutboundTraining = () => {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* ================= CTA ================= */}
         <section className="bg-palms-gradient text-white py-16 sm:py-20 md:py-26 text-center px-5 sm:px-6">

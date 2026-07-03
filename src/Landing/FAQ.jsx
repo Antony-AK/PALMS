@@ -20,7 +20,7 @@ const faqs = [
     },
     {
         q: "How can I become a PALMS member?",
-        a: "You can begin by exploring the membership structure on our website or by contacting the PALMS team directly. Membership details are shared clearly before enrolment.",
+        a: "You can begin by exploring the membership plan or by contacting the PALMS team directly. ",
     },
 ];
 
@@ -106,9 +106,7 @@ const FAQSection = () => {
                     </span>
 
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-[var(--palms-blue)]">
-                        Clarifying
-                        <br />
-                        questions
+                        FAQ
                     </h2>
 
                     <p className="mt-6 sm:mt-8 md:mt-10 text-base sm:text-lg text-[var(--palms-grey)]">

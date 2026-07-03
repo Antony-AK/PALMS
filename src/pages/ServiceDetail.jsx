@@ -259,7 +259,7 @@ className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 md:gap-20 justify-ce
             {/* HEADER */}
             <div className="mb-24">
               <h2 className="text-4xl font-semibold text-[var(--palms-blue)]">
-                How learning happens
+                Methodology
               </h2>
               <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
             </div>

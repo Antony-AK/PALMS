@@ -48,8 +48,8 @@ export const inhouseData = {
 
   benefits: [
     "Improve Employee Behaviour and Workplace Attitudes",
-    "Strengthen communication and interpersonal skills",
-    "Build stronger teams and collaborative work culture",
+    "Strengthen Communication and Interpersonal Skills",
+    "Build Stronger Teams and Collaborative Work Culture",
     "Enhance customer service and professional conduct",
     "Improve productivity, efficiency, and workplace effectiveness",
     "Develop leadership capabilities at different levels"
@@ -64,7 +64,7 @@ export const inhouseData = {
   ],
 
   programmes: {
-    "Behavioural and personal effectiveness": [
+    "Behavioural and Personal Effectiveness": [
       "Behavioural and Attitudinal Change",
       "Self Management and Personal Effectiveness",
       "Self Motivation and Self Renewal",
@@ -72,14 +72,15 @@ export const inhouseData = {
       "Conquering Inhibitions",
       "Power of Possibility Thinking"
     ],
-    "Communication and interpersonal skills": [
+    "Communication and Interpersonal Skills": [
       "Effective Communication",
       "Written Communication and Telephone Skills",
-      "Presentation Skills – Express to Impress",
+      "Presentation Skills",
+      "Express to Impress",
       "Body Language",
       "Human Relations"
     ],
-    "Leadership and management development": [
+    "Leadership and Management Development": [
       "Leadership in Action",
       "Vision, Mission and Goals",
       "Effective Decision Making",
@@ -87,7 +88,7 @@ export const inhouseData = {
       "Transactional Analysis",
       "Negotiation Skills"
     ],
-    "Teamwork and workplace productivity": [
+    "Teamwork and Workplace Productivity": [
       "Team Building",
       "Work Ethics and Work Culture",
       "Quality of Work Life",
@@ -95,14 +96,14 @@ export const inhouseData = {
       "5S for Enhancing Office Productivity",
       "Stress Management"
     ],
-    "Thinking and Problem solving": [
+    "Thinking and Problem Solving": [
       "Creativity & Innovation",
       "Critical Thinking",
       "Design Thinking",
       "Six Thinking Hats",
       "Problem Solving Techniques"
     ],
-    "Business and organisational effectiveness": [
+    "Business and Organisational Effectiveness": [
       "Customer Service Excellence",
       "Selling Skills",
       "Change Management",
@@ -172,19 +173,19 @@ export const outboundData = {
 
   elements: [
     {
-      title: "Experiential team challenges",
+      title: "Experiential Team Challenges",
       desc: "Participants work together to solve challenges that require cooperation, creativity, and teamwork."
     },
     {
-      title: "Leadership and decision-making exercises",
+      title: "Leadership and Decision-Making Exercises",
       desc: "Activities that encourage participants to take initiative, make decisions, and guide the team under pressure."
     },
     {
-      title: "Fun and engagement activities",
+      title: "Fun and Engagement Activities",
       desc: "Interactive games and outdoor activities that encourage bonding, energy, and enjoyment."
     },
     {
-      title: "Guided reflection and learning integration",
+      title: "Guided Reflection and Learning Integration",
       desc: "Facilitated discussions help participants connect their experiences with workplace behaviours and teamwork."
     }
   ],
@@ -224,15 +225,14 @@ export const outboundData = {
 export const specialProgrammesData = {
   id: "03",
   title: "Special Programmes for Individuals",
-  tagline: "Bringing world-class learning experiences to Thoothukudi.",
+  tagline: "Bringing world-class learning experiences for Professional Growth.",
 
   image: individuals,
 
   intro: [
     "PALMS Training & Consulting Pvt Ltd periodically organises special workshops and learning programmes for individuals and professionals from different fields.",
-    "These programmes are usually conducted over one to three days and are designed to introduce new ideas, emerging concepts, and practical skills that are relevant in today’s rapidly changing world. The aim is to make latest knowledge, management practices, and personal development concepts accessible to the people of Thoothukudi.",
+    "These programmes are usually conducted over one to three days and are designed to introduce new ideas, emerging concepts, and practical skills that are relevant in today’s rapidly changing world. The aim is to make latest knowledge, management practices, and personal development concepts accessible to all",
     "Over the years, PALMS has organised a wide range of programmes for business owners, managers, professionals, teachers, trainers, parents, couples and students, creating valuable opportunities for learning, reflection, and personal growth.",
-    "The objective of these workshops is to bring latest concepts, practical knowledge, and inspiring learning experiences to the people of Thoothukudi.",
     "Through these programmes, PALMS continues to create meaningful opportunities for learning, growth, and professional development in the community."
   ],
 
@@ -240,7 +240,7 @@ export const specialProgrammesData = {
 
   categories: [
     {
-      title: "For CEOs and Business owners",
+      title: "For CEOs and Business Owners",
       desc: "These programmes focus on strengthening leadership capability, business strategy, and organisational growth.",
       points: [
         "Strategic thinking",
@@ -286,7 +286,7 @@ export const specialProgrammesData = {
       ]
     },
     {
-      title: "For College students",
+      title: "For College Students",
       desc: "Programmes that prepare students for career to campus",
       points: [
         "Career awareness",
@@ -327,19 +327,19 @@ export const careerGuidanceData = {
 
   elements: [
     {
-      title: "Psychometric career assessment",
+      title: "Psychometric Career Assessment",
       desc: "A scientifically designed assessment that evaluates personality, interests, skills, and career motivators."
     },
     {
-      title: "Career analysis report",
+      title: "Career Analysis Report",
       desc: "A detailed personalised report highlighting strengths, career clusters, and suitable paths."
     },
     {
-      title: "One-to-one counselling session",
+      title: "One-to-one Counselling Session",
       desc: "Expert guidance to interpret results and explore the best career options."
     },
     {
-      title: "Career planning guidance",
+      title: "Career Planning Guidance",
       desc: "Support in selecting courses, skills, and future preparation strategies."
     },
     {
@@ -482,7 +482,6 @@ export const pepUpData = {
     "Participant presentations",
     "Practical challenges and assignments",
     "One-to-one counselling",
-    "Facilitator feedback and peer learning"
   ],
 
   why: [
@@ -750,23 +749,23 @@ export const profitData = {
   // 🔥 Focus Areas mapped as modules
   modules: [
     {
-      title: "Vision clarity and strategic direction",
+      title: "Vision Clarity and Strategic Direction",
       desc: "Reflect on long-term aspirations and define clear strategic priorities."
     },
     {
-      title: "Leadership alignment and accountability",
+      title: "Leadership Alignment and Accountability",
       desc: "Strengthen trust, shared ownership, and clarity of leadership roles."
     },
     {
-      title: "Business model review and growth planning",
+      title: "Business Model Review and Growth Planning",
       desc: "Examine existing business models and identify opportunities for expansion and innovation."
     },
     {
-      title: "Execution roadmap development",
+      title: "Execution Roadmap Development",
       desc: "Translate strategy into clear action plans and measurable priorities."
     },
     {
-      title: "Culture and performance alignment",
+      title: "Culture and Performance Alignment",
       desc: "Explore how organisational culture supports strategy, performance, and long-term success."
     }
   ],

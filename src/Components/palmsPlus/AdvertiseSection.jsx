@@ -29,16 +29,16 @@ const AdvertiseSection = () => {
         <div className="mt-8 sm:mt-10 md:mt-12 flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-5">
 
           {/* Primary Enquiry */}
-          <button onClick={() => navigate("/contact")} className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base bg-[var(--palms-blue)] text-white rounded-lg hover:opacity-90 transition shadow-md">
+          {/* <button onClick={() => navigate("/contact")} className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base bg-[var(--palms-blue)] text-white rounded-lg hover:opacity-90 transition shadow-md">
             Enquire for Advertising
-          </button>
+          </button> */}
 
           {/* Download Kit */}
           <a
             href="/pdf/PALMS-Advertisement-Form.jpg"
             download
             className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base border border-[var(--palms-blue)] text-[var(--palms-blue)] rounded-lg hover:bg-[var(--palms-blue)] hover:text-white transition"          >
-            Download Media Kit
+            Download Advertisement Form
           </a>
 
         </div>

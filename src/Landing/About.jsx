@@ -74,7 +74,7 @@ const AboutSection = () => {
                     <div className="w-full about-reveal">
                         {/* Text */}
                         <p className="text-base sm:text-lg text-[var(--palms-grey)] leading-relaxed max-w-[550px]">
-                            PALMS Training & Consulting is an organisation dedicated
+                            PALMS Training & Consultancy (P) Ltd is an organisation dedicated
                             to professional and personal development. Since 2000, we have worked
                             with individuals, professionals, and organisations to strengthen
                             leadership capability, foster clear thinking, and support continuous

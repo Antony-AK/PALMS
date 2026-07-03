@@ -22,9 +22,9 @@ function Home() {
       <Hero />
       <PalmsLearningMoment />
       <AboutSection />
+      <ImpactSection />
       <ServicesSection />
       <LandingEventsSection />
-      <ImpactSection />
       <TestimonialsSection />
       <PalmsPassion />
       <MembershipCTASection />

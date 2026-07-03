@@ -156,7 +156,7 @@ const Profit = () => {
                     <div className="max-w-[1200px] mx-auto px-5 md:px-10">
 
                         <h2 className="text-4xl md:text-5xl font-semibold mb-20">
-                            Learning Modules
+                             Objective
                             <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
                         </h2>
 
@@ -203,7 +203,7 @@ const Profit = () => {
                         {/* HEADER */}
                         <div className="mb-10">
                             <h2 className="text-4xl md:text-5xl font-semibold text-[var(--palms-blue)]">
-                                Ideal for Key Takeaway
+                                Target Audience ~ Takeaways
                             </h2>
                             <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
                         </div>
@@ -221,7 +221,7 @@ const Profit = () => {
         group-hover:w-full transition-all duration-500 rounded-t-3xl" />
 
                                 <h3 className="text-2xl font-semibold text-[var(--palms-blue)] mb-8">
-                                    For whom
+                                    For Whom?
                                 </h3>
 
                                 <div className="space-y-5">
@@ -252,7 +252,7 @@ const Profit = () => {
         group-hover:w-full transition-all duration-500 rounded-t-3xl" />
 
                                 <h3 className="text-2xl font-semibold text-[var(--palms-blue)] mb-8">
-                                    Outcomes you can expect
+                                    Key Takeaways
                                 </h3>
 
                                 <div className="space-y-5">
@@ -286,7 +286,7 @@ const Profit = () => {
 
                         <div className="mb-10">
                             <h2 className="text-4xl md:text-5xl font-semibold text-[var(--palms-blue)]">
-                                How learning happens
+                                Methodology
                             </h2>
                             <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
                         </div>
@@ -314,7 +314,7 @@ const Profit = () => {
                 </section>
 
                 {/* ================= WHY ================= */}
-                <section className="p-10 bg-gray-100">
+                {/* <section className="p-10 bg-gray-100">
                     <h2 className="text-3xl font-semibold text-center text-[var(--palms-blue)] mb-16">
                         Why organisations choose PALMS?
                     </h2>
@@ -328,7 +328,7 @@ const Profit = () => {
                             </div>
                         ))}
                     </div>
-                </section>
+                </section> */}
 
 
 

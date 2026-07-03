@@ -52,13 +52,13 @@ const PalmsPlusHero = () => {
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.15] tracking-tight">
           PALMS PLUS<br />
           <span className="text-white/85 mt-4  md:mt-5 block">
-            A Leadership Journal<br />
+            An Inhouse Journal<br />
             for Continuous Growth
           </span>
         </h1>
 
         <p className="mt-6 sm:mt-8 md:mt-10 text-base sm:text-lg md:text-xl text-white/80 max-w-[640px] leading-relaxed">
-          Quarterly insights, reflections, and practical leadership thinking
+          Monthly insights, reflections, and practical leadership thinking
           designed to strengthen clarity, decision-making, and long-term growth.
         </p>
 

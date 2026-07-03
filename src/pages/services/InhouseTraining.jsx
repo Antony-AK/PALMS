@@ -69,9 +69,9 @@ const InhouseTraining = () => {
           </span>
 
           <div className="space-y-8">
-            <span className="uppercase tracking-[0.3em] text-sm text-[var(--palms-green)] font-bold">
+            {/* <span className="uppercase tracking-[0.3em] text-sm text-[var(--palms-green)] font-bold">
               Programme
-            </span>
+            </span> */}
 
             <h1 className="text-5xl md:text-6xl font-semibold text-[var(--palms-blue)] leading-tight">
               {service.title}

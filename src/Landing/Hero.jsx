@@ -18,7 +18,7 @@ const Hero = () => {
       sub: "PALMS empowers individuals and organisations through value-driven learning that builds leadership capability, clarity of thought, and meaningful professional growth."
     },
     {
-      title: "Building capability, confidence, and cultures of excellence",
+      title: "Building capability, confidence, and culture of excellence",
       sub: "Through high-impact training programmes, PALMS strengthens individual effectiveness, improves organisational performance, and nurtures strong leadership behaviour."
     },
     {
@@ -143,7 +143,7 @@ const Hero = () => {
       introTl.call(() => {
         gsap.timeline({ repeat: -1 })
           .call(swapContent)
-          .to({}, { duration: 3 });
+          .to({}, { duration: 5 });
       });
 
 

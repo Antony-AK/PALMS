@@ -198,47 +198,124 @@ const TIMELINE_DATA = [
 const RAILS = {
     top: {
         y: 80,
-        labelOffset: -85,
-        years: [2001, 2002, 2003, 2004, 2005, 2009, 2010]
+        labelOffset: -135,
+        years: [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008,]
     },
     middle: {
         y: 240,
-        labelOffset: 80,
-        years: [2006, 2007, 2008, 2011, 2012, 2013, 2014, 2015]
+        labelOffset: 62,
+        years: [ 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,]
     },
     bottom: {
         y: 400,
-        labelOffset: 80,
-        years: [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]
+        labelOffset: 50,
+        years: [ 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]
     }
 };
 
 const EVENTS = {
-    2001: ["Foundation"],
-    2005: ["First Members Conducted"],
-    2006: ["Set up PALMS Self Development Centre"],
-    2007: ["CEO Summit", "First Exclusive Programme"],
-    2008: [
-        "50th Milestone Programme"
-    ],
-    2009: ["100th Milestone"],
-    2010: [
-        "Moved to Bigger Meeting Centre",
-    ],
-    2011: ["PROFIT Business Retreat"],
-    2012: ["PALMS Business Network"],
-    2013: ["Business Yatra – China"],
-    2014: ["Business Yatra – Indonesia"],
-    2015: ["PALMS Membership Programmes – Tirunelveli"],
-    2016: ["PROFIT Business Retreat"],
-    2017: ["200th Milestone Programme"],
-    2018: ["Business Yatra – Dubai"],
-    2019: ["PROFIT Business Retreat"],
-    2020: ["Launch of PEP UP Programme"],
-    2021: ["250th Milestone Programme"],
-    2025: ["300th Milestone – Pro Programme"]
-};
+  2001: [
+    "PROFIT Awareness Programme"
+  ],
 
+  2002: [],
+
+  2003: [
+    "BSNL Tender for In-house Training of 600 Employees",
+    "Launch of PALMS PLUS Newsletter"
+  ],
+
+  2004: [
+    "Started Summer Camp for School Students",
+    "50th Milestone Programme"
+  ],
+
+  2005: [],
+
+  2006: [
+    "Set up PALMS Self Development Centre"
+  ],
+
+  2007: [
+    "CEO Summit",
+    "First Executive Programme"
+  ],
+
+  2008: [
+    "Moved to a Bigger Meeting Space",
+    "First Outbound Training Programme for Cairn Energy",
+    "Diploma in Shipping & Logistics"
+  ],
+
+  2009: [
+    "100th Milestone Programme",
+    "Launched Tuticorin PALMS Toastmaster"
+  ],
+
+  2010: [
+    "10th Anniversary Celebrations  Annual General Programme",
+    "Launched The Pink Circle"
+  ],
+
+  2011: [
+    "PROFIT Business Retreat"
+  ],
+
+  2012: [
+    "Launch of PALMS Business Network",
+    "PALMS Business Yatra to China"
+  ],
+
+  2013: [
+    "PROFIT Business Retreat"
+  ],
+
+  2014: [
+    "PALMS Business Yatra to Indonesia"
+  ],
+
+  2015: [
+    "Started PALMS Membership Programmes in Tirunelveli"
+  ],
+
+  2016: [
+    "PROFIT Business Retreat"
+  ],
+
+  2017: [
+    "PROFIT Business Retreat",
+    "200th Milestone Programme"
+  ],
+
+  2018: [
+    "PALMS Business Yatra to Dubai"
+  ],
+
+  2019: [
+    "PROFIT Business Retreat"
+  ],
+
+  2020: [
+    "Launch of PEP UP Programme"
+  ],
+
+  2021: [
+    "250th Milestone Programme"
+  ],
+
+  2022: [
+    "PALMS Business Yatra to Dubai"
+  ],
+
+  2023: [],
+
+  2024: [],
+
+  2025: [
+    "Launch of Pro-Ex",
+    "300th Milestone Programme"
+  ]
+};
 
 const PalmsTimeline = () => {
     const svgRef = useRef(null);
@@ -303,16 +380,16 @@ const PalmsTimeline = () => {
 
 
     return (
-        <section className="w-full py-16 sm:py-24 md:py-32">
+       <section className="w-full pt-48 pb-16">
             <h3 className="text-3xl font-semibold text-center text-[var(--palms-blue)] mb-20">
                 The PALMS Journey
             </h3>
 
-            <div className="w-full overflow-x-auto pb-6">
-                <div className="min-w-[1200px] snap-center">
+            <div className="w-full  overflow-x-auto ">
+                <div className="min-w-[1200px] snap-center mt-16">
                     <svg
                         ref={svgRef}
-                        viewBox="0 0 1600 520"
+                        viewBox="0 0 1600 620"
                         className="w-full h-auto overflow-visible"
                     >
                         {/* TRACK */}
@@ -386,7 +463,7 @@ const PalmsTimeline = () => {
                                     x={e.x}
                                     y={e.y + 4}
                                     textAnchor="middle"
-                                    fontSize="13"
+                                    fontSize="12"
                                     fontWeight="600"
                                     fill="var(--palms-blue)"
                                 >

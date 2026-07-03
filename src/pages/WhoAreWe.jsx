@@ -110,7 +110,7 @@ const WhoAreWe = () => {
                             </h2>
 
                             <p className="text-xl text-[var(--palms-grey)] leading-relaxed">
-                                PALMS is a leadership and management development institution
+                                PALMS is a leadership and management skills development organisation
                                 focused on building clarity, capability, and purposeful growth
                                 in individuals and organisations.
                             </p>
@@ -212,22 +212,22 @@ const WhoAreWe = () => {
                         {[
                             {
                                 index: "01",
-                                title: "Leadership & management capability",
+                                title: "Leadership & Management capability",
                                 desc: "Developing leaders who think clearly, take responsibility, and lead people with confidence."
                             },
                             {
                                 index: "02",
-                                title: "Personality & self-development",
+                                title: "Personality & Self-development",
                                 desc: "Strengthening self-awareness, emotional intelligence, confidence, and professional presence."
                             },
                             {
                                 index: "03",
-                                title: "Workplace effectiveness & culture",
+                                title: "Workplace Effectiveness & Culture",
                                 desc: "Improving productivity, collaboration, trust, and healthy work culture across teams."
                             },
                             {
                                 index: "04",
-                                title: "Communication & professional excellence",
+                                title: "Communication & Professional Excellence",
                                 desc: "Building clarity in communication, credibility in relationships, and excellence in execution."
                             }
                         ].map((item, i) => (

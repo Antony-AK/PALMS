@@ -128,7 +128,7 @@ const Navbar = () => {
                         <div className="hidden md:flex  items-center gap-8 text-md font-medium">
 
                             <NavLink to="/whoweare" className={linkClass}>
-                                Who Are We
+                                About Us
                             </NavLink>
 
                             <div
@@ -200,9 +200,9 @@ const Navbar = () => {
                                                         <p className="text-lg font-medium group-hover:text-[var(--palms-green)] transition">
                                                             {membership.title}
                                                         </p>
-                                                        <span className="text-xs text-white/50">
+                                                        {/* <span className="text-xs text-white/50">
                                                             Programme {membership.id}
-                                                        </span>
+                                                        </span> */}
                                                     </div>
 
                                                     <span className="opacity-0 translate-x-[-6px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
@@ -433,7 +433,7 @@ const Navbar = () => {
 
                     <div className="space-y-6 text-[var(--palms-blue)] font-medium">
 
-                        <MobileLink to="/whoweare" label="Who Are We" close={() => setMobileOpen(false)} />
+                        <MobileLink to="/whoweare" label="About Us" close={() => setMobileOpen(false)} />
 
                         {/* Memberships Accordion */}
                         <div>
@@ -441,7 +441,7 @@ const Navbar = () => {
                                 onClick={() => setMobileMembershipsOpen(!mobileMembershipsOpen)}
                                 className="w-full flex justify-between items-center"
                             >
-                                Memberships
+                                Membership
                                 <span>{mobileMembershipsOpen ? "−" : "+"}</span>
                             </button>
 

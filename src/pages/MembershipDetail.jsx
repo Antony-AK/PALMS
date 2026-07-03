@@ -118,7 +118,7 @@ ${membership.plans.length === 4 ? "p-8" : "p-10"}
                   <span className="text-sm text-white/60"> / year</span>
                 </div>
 
-                <p className="text-white/70 text-sm mb-8">
+                <p className="text-white/70 italic text-sm mb-8">
                   {plan.description}
                 </p>
 
@@ -268,7 +268,7 @@ const DotPage = ({ membership }) => {
             </p>
 
             <button
-              onClick={() => window.open(INDIVIDUAL_FORM, "_blank")}
+              onClick={"/contact"}
               className="px-16 py-4 bg-[var(--palms-green)] text-white rounded-full font-medium hover:scale-105 hover:shadow-lg transition-all duration-300"
             >
               Register Now

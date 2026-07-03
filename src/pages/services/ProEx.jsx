@@ -183,7 +183,7 @@ const ProEx = () => {
                         {/* HEADER */}
                         <div className="mb-10">
                             <h2 className="text-4xl md:text-5xl font-semibold text-[var(--palms-blue)]">
-                                Ideal for Key Takeaway
+                                Target Audience ~ Takeaways
                             </h2>
                             <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
                         </div>
@@ -201,7 +201,7 @@ const ProEx = () => {
         group-hover:w-full transition-all duration-500 rounded-t-3xl" />
 
                                 <h3 className="text-2xl font-semibold text-[var(--palms-blue)] mb-8">
-                                    For whom
+                                    For Whom?
                                 </h3>
 
                                 <div className="space-y-5">
@@ -232,7 +232,7 @@ const ProEx = () => {
         group-hover:w-full transition-all duration-500 rounded-t-3xl" />
 
                                 <h3 className="text-2xl font-semibold text-[var(--palms-blue)] mb-8">
-                                    Outcomes you can expect
+                                    Key Takeaways
                                 </h3>
 
                                 <div className="space-y-5">
@@ -266,7 +266,7 @@ const ProEx = () => {
 
                         <div className="mb-10">
                             <h2 className="text-4xl md:text-5xl font-semibold text-[var(--palms-blue)]">
-                                How learning happens
+                                Methodology
                             </h2>
                             <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
                         </div>

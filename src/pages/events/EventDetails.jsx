@@ -10,9 +10,12 @@ const EventDetails = () => {
   const [event, setEvent] = useState(null);
   const [timeLeft, setTimeLeft] = useState({});
 
-  useEffect(() => {
-    API.get(`/events/${slug}`).then((res) => setEvent(res.data));
-  }, [slug]);
+useEffect(() => {
+  API.get(`/events/${slug}`).then((res) => {
+    console.log("EVENT DATA:", res.data);
+    setEvent(res.data);
+  });
+}, [slug]);
 
   // ⏳ COUNTDOWN
   useEffect(() => {
@@ -46,6 +49,19 @@ const EventDetails = () => {
       year: "numeric",
     }).format(new Date(date));
   };
+
+  const handleRegister = () => {
+
+  if (event?.registrationLink) {
+    window.open(
+      event.registrationLink,
+      "_blank"
+    );
+    return;
+  }
+
+  navigate(`/events/${slug}/register`);
+};
 
   return (
     <section className="bg-[#f8fafc] min-h-screen pb-32">
@@ -88,7 +104,7 @@ const EventDetails = () => {
       <div className="mt-6 flex justify-center gap-4 flex-wrap">
 
         <button
-          onClick={() => navigate(`/events/${slug}/register`)}
+          onClick={handleRegister}
           className="px-8 py-3 bg-[var(--palms-green)] text-white rounded-xl font-medium hover:scale-105 transition"
         >
           Register Now
@@ -174,7 +190,7 @@ const EventDetails = () => {
           </p>
 
           <button
-            onClick={() => navigate(`/events/${slug}/register`)}
+            onClick={handleRegister}
             className="mt-4 w-full bg-[var(--palms-blue)] text-white py-3 rounded-xl"
           >
             Register Now

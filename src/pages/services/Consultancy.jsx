@@ -68,9 +68,9 @@ const Consultancy = () => {
                     </span>
 
                     <div className="space-y-8">
-                        <span className="uppercase tracking-[0.3em] text-sm text-[var(--palms-green)] font-bold">
+                        {/* <span className="uppercase tracking-[0.3em] text-sm text-[var(--palms-green)] font-bold">
                             Programme
-                        </span>
+                        </span> */}
 
                         <h1 className="text-5xl md:text-6xl font-semibold text-[var(--palms-blue)] leading-tight">
                             {service.title}
@@ -119,7 +119,7 @@ const Consultancy = () => {
                     <div className="max-w-[1200px] mx-auto px-5 md:px-10">
 
                         <h2 className="text-4xl md:text-5xl font-semibold mb-20">
-                            Scope of Works
+                            Scope of Work
                             <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
                         </h2>
 
@@ -166,7 +166,7 @@ const Consultancy = () => {
                         {/* HEADER */}
                         <div className="mb-10">
                             <h2 className="text-4xl md:text-5xl font-semibold text-[var(--palms-blue)]">
-                               Ideal for Key Takeaway
+                               Target Audience ~ Takeaways
                             </h2>
                             <div className="mt-6 h-[3px] w-16 bg-[var(--palms-green)] rounded-full" />
                         </div>
@@ -184,7 +184,7 @@ const Consultancy = () => {
         group-hover:w-full transition-all duration-500 rounded-t-3xl" />
 
                                 <h3 className="text-2xl font-semibold text-[var(--palms-blue)] mb-8">
-                                    For whom
+                                    For Whom?
                                 </h3>
 
                                 <div className="space-y-5">
@@ -192,7 +192,7 @@ const Consultancy = () => {
                                         <div key={i} className="flex gap-4 items-start">
 
                                             <span className="text-lg font-bold text-[var(--palms-green)]">
-                                                {String(i + 1).padStart(2, "0")}
+                                                .
                                             </span>
 
                                             <p className="text-[var(--palms-grey)] leading-relaxed">
@@ -215,7 +215,7 @@ const Consultancy = () => {
         group-hover:w-full transition-all duration-500 rounded-t-3xl" />
 
                                 <h3 className="text-2xl font-semibold text-[var(--palms-blue)] mb-8">
-                                    Outcomes you can expect
+                                    Key Takeaways
                                 </h3>
 
                                 <div className="space-y-5">
@@ -267,7 +267,7 @@ const Consultancy = () => {
 
 
                 {/* ================= WHY ================= */}
-                <section className="p-10 bg-gray-100">
+                {/* <section className="p-10 bg-gray-100">
                     <h2 className="text-3xl font-semibold text-center text-[var(--palms-blue)] mb-16">
                         Why organisations choose PALMS?
                     </h2>
@@ -281,7 +281,7 @@ const Consultancy = () => {
                             </div>
                         ))}
                     </div>
-                </section>
+                </section> */}
 
 
 

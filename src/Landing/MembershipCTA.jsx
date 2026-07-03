@@ -126,7 +126,7 @@ const MembershipCTASection = () => {
             </button>
 
             <button onClick={()=> navigate("/memberships/corporate")} className="btn-secondary text-[var(--palms-blue)]">
-              View membership structure →
+              View membership plans →
             </button>
           </div>
 

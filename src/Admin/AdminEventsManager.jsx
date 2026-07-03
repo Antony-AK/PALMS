@@ -13,6 +13,7 @@ const AdminEventsManager = () => {
         description: "",
         bannerImage: "",
         bannerFile: null,
+        registrationLink: "",
         date: "",
         time: "",
         venue: "",
@@ -41,6 +42,7 @@ const AdminEventsManager = () => {
         setFormData({
             title: "",
             description: "",
+            registrationLink: "",
             bannerImage: "",
             date: "",
             time: "",
@@ -69,6 +71,10 @@ const AdminEventsManager = () => {
         data.append("seatsAvailable", formData.seatsAvailable);
         data.append("deadline", formData.deadline);
         data.append("status", formData.status);
+        data.append(
+  "registrationLink",
+  formData.registrationLink
+);
 
         if (formData.bannerFile) {
             data.append("banner", formData.bannerFile);
@@ -104,6 +110,8 @@ const AdminEventsManager = () => {
         setFormData({
             title: event.title,
             description: event.description,
+            registrationLink:
+  event.registrationLink || "",
             date: event.date?.substring(0, 10),
             time: event.time,
             venue: event.venue,
@@ -214,7 +222,13 @@ const AdminEventsManager = () => {
 
                 <input name="venue" placeholder="Venue" value={formData.venue} onChange={handleChange} className="input-style" />
                 <input name="speaker" placeholder="Speaker" value={formData.speaker} onChange={handleChange} className="input-style" />
-
+                <input
+                    name="registrationLink"
+                    placeholder="Registration Link (Optional)"
+                    value={formData.registrationLink}
+                    onChange={handleChange}
+                    className="input-style"
+                />
                 <div className="grid grid-cols-3 gap-4">
                     <input name="price" type="number" placeholder="Price" value={formData.price} onChange={handleChange} className="input-style " />
                     <input name="seatsAvailable" type="number" placeholder="Seats Available" value={formData.seatsAvailable} onChange={handleChange} className="input-style" />

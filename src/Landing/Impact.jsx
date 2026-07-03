@@ -99,18 +99,20 @@ const ImpactSection = () => {
                   "A sustained commitment to leadership development, management thinking, and behavioural growth.",
               },
               {
-                value: 12,
-                title: "Structured programmes conducted annually",
-                desc:
-                  "Regular monthly learning programmes designed exclusively for members.",
-              },
-              {
-                value: 5000,
+                value: 10000,
                 suffix: "+",
                 title: "Professionals and learners impacted",
                 desc:
                   "Individuals across industries engaged through workshops, programmes, and experiential learning.",
               },
+              {
+                value: 500,
+                suffix: "+",
+                title: "Structured programmes conducted ",
+                desc:
+                  "Regular monthly learning programmes designed exclusively for members.",
+              },
+              
             ].map((item, i) => (
               <div
                 key={i}

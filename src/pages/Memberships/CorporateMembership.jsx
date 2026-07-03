@@ -14,10 +14,10 @@ export const membershipsData = [
                 title: "Mega Corporate",
                 price: "30,000",
                 description:
-                    "Ideal for large sized companies or group of companies, with more than 25 employees.",
+                    "Ideal for large sized companies or group of companies",
                 benefits: [
                     "Entitles any 10 participants from your company/Group, to attend our regular monthly programmes.",
-                    "Membership Fee: Rs.30,000/- Per Annum + GST as applicable."
+                    "Membership Fee: ₹30,000/- Per Annum + GST as applicable."
                 ]
             },
             {
@@ -28,7 +28,7 @@ export const membershipsData = [
                     "Ideal for medium sized companies, with more than 10 employees.",
                 benefits: [
                     "Entitles any 5 participants from your company, to attend our regular monthly programmes.",
-                    "Membership Fee: Rs.18,000/- Per Annum + GST as applicable."
+                    "Membership Fee: ₹18,000/- Per Annum + GST as applicable."
                 ]
             },
             {
@@ -38,7 +38,7 @@ export const membershipsData = [
                     "Ideal for small companies, with less than 10 employees.",
                 benefits: [
                     "Entitles any 3 participants from your company, to attend the regular monthly programmes.",
-                    "Membership Fee: Rs.12,000/- Per Annum + GST as applicable."
+                    "Membership Fee: ₹12,000/- Per Annum + GST as applicable."
                 ]
             }
         ]
@@ -57,7 +57,7 @@ export const membershipsData = [
                     "Ideal for professionals, self-employed and individuals.",
                 benefits: [
                     "Entitles the member to attend our regular monthly programmes.",
-                    "Membership Fee: Rs.6,000/- Per Annum + GST as applicable."
+                    "Membership Fee: ₹6,000/- Per Annum + GST as applicable."
                 ]
             },
             {
@@ -66,8 +66,8 @@ export const membershipsData = [
                 description:
                     "Ideal for those who wish to attend the programmes with spouse.",
                 benefits: [
-                    "Entitles the member and spouse to attend our regular monthly programmes.",
-                    "Membership Fee: Rs.9,000/- Per Annum + GST as applicable."
+                    "Entitles the member and spouse / sibiling / adult / child",
+                    "Membership Fee: ₹9,000/- Per Annum + GST as applicable."
                 ]
             },
             {
@@ -77,7 +77,7 @@ export const membershipsData = [
                     "Ideal for college students who wish to attend the programmes.",
                 benefits: [
                     "Entitles the member to attend our regular monthly programmes.",
-                    "Membership Fee: Rs.4,000/- Per Annum + GST as applicable.",
+                    "Membership Fee: ₹4,000/- Per Annum + GST as applicable.",
                 ],
                   note: "To become a member under this category, the student should submit proof of age and institutional identity card."
 
@@ -92,7 +92,7 @@ export const membershipsData = [
             "DOT is the acronym of DISTANT ONLINE TRAINING. Personal and Professional Development is an integral part of our life and distance should not be a barrier to learning new skills.",
         content: {
             intro: [
-                "At PALMS, we are committed to training. Being the pioneers in the field of leadership and management skills training in Tuticorin, with 20 years of experience, we have been consistent in offering our regular monthly training programmes to our members.",
+                "At PALMS, we are committed to training. Being the pioneers in the field of leadership and management skills training in Tuticorin, with 25+ years of experience, we have been consistent in offering our regular monthly training programmes to our members.",
                 "We would now like to leverage the power of internet, to offer this programme to people situated across the state and country. Through our DOT online membership plan, you will be able to enrich your knowledge and skills through our Monthly Webinars."
             ],
             why: [
@@ -110,7 +110,7 @@ export const membershipsData = [
                 "12 regular monthly DOT programmes in a year (one per month).",
                 "Copy of PALMS PLUS Monthly Magazine."
             ],
-            price: "Rs.3000/- per annum + 18% GST",
+            price: "₹3000/- per annum + 18% GST",
             note:
                 "Corporates may contact us for group discount packages."
         }
@@ -219,7 +219,7 @@ const CorporateMembership = () => {
                                 <span className="text-sm text-white/60"> / year</span>
                             </div>
 
-                            <p className="text-white/70 text-sm leading-relaxed mb-8">
+                            <p className="text-white/70 text-sm italic leading-relaxed mb-8">
                                 {plan.description}
                             </p>
 
